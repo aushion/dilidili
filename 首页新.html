@@ -1,0 +1,370 @@
+<!--制作ly-->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <meta name="format-detection" content="telephone=no">
+    <!-- 公共css区域 -->
+    <link rel="stylesheet" href="css/weui.min.css">
+    <link rel="stylesheet" href="css/jquery-weui.min.css">
+    <link rel="stylesheet" href="css/flexslider.css">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- 公共css完区域 -->
+    <!-- 该页面应用css区域 -->
+    <style type="text/css">
+        .header-top {
+            border: none;
+        }
+
+        .header-top .head {
+            justify-content: center;
+            align-items: center;
+            display: flex;
+        }
+
+        .header-top .avator {
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            overflow: hidden
+        }
+
+        .header-top .avator img {
+            width: 100%
+        }
+
+        .header-top .search {
+            width: 90%;
+            margin: 0 5% 0 5%;
+            border: none;
+            background: #f1f1f1;
+            height: 30px;
+            padding-left: 1em;
+            border-radius: 2%;
+        }
+
+        .header-top .notification {
+            position: relative;
+            height: 100%;
+        }
+
+        .notification i {
+            font-size: 24px;
+        }
+
+        .notification .number {
+            position: absolute;
+            width: 14px;
+            height: 15px;
+            border-radius: 50%;
+            background: red;
+            top: 10px;
+            left: 10px;
+            color: white;
+            text-align: center;
+            line-height: 14px;
+            font-size: 10px;
+        }
+
+        .content {
+            background: #eff3ed
+        }
+
+        .content img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .content .banner {
+            width: 100%;
+            height: 250px;
+            margin-top: 2px;
+            background: #fcc;
+        }
+
+        .content .logoList {
+            width: 100%;
+            height: 48px;
+            margin: 5px 0;
+            display: flex;
+        }
+
+        .content .logoList .slides {
+            height: 100%;
+        }
+
+        .content .ad-three {
+            width: 100%;
+            height: 345px;
+            margin-bottom: 10px;
+        }
+
+        .ad-three .ad-three-top {
+            width: 100%;
+            height: 160px;
+            margin-bottom: 10px;
+        }
+
+        .ad-three .ad-three-bottom {
+            height: 170px;
+        }
+
+        .ad-three .ad-three-bottom .item {
+            padding: 0 1%;
+        }
+
+        .content .ad-four {
+            width: 100%;
+            height: 380px;
+            margin-bottom: 10px;
+        }
+
+        .content .ad-four .ad-four-top {
+            width: 100%;
+            height: 140px;
+            margin-bottom: 10px;
+        }
+
+        .ad-four-left,
+        .ad-four-right {
+            width: 49%;
+            height: 230px;
+            display: inline-block;
+        }
+
+        .ad-four .ad-four-right .item {
+            height: 110px;
+        }
+
+        .ad-one-three {
+            width: 100%;
+            height: 428px;
+            margin-bottom: 10px;
+        }
+
+        .ad-one-three .top {
+            width: 100%;
+            height: 251px;
+            margin-bottom: 7px;
+        }
+
+        .ad-one-three .bottom .item {
+            padding: 0 1%;
+            height: 170px;
+            display: inline-block;
+        }
+
+        .content .classify {
+            width: 100%;
+            height: 130px;
+            margin-bottom: 10px;
+        }
+    </style>
+    <!-- 该页面应用css区域 -->
+</head>
+
+<body ontouchstart>
+    <header>
+        <div class="header-top weui-flex">
+            <div class="head">
+                <div class="avator"><img src="images/head.png"></div>
+            </div>
+
+            <div class="weui-flex__item">
+                <input type="text" class="search" placeholder="嘀哩嘀哩">
+            </div>
+            <div class="notification"><span class="inform"><i class="iconfont">&#xe632;</i><div class="number">99+</div></span></div>
+        </div>
+    </header>
+
+    <div class="content">
+        <!-- 轮播图部分 -->
+        <div class="banner">
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide"><img src="images/250.png" alt=""></div>
+                    <div class="swiper-slide"><img src="images/250.png" alt=""></div>
+                </div>
+                <!-- If we need pagination -->
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+        <!-- 轮播图部分 -->
+
+        <!-- logo滑块部分 -->
+        <div class="logoList flexslider">
+            <ul class="slides">
+                <li>
+                    <img src="images/brand1.png" />
+                </li>
+                <li>
+                    <img src="images/brand2.png" />
+                </li>
+                <li>
+                    <img src="images/brand3.png" />
+                </li>
+                <li>
+                    <img src="images/brand4.png" />
+                </li>
+                <li>
+                    <img src="images/brand5.png" />
+                </li>
+                <li>
+                    <img src="images/brand6.png" />
+                </li>
+                <li>
+                    <img src="images/brand7.png" />
+                </li>
+            </ul>
+        </div>
+        <!-- logo滑块部分 -->
+
+        <!-- 广告上1下2布局 -->
+        <div class="ad-three">
+            <div class="ad-three-top">
+                <img src="images/160.png">
+            </div>
+            <div class="ad-three-bottom weui-flex">
+                <div class="item weui-flex__item"><img src="images/344.png"></div>
+                <div class="item weui-flex__item"><img src="images/344.png"></div>
+            </div>
+        </div>
+        <!-- 广告上1下2布局 -->
+
+
+
+        <!-- 广告2部分4区块 -->
+        <div class="ad-four">
+            <div class="ad-four-top">
+                <img src="images/140.png">
+            </div>
+            <div class="ad-four-left"><img src="images/230.png"></div>
+            <div class="ad-four-right">
+                <div class="item" style="margin-bottom:10px;"><img src="images/110.png"></div>
+                <div class="item"><img src="images/110.png"></div>
+            </div>
+        </div>
+        <!-- 广告2部分4区块 -->
+
+
+        <!-- 广告上1下3布局 -->
+        <div class="ad-one-three">
+            <div class="top"><img src="images/251.png"></div>
+            <div class="bottom weui-flex">
+                <div class="item weui-flex__item"><img src="images/170.png"></div>
+                <div class="item weui-flex__item"><img src="images/170.png"></div>
+                <div class="item weui-flex__item"><img src="images/170.png"></div>
+            </div>
+        </div>
+        <!-- 广告上1下3布局 -->
+        <!-- 广告上1下3布局 -->
+        <div class="ad-one-three">
+            <div class="top"><img src="images/251.png"></div>
+            <div class="bottom weui-flex">
+                <div class="item weui-flex__item"><img src="images/170.png"></div>
+                <div class="item weui-flex__item"><img src="images/170.png"></div>
+                <div class="item weui-flex__item"><img src="images/170.png"></div>
+            </div>
+        </div>
+        <!-- 广告上1下3布局 -->
+        <!-- 广告上1下3布局 -->
+        <div class="ad-one-three">
+            <div class="top"><img src="images/251.png"></div>
+            <div class="bottom weui-flex">
+                <div class="item weui-flex__item"><img src="images/170.png"></div>
+                <div class="item weui-flex__item"><img src="images/170.png"></div>
+                <div class="item weui-flex__item"><img src="images/170.png"></div>
+            </div>
+        </div>
+        <!-- 广告上1下3布局 -->
+        <!-- 广告上1下3布局 -->
+        <div class="ad-one-three">
+            <div class="top"><img src="images/251.png"></div>
+            <div class="bottom weui-flex">
+                <div class="item weui-flex__item"><img src="images/170.png"></div>
+                <div class="item weui-flex__item"><img src="images/170.png"></div>
+                <div class="item weui-flex__item"><img src="images/170.png"></div>
+            </div>
+        </div>
+        <!-- 广告上1下3布局 -->
+
+        <!-- 品类展位 -->
+        <div class="classify"><img src="images/130.png"></div>
+        <div class="classify"><img src="images/130.png"></div>
+        <div class="classify"><img src="images/130.png"></div>
+        <div class="classify"><img src="images/130.png"></div>
+
+    </div>
+
+
+
+
+    <!-- logo滑块部分       -->
+    <footer>
+        <div class="weui-tabbar">
+            <a href="#" class="weui-tabbar__item weui-bar__item--on index active">
+                <div class="weui-tabbar__icon add-d-img">
+                    <span><img src="images/index.png"/></span>
+                </div>
+                <p class="weui-tabbar__label">首页</p>
+            </a>
+            <a href="#" class="weui-tabbar__item weui-bar__item--on classify">
+                <div class="weui-tabbar__icon">
+                    <span><img src="images/z-53-2-3.png" class='gray'/></span>
+                </div>
+                <p class="weui-tabbar__label">分类</p>
+            </a>
+            <a href="#" class="weui-tabbar__item weui-bar__item--on cart">
+                <div class="weui-tabbar__icon">
+                    <span><img src="images/z-53-2-4.png"/></span>
+                    <span class="weui-badge" style="position: absolute;top: -.4em;right: 1em;">8</span>
+                </div>
+                <p class="weui-tabbar__label">购物车</p>
+            </a>
+            <a href="#" class="weui-tabbar__item weui-bar__item--on personage">
+                <div class="weui-tabbar__icon">
+                    <span><img src="images/z-53-2-1.png"/></span>
+                </div>
+                <p class="weui-tabbar__label">个人</p>
+            </a>
+        </div>
+    </footer>
+    <!-- 公共js区域 -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery-weui.min.js"></script>
+    <script src="js/swiper.min.js"></script>
+    <script src="js/city-picker.min.js"></script>
+    <script src="js/jquery.flexslider-min.js"></script>
+    <script src="https://cdn.bootcss.com/jquery_lazyload/1.9.7/jquery.lazyload.js"></script>
+    <!-- 公共js区域完 -->
+    <!-- 该页面应用js区域 -->
+    <script type="text/javascript">
+        $(function () {
+            $('.swiper-container').swiper({
+                loop: true,
+                autoplay: 3000
+            })
+            $('.flexslider').flexslider({
+                animation: "slide",
+                animationLoop: true,
+                slideShow: true,
+                itemWidth: 62,
+                itemMargin: 10,
+                move: 1,
+                // directionNav: true,
+                controlNav: false
+            });
+
+            $('img').lazyload({
+                effect: 'fadeIn'
+            })
+        });
+    </script>
+    <!-- 该页面应用js区域 -->
+</body>
+
+</html>

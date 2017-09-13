@@ -1,0 +1,112 @@
+<!--制作lj-->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <meta name="format-detection" content="telephone=no">
+    <!-- 公共css区域 -->
+    <link rel="stylesheet" href="../css/weui.min.css">
+    <link rel="stylesheet" href="../css/jquery-weui.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <!-- 公共css完区域 -->
+    <!-- 该页面应用css区域 -->
+    <style type="text/css">
+        .clearfix:before,.clearfix:after {content: "";display: block;height: 0;visibility: hidden;}
+        .clearfix:after {clear: both;}
+        .clearfix {zoom: 1;}/*兼容IE6/7*/
+        .container-wrap{padding: 0 0.5rem;}
+        .container .item-title{font-size: 0.7rem;color: #666;}
+        .container .item-after{font-size: 0.6rem;color: #b0b0b0;}
+        .container .text-center{text-align: center;}
+        .col-35{width: 105px;}
+        .col-65{width: 65%;}
+        /*该页面样式*/
+        .content{bottom: 0;}
+        .container .article{font-size: 0.6rem;color: #666;}
+        .search-des2{position: relative;border-bottom: 1px solid #dfdfdf;}
+        .search-des2 .search-input{border: none;text-align: center;outline: 0;width: 100%;display: block;height: 1.5rem;background-color: #f8f8f8;border-radius: 0.1rem;font-size: 0.7rem;}
+        .search-des2 .search-iconn{font-size: 1.1rem;position: absolute;left: 35%;top: 10px;}
+        .container .left-in{float: left;}
+        .container .left-in img{width: 105px;height: 105px;}
+        .container .right-in{float: left;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;}
+        .container .right-in p{margin-bottom: 0.3rem;}
+        .container .right-in p:last-child{margin-bottom: 0;}
+        .container .right-in p.title-head{font-size: 0.8rem;margin-top: -0.2rem;}
+        .ad-bottom-gu{margin-bottom: 0.8rem;}
+        .container-white2{background-color: #FFF;padding: 0.5rem;}
+    </style>
+    <!-- 该页面应用css区域 -->
+</head>
+<body ontouchstart>
+<header>
+    <div class="header-top">
+        <div class="pull-left"><i class="iconfont">&#xe600;</i></div>
+        <div class="pull-center">阿玛尼门店信息</div>
+    </div>
+</header>
+<div class="content container">
+    <div class="search-des2 text-center item-after container-white2">
+        <input type="text" placeholder="搜索门店" class="text-center search-input"><i class="iconfont search-iconn">&#xe656;</i>
+    </div>
+    <div class="clearfix container-wrap ad-bottom-gu  container-white2">
+        <div class="left-in col-35">
+            <img src="../images/sp.jpg" alt="">
+        </div>
+        <div class="right-in col-65 container-wrap item-title">
+            <p class="title-head">江北星光店</p>
+            <p>门店经理 : <span>经理名称</span></p>
+            <p>门店电话 : <span>023-55555</span></p>
+            <p>门店地址 : <span>重庆江北区观音星区观音桥星光</span></p>
+        </div>
+    </div>
+    <div class="clearfix container-wrap ad-bottom-gu container-white2">
+        <div class="left-in col-35">
+            <img src="../images/sp.jpg" alt="">
+        </div>
+        <div class="right-in col-65 container-wrap item-title">
+            <p class="title-head">江北星光店</p>
+            <p>门店经理 : <span>经理名称</span></p>
+            <p>门店电话 : <span>023-55555</span></p>
+            <p>门店地址 : <span>重庆江北区观音星区观音桥星光</span></p>
+        </div>
+    </div>
+    <div class="clearfix container-wrap ad-bottom-gu container-white2">
+        <div class="left-in col-35">
+            <img src="../images/sp.jpg" alt="">
+        </div>
+        <div class="right-in col-65 container-wrap item-title">
+            <p class="title-head">江北星光店</p>
+            <p>门店经理 : <span>经理名称</span></p>
+            <p>门店电话 : <span>023-55555</span></p>
+            <p>门店地址 : <span>重庆江北区观音星区观音桥星光</span></p>
+        </div>
+    </div>
+</div>
+
+<!-- 公共js区域 -->
+<script src="../js/jquery.min.js"></script>
+<script src="../js/jquery-weui.min.js"></script>
+<script src="../js/swiper.min.js"></script>
+<script src="../js/city-picker.min.js"></script>
+<!-- 公共js区域完 -->
+<!-- 该页面应用js区域 -->
+<script type="text/javascript">
+/**/
+$('.search-input').bind('input propertychange', function() {
+            var $this =  $(this).val().length; 
+            if($this >= 1){
+                $(".search-iconn").hide();
+            }else{
+                $(".search-iconn").show();
+            }
+        }); 
+</script>
+<!-- 该页面应用js区域 -->
+</body>
+</html>

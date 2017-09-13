@@ -1,0 +1,85 @@
+<!--制作ly-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+        <meta name="format-detection" content="telephone=no">
+        <!-- 公共css区域 -->
+        <link rel="stylesheet" href="../css/weui.min.css">
+        <link rel="stylesheet" href="../css/jquery-weui.min.css">
+        <link rel="stylesheet" href="../css/style.css">
+        <!-- 公共css完区域 -->
+        <!-- 该页面应用css区域 -->
+        <style type="text/css">
+        .content{bottom: 0;}
+        .logo{height: 7rem;text-align: center;}
+        .logo img{width: 5rem;height:5rem;border-radius: 50%;margin-top: 1rem;}
+        .list{margin:0;}
+        .list .weui-cell_access .weui-cell__ft:after{display: none;}
+        .list:after, .weui-cells:before, .list .weui-cell:before{display: none;}
+        .list .weui-cell{border-bottom: 1px solid #dfdfdf;margin-top: 0.5rem;padding: 0.25rem 0.5rem;background-color: #fff;}
+        .list .weui-cell .weui-cell__hd i{font-size: 1.2rem;color: #b0b0b0;}
+        .list .weui-cell .weui-cell_primary input{width: 100%;height: 1.5rem;border: 0;font-size: 0.7rem;color: #666;padding-left: 0.25rem;}
+        .row-ly{height: 2rem;line-height: 2rem;padding: 0 0.5rem;font-size: 0.7rem;color: #b0b0b0;}
+        .row-ly .row-ly-right{float: right;}
+        .add-bg-css{background-color: #666 !important;border:1px solid #666 !important;}
+        </style>
+        <!-- 该页面应用css区域 -->
+    </head>
+    <body ontouchstart>	
+	<header>
+		<div class="header-top">
+			<div class="pull-left"><i class="iconfont">&#xe600;</i></div>
+			<div class="pull-center">登录</div>
+		</div>
+	</header>
+	<div class="content">
+    	<div class="logo"><img src="../images/logo.jpg"/></div>
+        <div class="weui-cells list">
+          <a class="weui-cell weui-cell_access">
+            <div class="weui-cell__hd">
+            	<i class="iconfont">&#xe642;</i>
+            </div>
+            <div class="weui-cell__bd weui-cell_primary">
+              	<input type="text" placeholder="手机号码" class="fall">
+            </div>
+          </a>
+          <a class="weui-cell weui-cell_access">
+            <div class="weui-cell__hd">
+            	<i class="iconfont">&#xe631;</i>
+            </div>
+            <div class="weui-cell__bd weui-cell_primary">
+              	<input type="password" placeholder="密码" class="fall">
+            </div>
+          </a>
+        </div>
+		<div class="row-ly">
+			<span class="row-ly-left">我要注册</span>
+			<span class="row-ly-right">忘记密码</span>
+		</div>
+		<div class="submit"><button type="button">立即登陆</button></div>
+   	</div>
+    <!-- 公共js区域 --> 
+    <script src="../js/jquery.min.js"></script>
+	<script src="../js/jquery-weui.min.js"></script>
+	<script src="../js/swiper.min.js"></script>
+	<script src="../js/city-picker.min.js"></script>
+    <!-- 公共js区域完 -->
+    <!-- 该页面应用js区域 -->
+    <script type="text/javascript">
+    //实时监控input事件
+    $('.fall').bind('input propertychange', function() {
+        var $this =  $(this).val().length; 
+        if($this >= 1){
+            $(".submit button").addClass("add-bg-css");
+        }else{
+            $(".submit button").removeClass("add-bg-css");
+        }
+    });  
+    </script>
+    <!-- 该页面应用js区域 -->
+    </body>
+</html>

@@ -1,0 +1,93 @@
+<!--制作ly-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+        <meta name="format-detection" content="telephone=no">
+        <!-- 公共css区域 -->
+        <link rel="stylesheet" href="../css/weui.min.css">
+        <link rel="stylesheet" href="../css/jquery-weui.min.css">
+        <link rel="stylesheet" href="../css/style.css">
+        <!-- 公共css完区域 -->
+        <!-- 该页面应用css区域 -->
+        <style type="text/css">
+        .header-top .pull-right{color: #b0b0b0;}
+        .content{bottom: 0px;background-color: #F8F8F8;}
+        .list .weui-cell__hd img{height: 2rem;width: 2rem;border-radius: 50%;}
+        .list .weui-cell{padding: 10px 10px;}
+        .list .weui-cell__bd{font-size: 0.7rem;color: #666;margin-left: 0.25rem;}
+        .list .weui-cell__ft i{font-size: 1rem;position: relative;top: 0.1rem;}
+        .list .weui-cell__ft i.red{color: #d0021b;}
+        .icon-sx:before { content: "\e605"; }
+        .icon-kx:before { content: "\e678"; }
+        .weui-toast{font-size: 0.6rem;}
+        </style>
+        <!-- 该页面应用css区域 -->
+    </head>
+    <body ontouchstart>	
+	<header>
+		<div class="header-top">
+			<div class="pull-left"><i class="iconfont">&#xe600;</i></div>
+			<div class="pull-center">收藏的品牌</div>
+            <div class="pull-right eliminate">清空</div>
+		</div>
+	</header>
+	<div class="content">
+    	<div class="weui-cells list">
+            <div class="weui-cell weui-cell_access">
+                <div class="weui-cell__bd">
+                    <p>阿玛尼</p>
+                </div>
+                <div class="weui-cell__ft"><i class="iconfont red icon-sx"></i></div>
+            </div>
+            <div class="weui-cell weui-cell_access">
+                <div class="weui-cell__bd">
+                    <p>阿玛尼</p>
+                </div>
+                <div class="weui-cell__ft"><i class="iconfont red icon-sx"></i></div>
+            </div>
+            <div class="weui-cell weui-cell_access">
+                <div class="weui-cell__bd">
+                    <p>阿玛尼</p>
+                </div>
+                <div class="weui-cell__ft"><i class="iconfont icon-kx"></i></div>
+            </div>
+        </div>
+   	</div>
+    <!-- 公共js区域 --> 
+    <script src="../js/jquery.min.js"></script>
+	<script src="../js/jquery-weui.min.js"></script>
+	<script src="../js/swiper.min.js"></script>
+	<script src="../js/city-picker.min.js"></script>
+    <!-- 公共js区域完 -->
+    <!-- 该页面应用js区域 -->
+    <script type="text/javascript">
+    $(function() {
+        $(".eliminate").click(function(){
+            $.confirm({
+              title: '确定清空吗？',
+              onOK: function () {
+              },
+              onCancel: function () {
+              }
+            });
+        });
+        $(".weui-cell__ft").click(function(){
+            if($(this).find(".iconfont").hasClass("red")){
+                $(this).find(".iconfont").removeClass("red");
+                $.toast("取消成功", "text");
+                $(this).find(".iconfont").removeClass("icon-sx").addClass("icon-kx");
+            }else{
+                $(this).find(".iconfont").addClass("red");
+                $.toast("收藏成功", "text");
+                $(this).find(".iconfont").removeClass("icon-kx").addClass("icon-sx");
+            }
+        });
+    });
+    </script>
+    <!-- 该页面应用js区域 -->
+    </body>
+</html>

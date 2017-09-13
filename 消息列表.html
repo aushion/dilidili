@@ -1,0 +1,145 @@
+<!--制作ly-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+        <meta name="format-detection" content="telephone=no">
+        <!-- 公共css区域 -->
+        <link rel="stylesheet" href="../css/weui.min.css">
+        <link rel="stylesheet" href="../css/jquery-weui.min.css">
+        <link rel="stylesheet" href="../css/style.css">
+        <!-- 公共css完区域 -->
+        <!-- 该页面应用css区域 -->
+        <style type="text/css">
+        .header-top .pull-right{color: #b0b0b0;}
+        .content{background-color: #F8F8F8;bottom: 0;}
+        .weui-cell{padding: 10px 15px 10px 5px;}
+        .weui-cells{margin-top: 0;}
+        .weui-cells:after, .weui-cells:before{display: none;}
+        .weui-cell:before{border-top: 1px solid #dfdfdf;}
+        .weui-cells_checkbox .weui-check:checked+.weui-icon-checked:before{color: #666;}
+        .weui-cells .title{font-size: 0.7rem;color: #666;overflow : hidden;text-overflow: ellipsis;display: -webkit-box;-webkit-line-clamp: 1;-webkit-box-orient: vertical;}
+        .weui-cells .del{font-size: 0.6rem;color: #b0b0b0;overflow : hidden;text-overflow: ellipsis;display: -webkit-box;-webkit-line-clamp: 1;-webkit-box-orient: vertical;margin-top: 0.15rem;}
+        .weui-cells .time{font-size: 0.6rem;color: #b0b0b0;margin-top: 0.15rem;}
+        .add-address{height: 45px;background-color: #fff;font-size: 0.7rem;color: #666;text-align: center;line-height: 45px;margin-top: 1rem;}
+        .row{overflow: hidden;height: 46px;background-color: #fff;}
+        .row .col-65{width: 65%;float: left;height: 100%;}
+        .row .col-35{width: 35%;float: left;height: 100%;line-height: 46px;text-align: center;font-size: 0.7rem;color: #fff;background-color: #666;}
+        .row .col-65 .yuan{width: 20px;height: 20px;border:1px solid #dfdfdf;border-radius: 50%;margin-top: 0.1rem;}
+        .row .col-65 p{font-size: 0.7rem;color: #666;margin-top: -2px;}
+        .row .col-65 .matter{margin-left: 0.5rem;width: 2rem;}
+        .row .col-65 .yuan.add-img{background: url(../images/xz.png);background-size: 100% 100%;}
+        .add-bottom{bottom: 46px;}
+        footer{display: none;}
+        </style>
+        <!-- 该页面应用css区域 -->
+    </head>
+    <body ontouchstart>	
+	<header>
+		<div class="header-top">
+			<div class="pull-left"><i class="iconfont">&#xe600;</i></div>
+			<div class="pull-center">消息</div>
+      <div class="pull-right addition">批量删除</div>
+		</div>
+	</header>
+	<div class="content">
+    	<div class="weui-cells weui-cells_checkbox">
+          <label class="weui-cell weui-check__label weui-cell_access">
+            <div class="weui-cell__hd">
+              <!-- <input type="checkbox" class="weui-check" name="checkbox1">
+              <i class="weui-icon-checked"></i> -->
+            </div>
+            <div class="weui-cell__bd">
+              <p class="title">消息标题消息标题消息标题消息标题消息标题消息标题消息标题消息标题消息标题</p>
+              <p class="del">重庆市 重庆市 渝中区 解放碑街道地址信息地址信息地址信息地址信息地址信息地址信息</p>
+              <p class="time">2017-01-01 10:20:38</p>
+            </div>
+            <div class="weui-cell__ft"></div> 
+          </label>
+          <label class="weui-cell weui-check__label weui-cell_access">
+            <div class="weui-cell__hd">
+              <!-- <input type="checkbox" name="checkbox1" class="weui-check">
+              <i class="weui-icon-checked"></i> -->
+            </div>
+            <div class="weui-cell__bd">
+              <p class="title">消息标题消息标题消息标题消息标题消息标题消息标题消息标题消息标题消息标题</p>
+              <p class="del">重庆市 重庆市 渝中区 解放碑街道地址信息地址信息地址信息地址信息地址信息地址信息</p>
+              <p class="time">2017-01-01 10:20:38</p>
+            </div>
+            <div class="weui-cell__ft"></div> 
+          </label>
+          <label class="weui-cell weui-check__label weui-cell_access">
+            <div class="weui-cell__hd">
+              <!-- <input type="checkbox" name="checkbox1" class="weui-check">
+              <i class="weui-icon-checked"></i> -->
+            </div>
+            <div class="weui-cell__bd">
+              <p class="title">消息标题消息标题消息标题消息标题消息标题消息标题消息标题消息标题消息标题</p>
+              <p class="del">重庆市 重庆市 渝中区 解放碑街道地址信息地址信息地址信息地址信息地址信息地址信息</p>
+              <p class="time">2017-01-01 10:20:38</p>
+            </div>
+            <div class="weui-cell__ft"></div> 
+          </label>
+        </div>
+   	</div>
+    <footer>
+      <div class="row">
+          <div class="col-65">
+              <div class="matter">
+                <div class="yuan"></div>
+                <p>全选</p>
+              </div>
+          </div>
+          <div class="col-35 delete">删除</div>
+      </div>
+    </footer>
+    <!-- 公共js区域 --> 
+    <script src="../js/jquery.min.js"></script>
+	<script src="../js/jquery-weui.min.js"></script>
+	<script src="../js/swiper.min.js"></script>
+	<script src="../js/city-picker.min.js"></script>
+  <!-- 公共js区域完 -->
+  <!-- 该页面应用js区域 -->
+  <script type="text/javascript">
+    $(function(){
+      $(".matter").click(function(){
+        var _this = $(this).find(".yuan") ;
+        _this.hasClass("add-img") ? _this.removeClass("add-img") : _this.addClass("add-img") ;
+        $(".weui-check").each(function(index){
+            this.checked = _this.hasClass("add-img") ;
+        }) ;
+
+      });
+      $(".pull-right").click(function(){
+        if($(this).hasClass("addition")){
+          $(this).html("完成").removeClass("addition");
+          $(".weui-cell__hd").append("<input type='checkbox' name='checkbox1' class='weui-check'><i class='weui-icon-checked'></i>");
+          $(".weui-cell__ft").hide();
+          $("footer").show();
+          $(".content").addClass("add-bottom");
+        }else{
+          $(this).html("批量删除").addClass("addition");
+          $(".weui-check").remove();
+          $(".weui-icon-checked").remove();
+          $(".weui-cell__ft").show();
+          $("footer").hide();
+          $(".content").removeClass("add-bottom");
+        }
+      });
+      $(".delete").click(function(){
+            $.confirm({
+              title: '确定删除吗？',
+              onOK: function () {
+              },
+              onCancel: function () {
+              }
+            });
+        });
+    });
+  </script>
+  <!-- 该页面应用js区域 -->
+  </body>
+</html>

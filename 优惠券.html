@@ -1,0 +1,134 @@
+<!--制作ly-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+        <meta name="format-detection" content="telephone=no">
+        <!-- 公共css区域 -->
+        <link rel="stylesheet" href="../css/weui.min.css">
+        <link rel="stylesheet" href="../css/jquery-weui.min.css">
+        <link rel="stylesheet" href="../css/style.css">
+        <!-- 公共css完区域 -->
+        <!-- 该页面应用css区域 -->
+        <style type="text/css">
+        .content{bottom: 0px;background-color: #F8F8F8;}
+        .head-input{background-color: #fff;padding: 0.75rem 0;}
+        .row{height: 55px;overflow: hidden;padding: 0 0.5rem;}
+        .row .ly-70{width: 70%;float: left;}
+        .row .ly-70 input{width: 95%;height: 53px;font-size: 0.7rem;color: #666;text-indent: 0.5rem;border:1px solid #dfdfdf;border-radius: 5px;}
+        .row .ly-30{width: 30%;float: left;}
+        .submit{padding: 0;margin-top: 0;font-size: 0.7rem;color: #fff;}
+        .submit button{border-radius: 5px;font-size: 0.7rem;}
+        .add-bg-css{background-color: #666 !important;border:1px solid #666 !important;}
+        .chunk{background-color: #fff;margin-top: 0.5rem;padding: 0.1rem 0.5rem;}
+        .chunk .nonuse{height: 45px;color: #666;}
+        .chunk .nonuse button{width: 100%;height: 100%;background-color: #fff;border:1px solid #dfdfdf;border-radius: 5px;color: #666;font-size: 0.7rem;}
+        .chunk .titled{font-size: 0.7rem;color: #666;text-align: center;margin: 1.5rem 0;position: relative;background-color: #dfdfdf;height: 1px;margin-left: 10%;width: 80%;}
+        .chunk .titled span{background-color: #fff;padding: 0 1rem;z-index: 999;position: relative;top: -0.55rem;}
+        .chunk .list .list-ul .list-li{width: 100%;height: 4rem;margin-bottom: 1rem;background:url(../images/yhj-unuse.jpg);background-size: 100% 100%;position: relative;}
+        .chunk .list .list-ul .list-li .row{height: 4rem;overflow: hidden;padding: 0 0rem;position: absolute;top: 0rem;left: 0rem;width: 100%;}
+        .chunk .list .list-ul .list-li .row .ly-33{width: 33%;float: left;height: 100%;text-align: center;color: #fff;font-size: 2rem;line-height: 4rem;}
+        .chunk .list .list-ul .list-li .row .ly-67{width: 67%;float: left;height: 100%;font-size: 0.7rem;color: #fff;}
+        .chunk .list .list-ul .list-li .row .ly-67 .title{padding-left: 0.75rem;margin-top: 0.8rem;}
+        .chunk .list .list-ul .list-li .row .ly-67 .del{font-size: 0.6rem;padding-left: 0.75rem;margin-top: 0.2rem;}
+        .chunk .lists .list-ul .list-li{width: 100%;height: 4rem;margin-bottom: 1rem;background:url(../images/yhj-used.jpg);background-size: 100% 100%;position: relative;}
+        .chunk .lists .list-ul .list-li .row{height: 4rem;overflow: hidden;padding: 0 0rem;position: absolute;top: 0rem;left: 0rem;width: 100%;}
+        .chunk .lists .list-ul .list-li .row .ly-33{width: 33%;float: left;height: 100%;text-align: center;color: #fff;font-size: 2rem;line-height: 4rem;}
+        .chunk .lists .list-ul .list-li .row .ly-67{width: 67%;float: left;height: 100%;font-size: 0.7rem;color: #fff;}
+        .chunk .lists .list-ul .list-li .row .ly-67 .title{padding-left: 0.75rem;margin-top: 0.8rem;}
+        .chunk .lists .list-ul .list-li .row .ly-67 .del{font-size: 0.6rem;padding-left: 0.75rem;margin-top: 0.2rem;}
+        </style>
+        <!-- 该页面应用css区域 -->
+    </head>
+    <body ontouchstart>	
+	<header>
+		<div class="header-top">
+			<div class="pull-left"><i class="iconfont">&#xe600;</i></div>
+			<div class="pull-center">支付中心</div>
+		</div>
+	</header>
+	<div class="content">
+        <div class="head-input">
+        	<div class="row">
+                <div class="ly-70"><input type="text" placeholder="输入优惠券码" class="fall" /></div>   
+                <div class="ly-30 submit"><button type="button">确定</button></div>   
+            </div>
+        </div>
+        <div class="chunk">
+            <div class="nonuse"><button type="button">不使用任何优惠券</button></div>
+            <div class="titled"><span>可使用的优惠券</span></div>
+            <div class="list">
+                <ul class="list-ul">
+                    <li class="list-li">
+                        <div class="row">
+                            <div class="ly-33">10</div>
+                            <div class="ly-67">
+                                <p class="title">优惠券名称：<span>满1000减10</span></p>
+                                <p class="del">有效期：<span>2017.06.01-2017.07.01</span></p>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="list-li">
+                        <div class="row">
+                            <div class="ly-33">10</div>
+                            <div class="ly-67">
+                                <p class="title">优惠券名称：<span>满1000减10</span></p>
+                                <p class="del">有效期：<span>2017.06.01-2017.07.01</span></p>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="chunk">
+            <div class="titled"><span>不可使用的优惠券</span></div>
+            <div class="lists">
+                <ul class="list-ul">
+                    <li class="list-li">
+                        <div class="row">
+                            <div class="ly-33">10</div>
+                            <div class="ly-67">
+                                <p class="title">优惠券名称：<span>满1000减10</span></p>
+                                <p class="del">有效期：<span>2017.06.01-2017.07.01</span></p>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="list-li">
+                        <div class="row">
+                            <div class="ly-33">10</div>
+                            <div class="ly-67">
+                                <p class="title">优惠券名称：<span>满1000减10</span></p>
+                                <p class="del">有效期：<span>2017.06.01-2017.07.01</span></p>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+   	</div>
+    <!-- 公共js区域 --> 
+    <script src="../js/jquery.min.js"></script>
+	<script src="../js/jquery-weui.min.js"></script>
+	<script src="../js/swiper.min.js"></script>
+	<script src="../js/city-picker.min.js"></script>
+    <!-- 公共js区域完 -->
+    <!-- 该页面应用js区域 -->
+    <script type="text/javascript">
+    $(function(){
+    //实时监控input事件
+        $('.fall').bind('input propertychange', function() {
+            var $this =  $(this).val().length; 
+            if($this >= 1){
+                $(".submit button").addClass("add-bg-css");
+            }else{
+                $(".submit button").removeClass("add-bg-css");
+            }
+        });  
+    });
+    </script>
+    <!-- 该页面应用js区域 -->
+    </body>
+</html>

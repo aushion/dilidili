@@ -1,0 +1,101 @@
+<!--制作ly-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+        <meta name="format-detection" content="telephone=no">
+        <!-- 公共css区域 -->
+        <link rel="stylesheet" href="../css/weui.min.css">
+        <link rel="stylesheet" href="../css/jquery-weui.min.css">
+        <link rel="stylesheet" href="../css/style.css">
+        <!-- 公共css完区域 -->
+        <!-- 该页面应用css区域 -->
+        <style type="text/css">
+        .content{background-color: #F8F8F8;}
+        .chunk{background-color: #fff;margin-top: 0.5rem;}
+        .chunk .list .weui-media-box_appmsg .weui-media-box__hd{height: auto;}
+        .chunk .list .weui-media-box_appmsg{align-items:end;}
+        .chunk .list .weui-cell_access .weui-cell__ft{position: initial;}
+        .chunk .list .weui-cell_access .weui-cell__ft:after{right: 0.5rem;}
+        .chunk .list .weui-media-box__title, .list .weui-media-box__desc{font-size: 0.7rem;color: #666;position: relative;padding-right: 4rem;}
+        .chunk .list .weui-media-box__desc{color: #b0b0b0;font-size: 0.6rem;margin-top: 0.25rem;}
+        .chunk .list .weui-media-box__desc .lump{margin-right: 0.5rem;}
+        .chunk .list .weui-media-box__title .money{position: absolute;top: 0rem;right: 0rem;font-size: 0.7rem;color: #666;}
+        .chunk .list .weui-media-box__desc .cases{position: absolute;top: 0rem;right: 0rem;}
+        .order-del{background-color: #fff;font-size: 0.7rem;color: #b0b0b0;padding: 0.5rem 0.5rem;}
+        .order-del .order-number{color: #666;font-size: 0.7rem;}
+        .order-del p{margin-top: 0.1rem;font-size: 0.6rem;}
+        .cancel{width: 100%;height: 100%;border-radius: 0;background-color: #666;font-size: 0.7rem;color: #fff;border:1px solid #666;}
+        .text{background-color: #fff;font-size: 0.6rem;color: #666;padding: 0.5rem 0.5rem;margin-top: 0.5rem;min-height: 5rem;}
+        </style>
+        <!-- 该页面应用css区域 -->
+    </head>
+    <body ontouchstart>	
+	<header>
+		<div class="header-top">
+			<div class="pull-left"><i class="iconfont">&#xe600;</i></div>
+			<div class="pull-center">售后服务</div>
+		</div>
+	</header>
+	<div class="content">
+        <div class="order-del">
+            <p class="order-number">订单编号:<span>65656565656</span></p>
+            <p class="order-numbers">售后服务:<span>订单当前状态</span></p>
+            <p class="order-numbers">售后申请时间:<span>2017.01.01 20:30:59</span></p>
+        </div>
+        <div class="chunk">
+            <div class="weui-panel weui-panel_access list">
+                <div class="weui-panel__bd weui-cell_access">
+                    <a href="#" class="weui-media-box weui-media-box_appmsg">
+                        <div class="weui-media-box__hd">
+                            <img class="weui-media-box__thumb" src="../images/sp.jpg"/>
+                        </div>
+                        <div class="weui-media-box__bd">
+                            <h4 class="weui-media-box__title">商品名称商品名称商品名称商品名称商品名称商品名称商品名称商品名称商品名称 <span class="money">￥259.00</span></h4>
+                            <p class="weui-media-box__desc"><span class="lump">颜色：<span>黑色</span></span><span class="lump">尺码：<span>S</span></span><span class="cases">x1</span></p>
+                        </div>
+                    </a>
+                    <a href="#" class="weui-media-box weui-media-box_appmsg">
+                        <div class="weui-media-box__hd">
+                            <img class="weui-media-box__thumb" src="../images/sp.jpg"/>
+                        </div>
+                        <div class="weui-media-box__bd">
+                            <h4 class="weui-media-box__title">商品名称商品名称商品名称商品名称商品名称商品名称商品名称商品名称商品名称 <span class="money">￥259.00</span></h4>
+                            <p class="weui-media-box__desc"><span class="lump">颜色：<span>黑色</span></span><span class="lump">尺码：<span>S</span></span><span class="cases">x1</span></p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="text">售后问题描述售后问题描述售后问题描述售后问题描述售后问题描述</div>
+   	</div>
+    <footer>
+        <button class="cancel" type="button">取消申请</button>
+    </footer>
+    <!-- 公共js区域 --> 
+    <script src="../js/jquery.min.js"></script>
+	<script src="../js/jquery-weui.min.js"></script>
+	<script src="../js/swiper.min.js"></script>
+	<script src="../js/city-picker.min.js"></script>
+    <!-- 公共js区域完 -->
+    <!-- 该页面应用js区域 -->
+    <script type="text/javascript">
+    $(function() {
+        $(".cancel").click(function(){
+            $.confirm({
+              title: '是否取消申请',
+              onOK: function () {
+                //点击确认
+              },
+              onCancel: function () {
+              }
+            });
+        });
+    });
+    </script>
+    <!-- 该页面应用js区域 -->
+    </body>
+</html>

@@ -1,0 +1,90 @@
+<!--制作ly-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+        <meta name="format-detection" content="telephone=no">
+        <!-- 公共css区域 -->
+        <link rel="stylesheet" href="../css/weui.min.css">
+        <link rel="stylesheet" href="../css/jquery-weui.min.css">
+        <link rel="stylesheet" href="../css/style.css">
+        <!-- 公共css完区域 -->
+        <!-- 该页面应用css区域 -->
+        <style type="text/css">
+        .content{bottom: 0px;background-color: #F8F8F8;}
+        .head-title{background-color: #fff;height: 2.5rem;text-align: center;line-height: 2.5rem;font-size: 0.9rem;color: #666;}
+        .head-title span{color: #d0021b;}
+        .list{font-size: 0.6rem;color: #666;}
+        .list .weui-cell__ft{color: #b0b0b0;}
+        .list:after, .weui-cells:before{display: none;}
+        .list .weui-cell:before{border-top: 1px solid #dfdfdf;left:0px;}
+        .list .weui-cell__hd img{width: 1.5rem;}
+        .weui-dialog .weui-dialog__hd{font-size: 0.9rem;color: #666;}
+        .weui-dialog .weui-dialog__bd{font-size: 0.6rem;color: #666;}
+        .weui-dialog .weui-dialog__ft .weui-dialog__btn{color: #666;font-size: 0.9rem;}
+        </style>
+        <!-- 该页面应用css区域 -->
+    </head>
+    <body ontouchstart>	
+	<header>
+		<div class="header-top">
+			<div class="pull-left"><i class="iconfont">&#xe600;</i></div>
+			<div class="pull-center">支付中心</div>
+		</div>
+	</header>
+	<div class="content">
+    	<div class="head-title">支付金额<span>￥999.00</span></div>
+        <div class="weui-cells list">
+          <a class="weui-cell weui-cell_access" href="#">
+            <div class="weui-cell__hd"><img src="../images/wechat.png"/></div>
+            <div class="weui-cell__bd">
+              <p>微信支付</p>
+            </div>
+            <div class="weui-cell__ft">
+                <p>需要安装微信客户端</p>
+            </div>
+          </a>
+          <a class="weui-cell weui-cell_access" href="#">
+            <div class="weui-cell__hd"><img src="../images/alipay.png"/></div>
+            <div class="weui-cell__bd">
+              <p>支付宝</p>
+            </div>
+            <div class="weui-cell__ft">
+                <p>支付宝钱包支付</p>
+            </div>
+          </a>
+          <a class="weui-cell weui-cell_access" href="#">
+            <div class="weui-cell__hd"><img src="../images/unipay.png"/></div>
+            <div class="weui-cell__bd">
+              <p>银联支付</p>
+            </div>
+            <div class="weui-cell__ft">
+                <p>银行卡在线支付</p>
+            </div>
+          </a>
+        </div>
+   	</div>
+    <!-- 公共js区域 --> 
+    <script src="../js/jquery.min.js"></script>
+	<script src="../js/jquery-weui.min.js"></script>
+	<script src="../js/swiper.min.js"></script>
+	<script src="../js/city-picker.min.js"></script>
+    <!-- 公共js区域完 -->
+    <!-- 该页面应用js区域 -->
+    <script type="text/javascript">
+    $(function(){
+        $.alert({
+          title: '支付结果',
+          text: '<p>支付中途取消，请到订单详情里查看！</p><p>支付成功，请到订单详情里查看！</p>',
+          onOK: function () {
+            alert("跳回个人中心");
+          }
+        });
+    });
+    </script>
+    <!-- 该页面应用js区域 -->
+    </body>
+</html>

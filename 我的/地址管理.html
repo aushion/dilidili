@@ -1,0 +1,142 @@
+<!--制作lJ-->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <meta name="format-detection" content="telephone=no">
+    <!-- 公共css区域 -->
+    <link rel="stylesheet" href="../css/weui.min.css">
+    <link rel="stylesheet" href="../css/jquery-weui.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <!-- 公共css完区域 -->
+    <!-- 该页面应用css区域 -->
+    <style type="text/css">
+        /*L-J自定样式*/
+        .clearfix:before,.clearfix:after {content: "";display: block;height: 0;visibility: hidden;}
+        .clearfix:after {clear: both;}
+        .clearfix {zoom: 1;}/*兼容IE6/7*/
+        .not-top-gutter{margin-top: 0;}
+        .text-elisps{display: -webkit-box;  -webkit-box-orient: vertical;  -webkit-line-clamp: 1;  overflow: hidden;}
+        .container .weui-cell:before{left: 0;color: #dfdfdf;}
+        .container .weui-cell{padding:10px;}
+        .container-wrap{padding: 0 0.5rem;}
+        .dg-btn{background-color: #d0021b;color: #FFF;display: block;width: 100%;height: 100%;border-radius: 0; }
+        .detel-border{border: none!important;}
+        .add-distance2{margin: 1rem 0;}
+        .add-distance3{margin: 0.5rem 0;}
+        .add-ditances4{padding-top:0.5rem;padding-bottom: 0.5rem;background-image: url("../images/linee.png");background-position: bottom;background-repeat: no-repeat;background-size: 100%;margin-bottom: 0.85rem;}
+        .add-distance5{margin: 0.2rem 0;}
+        .container .color-grey{font-size: 0.6rem;color: #b0b0b0}
+        .container .item-title{font-size: 0.7rem;color: #666;}
+        .container .item-title2{font-size: 0.7rem;color: #b0b0b0;}
+        .container .item-title3{font-size: 0.6rem;color: #666;}
+        .container .item-after{font-size: 0.6rem;color: #b0b0b0;}
+        .container .thisfr{float: right;}
+        .container .thisfl{float: left;}
+        .container .price{color: #d0021b}
+        .container .text-center{text-align: center;}
+        .col-20{width: 20%;}
+        .col-80{width: 80%;}
+        .col-10{width: 10%;}
+        .col-90{width: 90%;}
+        .col-70{width: 70%;}
+        /*该页面样式*/
+        .content{bottom: 0;}
+        .container .article{font-size: 0.6rem;color: #666;}
+        .container .L-tips{height: 2.25rem;line-height: 2.25rem;background-color: #F5F5F5;color: #999;text-align: center;font-size: 0.6rem;}
+        .container-form .weui-label{width: 70px;}
+        .container-form .area-content{position: relative;top: -1rem;}
+
+        .tiket{width: 80%;margin: 0 auto;}
+        .tiket .tiket-title{text-align: center;margin: 1.2rem auto 1rem;font-size: 0.7rem;}
+        .tiket .tiket-input-wrap{border-bottom: 1px solid #e0e0e0;padding-bottom: 1rem;}
+        .tiket .tiket-input{font-size: 0.6rem;color: #333;padding-left: 0.5rem;}
+        .tiket .tiket-btn{width: 100%;background-color: #FFF;border: none;padding: 0.5rem 0}
+        .tiket-group>div{display: inline-block;width: 70px;text-align: center;}
+
+        .logistics-item{position: relative;overflow: hidden;margin: 0.8rem 0;}
+        .logistics-item .right-inner{padding: 0.5rem 0;border-bottom: 1px solid #dfdfdf;}
+        .logistics .logistics-item:first-child .right-inner{padding-top: 0;}
+        /*.logistics .logistics-item:first-child {line-height: 1;}
+        .logistics .logistics-item:first-child p{line-height: 1.6;}*/
+        .logistics-item .left-inner i{color: #666;font-size: 1rem;}
+        .logistics-item .address-gutter{margin-top: 0.2rem;line-height: 1.4;padding: 0 0.5rem;}
+
+        .container-form .weui-label{width: 70px;}
+        .container-form:before{position: static;}
+        .container-form .form-radio{margin-right: 1rem;}
+        .container-form .form-radio .circle{width: 0.8rem;height: 0.8rem;border-radius: 0.4rem;border: 1px solid #dfdfdf;display: inline-block;margin-right: 0.4rem;position: relative;top: 0.2rem;}
+        .container-form .form-radio .circle-choose{background: url("../images/xz.png") no-repeat;background-size: 100%;border: none;width: 0.9rem;height: 0.9rem; border-radius: 0.45rem;}
+        .container-form .write-det{line-height: 1.2rem;}
+        .container-form .write-det span{margin-left: 1rem;display: inline-block;margin-top: -0.2rem;}
+        .container-form .write-det span img{width: 1.1rem;height: 1.1rem;position: relative;top: 0.25rem;line-height: 1}
+        .container-white{background-color: #FFF;}
+        .container-white2{background-color: #FFF;padding: 0.5rem;}
+
+        .weui-dialog__title{font-size: 0.7rem;}
+        .weui-prompt-input{border: none;font-size: 0.6rem;color: #666;}
+        .weui-dialog__ft{font-size: 0.7rem;}
+        .weui-dialog__btn{color: #666;}
+        .weui-dialog__btn.default{color: #999!important;}
+    </style>
+    <!-- 该页面应用css区域 -->
+</head>
+<body ontouchstart>
+<header>
+    <div class="header-top">
+        <div class="pull-left"><i class="iconfont">&#xe600;</i></div>
+        <div class="pull-center">地址管理</div>
+    </div>
+</header>
+<div class="content container">
+    <div class="L-tips text-elisps">为提高配送时效,请您尽量准确填写地址信息</div>
+    <div class="container-wrap item-title text-center add-distance5 container-white2">添加新地址</div>
+    <div class="logistics-item container-white">
+        <div class="weui-media-box__bd right-inner">
+            <p class="item-title container-wrap "><span>用户名称</span><span class="thisfr item-title3">146545465465</span></p>
+            <p class="weui-media-box__desc item-title2 address-gutter item-after">由各种物质组成的巨型球状天体，叫做星球。星球有一定的形状，有自己的运行轨道。</p>
+        </div>
+        <div class="container-form article add-distance5 container-wrap ">
+            <label class="form-radio">
+                <span class="circle circle-choose"></span><span>设为默认</span>
+            </label>
+            <div class="thisfr write-det"><span><img src="../images/bj.png" alt=""> 编辑</span><span class="delt"><img src="../images/det.png" alt=""> 删除</span></div>
+        </div>
+    </div>
+    <div class="logistics-item  container-white">
+        <div class="weui-media-box__bd right-inner">
+            <p class=" item-title container-wrap "><span>用户名称</span><span class="thisfr item-title3">146545465465</span></p>
+            <p class="weui-media-box__desc  item-title2 address-gutter  item-after">由各种物质组成的巨型球状天体，叫做星球。星球有一定的形状，有自己的运行轨道。</p>
+        </div>
+        <div class="container-form article add-distance5 container-wrap ">
+            <label class="form-radio">
+                <span class="circle"></span><span>设为默认</span>
+            </label>
+            <div class="thisfr write-det"><span><img src="../images/bj.png" alt=""> 编辑</span><span class="delt"><img src="../images/det.png" alt=""> 删除</span></div>
+        </div>
+    </div>
+</div>
+
+<!-- 公共js区域 -->
+<script src="../js/jquery.min.js"></script>
+<script src="../js/jquery-weui.min.js"></script>
+<script src="../js/swiper.min.js"></script>
+<script src="../js/city-picker.min.js"></script>
+<!-- 公共js区域完 -->
+<!-- 该页面应用js区域 -->
+<script type="text/javascript">
+    $("body").on("click",".form-radio",function () {
+        $(this).find(".circle").addClass("circle-choose").parents().siblings().find(".circle").removeClass("circle-choose");
+    })
+    $(".delt").click(function () {
+        $.confirm("确定删除?");
+        $(".weui-dialog .weui-dialog__hd").empty();
+        $(".weui-dialog .weui-dialog__bd").css("color","#666")
+    })
+</script>
+<!-- 该页面应用js区域 -->
+</body>
+</html>

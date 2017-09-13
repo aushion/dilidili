@@ -1,0 +1,125 @@
+<!--制作lJ-->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <meta name="format-detection" content="telephone=no">
+    <!-- 公共css区域 -->
+    <link rel="stylesheet" href="../css/weui.min.css">
+    <link rel="stylesheet" href="../css/jquery-weui.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <!-- 公共css完区域 -->
+    <!-- 该页面应用css区域 -->
+    <style type="text/css">
+        /*L-J自定样式*/
+        .not-top-gutter{margin-top: 0;}
+        .text-elisps{display: -webkit-box;  -webkit-box-orient: vertical;  -webkit-line-clamp: 1;  overflow: hidden;}
+        .container .weui-cell:before{left: 0;color: #dfdfdf;}
+        .container .weui-cell{padding:10px;}
+        .dg-btn{background-color: #d0021b;color: #FFF;display: block;width: 100%;height: 100%;border-radius: 0; }
+        .item-title{font-size: 0.7rem;color: #666;}
+        /*该页面样式*/
+
+        .container .article{font-size: 0.6rem;color: #666;}
+        .container .L-tips{height: 2.25rem;line-height: 2.25rem;background-color: #F5F5F5;color: #999;text-align: center;font-size: 0.6rem;}
+        .container-form .weui-label{width: 72px;}
+        .container-form .area-content{position: relative;top: -1rem;}
+        .container-form .area-chose{text-align:left;}
+        .tiket-group>div{display: inline-block;padding: 0.3rem;background-color: #f8f8f8;margin-right: 0.5rem;margin-bottom: 0.3rem;position: relative;top: 0.3rem;}
+        .toolbar .picker-button{color: #666;}
+
+        /*添加标签弹窗*/
+        .weui-dialog__title{font-size: 0.7rem;}
+        .weui-prompt-input{border: none;font-size: 0.6rem;color: #666;}
+        .weui-dialog__ft{font-size: 0.7rem;}
+        .weui-dialog__btn{color: #666;}
+        .weui-dialog__btn.default{color: #999!important;}
+    </style>
+    <!-- 该页面应用css区域 -->
+</head>
+<body ontouchstart>
+<header>
+    <div class="header-top">
+        <div class="pull-left"><i class="iconfont">&#xe600;</i></div>
+        <div class="pull-center">添加新地址</div>
+    </div>
+</header>
+<div class="content container">
+    <div class="L-tips text-elisps">为提高配送时效,请您尽量准确填写地址信息</div>
+    <div class="weui-cells weui-cells_form container-form not-top-gutter item-title">
+        <div class="weui-cell">
+            <div class="weui-cell__hd"><label class="weui-label">收&nbsp;货&nbsp;人&nbsp;&nbsp;: </label></div>
+            <div class="weui-cell__bd">
+                <input class="weui-input" type="text">
+            </div>
+        </div>
+        <div class="weui-cell">
+            <div class="weui-cell__hd"><label class="weui-label">联系电话 : </label></div>
+            <div class="weui-cell__bd">
+                <input class="weui-input" type="text">
+            </div>
+        </div>
+        <div class="weui-cell">
+            <div class="weui-cell__hd"><label class="weui-label">所在地区 : </label></div>
+            <div class="weui-cell__bd">
+                <input class="weui-input area-chose" type="text" placeholder="请选择">
+            </div>
+        </div>
+        <div class="weui-cell">
+            <div class="weui-cell__hd area-content"><label class="weui-label">详细地址 : </label></div>
+            <div class="weui-cell__bd">
+                <textarea class="weui-textarea"  rows="3"></textarea>
+            </div>
+        </div>
+        <div class="weui-cell">
+            <div class="weui-cell__hd"><label class="weui-label">标&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;签 : </label></div>
+            <div class="weui-cell__bd tiket-group">
+                <div class="tiket-item">+ 添加标签</div>
+            </div>
+        </div>
+    </div>
+</div>
+<footer>
+    <button type="button" class="weui-btn dg-btn">保存</button>
+</footer>
+<!-- 公共js区域 -->
+<script src="../js/jquery.min.js"></script>
+<script src="../js/jquery-weui.min.js"></script>
+<script src="../js/swiper.min.js"></script>
+<script src="../js/city-picker.min.js"></script>
+<!-- 公共js区域完 -->
+<!-- 该页面应用js区域 -->
+<script type="text/javascript">
+    $(document).ready(function () {
+        $(".tiket-item").click(function () {
+            $.prompt({
+                title: '添加标签',
+                input: '请输入标签名称 , 最多五个字',
+                empty: false, // 是否允许为空
+                onOK: function (input) {
+                    var inputval = $("#weui-prompt-input").val();
+                    var oDiv = document.createElement('div');
+                        oDiv.innerHTML = inputval;
+                        $(".tiket-group").prepend(oDiv);
+                },
+                onCancel: function () {
+                    //点击取消
+                }
+            });
+            $("#weui-prompt-input").attr("maxlength","5")
+            $("#weui-prompt-input").click(function () {
+                $(this).removeAttr("value")
+            });
+        });
+        $(".area-chose").cityPicker({
+            showDistrict: true
+        });
+
+    });
+</script>
+<!-- 该页面应用js区域 -->
+</body>
+</html>

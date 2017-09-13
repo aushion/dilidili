@@ -1,0 +1,104 @@
+<!--制作ly-->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <meta name="format-detection" content="telephone=no">
+    <!-- 公共css区域 -->
+    <link rel="stylesheet" href="../css/weui.min.css">
+    <link rel="stylesheet" href="../css/jquery-weui.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <!-- 公共css完区域 -->
+    <!-- 该页面应用css区域 -->
+    <style type="text/css">
+        .detel-border{border: none!important;}
+        .content{background-color: #F8F8F8;bottom: 0;}
+        .chunk{background-color: #fff;margin-top: 0.5rem;}
+        .chunk .list .weui-media-box_appmsg .weui-media-box__hd{height: auto;}
+        .chunk .list .weui-media-box_appmsg{align-items:end;}
+        .chunk .list .weui-cell_access .weui-cell__ft{position: initial;}
+        .chunk .list .weui-cell_access .weui-cell__ft:after{right: 0.5rem;}
+        .chunk .list .weui-media-box__title, .list .weui-media-box__desc{font-size: 0.7rem;color: #666;position: relative;padding-right: 4rem;}
+        .chunk .list .weui-media-box__desc{color: #b0b0b0;font-size: 0.6rem;margin-top: 0.25rem;}
+        .text{background-color: #fff;font-size: 0.7rem;color: #666;padding: 0 0.5rem;margin-top: 0.5rem;height: 3rem;background-color: #f8f8f8;}
+        .text textarea{width: 100%;height: 100%;font-size: 0.7rem;color: #666;border:0;resize:none;font-family: "微软雅黑", "黑体", arial;background-color: #f8f8f8;}
+        .chunk .list .container-wrap{padding: 0 0.5rem;margin: 0.5rem 0;}
+        .evaluate .weui-panel .weui-media-box__bd .weui-media-box__desc{font-size: 0.6rem;color: #b0b0b0;}
+        .evaluate .weui-panel .weui-media-box__bd .weui-media-box__desc i{margin-right: 0.1rem;}
+        .evaluate .weui-panel .weui-media-box__bd .weui-media-box__desc i.red{color: #d0021b;}
+
+        .container .article{font-size: 0.6rem;color: #666;}
+        .container .weui-cells:before, .container .weui-cells:after{position: static}
+        .submit .btn-black{background-color: #666;color: #FFF;border: none;}
+        .weui-uploader__input-word{position: absolute;bottom: -0.1rem;right: -4.5rem;font-size: 0.7rem;color:#b0b0b0;border: none;}
+        .weui-uploader__input-box,.weui-uploader__file{width: 65px;height: 65px;background-color: #f8f8f8;border: none;}
+        .weui-uploader__input-box:after, .weui-uploader__input-box:before{background-color: #b0b0b0;}
+    </style>
+    <!-- 该页面应用css区域 -->
+</head>
+<body ontouchstart>
+<header>
+    <div class="header-top">
+        <div class="pull-left"><i class="iconfont">&#xe600;</i></div>
+        <div class="pull-center">评价晒单</div>
+    </div>
+</header>
+<div class="content container">
+    <div class="chunk evaluate">
+        <div class="weui-panel weui-panel_access list">
+            <div class="weui-panel__bd weui-cell_access">
+                <a href="#" class="weui-media-box weui-media-box_appmsg container-wrap">
+                    <div class="weui-media-box__hd">
+                        <img class="weui-media-box__thumb" src="../images/sp.jpg"/>
+                    </div>
+                    <div class="weui-media-box__bd">
+                        <h4 class="weui-media-box__title">评分</h4>
+                        <p class="weui-media-box__desc">
+                            <i class="iconfont red">&#xe604;</i>
+                            <i class="iconfont red">&#xe604;</i>
+                            <i class="iconfont red">&#xe604;</i>
+                            <i class="iconfont red">&#xe604;</i>
+                            <i class="iconfont">&#xe60f;</i>
+                        </p>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+    </div>
+    <div class="text container">
+        <textarea type="text" placeholder="请输入评价内容" class="article"></textarea>
+    </div>
+    <div class="weui-cells weui-cells_form">
+        <div class="weui-cell">
+            <div class="weui-cell__bd">
+                <div class="weui-uploader">
+                    <div class="weui-uploader__bd">
+                        <ul class="weui-uploader__files" id="uploaderFiles">
+                            <li class="weui-uploader__file" style="background-image:url(../images/logo.jpg)"></li>
+                        </ul>
+                        <div class="weui-uploader__input-box">
+                            <input id="uploaderInput" class="weui-uploader__input" type="file" accept="image/*" multiple=""><span class="weui-uploader__input-word">上传晒单照片</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="submit">
+        <button type="button" class="btn-black">提交晒单</button>
+    </div>
+</div>
+<!-- 公共js区域 -->
+<script src="../js/jquery.min.js"></script>
+<script src="../js/jquery-weui.min.js"></script>
+<script src="../js/swiper.min.js"></script>
+<script src="../js/city-picker.min.js"></script>
+<!-- 公共js区域完 -->
+<!-- 该页面应用js区域 -->
+<!-- 该页面应用js区域 -->
+</body>
+</html>

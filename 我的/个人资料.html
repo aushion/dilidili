@@ -1,0 +1,166 @@
+<!--制作lJ-->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <meta name="format-detection" content="telephone=no">
+    <!-- 公共css区域 -->
+    <link rel="stylesheet" href="../css/weui.min.css">
+    <link rel="stylesheet" href="../css/jquery-weui.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <!-- 公共css完区域 -->
+    <!-- 该页面应用css区域 -->
+    <style type="text/css">
+        /*L自定样式*/
+        .not-top-gutter{margin-top: 0;}
+        .container .weui-cell:before{color: #dfdfdf;right: 15px;}
+        .container .weui-cell{padding:10px;}
+        .container-wrap{padding: 0 0.5rem;overflow: hidden;}
+        .container .color-grey{font-size: 0.6rem;color: #b0b0b0}
+        .article{font-size: 0.6rem;color: #666;}
+        .container .item-title{font-size: 0.7rem;color: #666}
+        .container .item-title2{color: #b0b0b0;font-size: 0.7rem;}
+        /*该页面样式*/
+        .container .article{font-size: 0.6rem;color: #666;}
+        .container-form{margin-top: 0.5rem;}
+        .container-form:before{position: static;}
+        .container-form .per{border: none;text-align: right;font-size: 0.7rem;}
+        .container .head-wrap{width: 30%;margin: 0.7rem auto;text-align: center;position: relative;}
+        .container .head-wrap img{width:4rem;height: 4rem;border-radius: 2rem;}
+        .container .head-wrap .circle-icon{position: absolute;bottom: 0.5rem;right: -0.2rem;background-color: #FFF;width: 1.5rem;height: 1.5rem;border-radius: 0.75rem;text-align: center;z-index: 66}
+        .container .head-wrap .circle-icon i{color: #b0b0b0;font-size: 0.9rem;position: relative;top: 0.1rem;}
+        footer .btn-black{background-color: #666;color: #FFF;display: block;width: 100%;height: 100%;border-radius: 0; border: none;font-size: 0.9rem;}
+        .toolbar .picker-button{color: #666;}
+        a.weui-cell_access:active .per{background-color: #ececec}
+    </style>
+    <!-- 该页面应用css区域 -->
+</head>
+<body ontouchstart>
+<header>
+    <div class="header-top">
+        <div class="pull-left"><i class="iconfont">&#xe600;</i></div>
+        <div class="pull-center">个人资料</div>
+    </div>
+</header>
+<div class="content container">
+    <div class="container-wrap">
+        <div class="head-wrap">
+            <img src="../images/logo.jpg" alt="">
+            <div class="circle-icon"><i class="iconfont">&#xe666;</i></div>
+        </div>
+    </div>
+    <div class="container-wrap item-title">个人信息</div>
+    <div class="weui-cells container-form article">
+        <a class="weui-cell" href="javascript:;">
+            <div class="weui-cell__bd">
+                <p class="item-title">昵称</p>
+            </div>
+            <div class="weui-cell__ft item-title2">
+                <input type="text" class="per" placeholder="请输入">
+            </div>
+        </a>
+        <a class="weui-cell weui-cell_access" href="javascript:;">
+            <div class="weui-cell__bd">
+                <p class="item-title">性别</p>
+            </div>
+            <div class="weui-cell__ft item-title2">
+                <input type="text" class="per sex" placeholder="请选择">
+            </div>
+        </a>
+        <a class="weui-cell weui-cell_access" href="javascript:;">
+            <div class="weui-cell__bd">
+                <p class="item-title">出生日期</p>
+            </div>
+            <div class="weui-cell__ft item-title2">
+                <input type="text" class="per birthday" placeholder="请选择">
+            </div>
+        </a>
+        <a class="weui-cell weui-cell_access" href="javascript:;">
+            <div class="weui-cell__bd">
+                <p class="item-title">身高</p>
+            </div>
+            <div class="weui-cell__ft item-title2">
+                <input type="text" class="per per-height" placeholder="请选择">
+            </div>
+        </a>
+        <a class="weui-cell weui-cell_access" href="javascript:;">
+            <div class="weui-cell__bd">
+                <p class="item-title">体重</p>
+            </div>
+            <div class="weui-cell__ft item-title2">
+                <input type="text" class="per per-heavey" placeholder="请选择">
+            </div>
+        </a>
+    </div>
+</div>
+<footer>
+    <button type="button" class="btn-black">保存</button>
+</footer>
+<!-- 公共js区域 -->
+<script src="../js/jquery.min.js"></script>
+<script src="../js/jquery-weui.min.js"></script>
+<script src="../js/swiper.min.js"></script>
+<script src="../js/city-picker.min.js"></script>
+<script src="../js/fastclick.js"></script>
+<!-- 公共js区域完 -->
+<!-- 该页面应用js区域 -->
+<script type="text/javascript">
+    $(function () {
+        $(".sex").picker({
+            title: "选择性别",
+            cols: [
+                {
+                    textAlign: 'center',
+                    values: ['男','女']
+                }
+            ]
+        });
+        $(".birthday").calendar();
+
+        $(".per-heavey").picker({
+            title: "选择体重",
+            cols: [
+                {
+                    textAlign: 'center',
+                    values: ['50KG','40KG']
+                }
+            ]
+        });
+
+        $(".per-height").picker({
+            title: "选择身高",
+            cols: [
+                {
+                    textAlign: 'center',
+                    values: ['165cm','167cm']
+                }
+            ]
+        });
+
+        /*$("body").on("click",".head-wrap",function () {
+
+        })*/
+        $(".head-wrap").click(function () {
+            $.actions({
+                actions: [{
+                    text: "拍照",
+                    onClick: function() {
+                        //do something
+                    }
+                },{
+                    text: "从相册中选择",
+                    onClick: function() {
+                        //do something
+                    }
+                }]
+            });
+            $(".weui-actionsheet__cell").addClass("item-title")
+        })
+    })
+</script>
+<!-- 该页面应用js区域 -->
+</body>
+</html>

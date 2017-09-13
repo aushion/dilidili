@@ -1,0 +1,578 @@
+<!--制作lJ-->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <meta name="format-detection" content="telephone=no">
+    <!-- 公共css区域 -->
+    <link rel="stylesheet" href="../css/weui.min.css">
+    <link rel="stylesheet" href="../css/jquery-weui.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <!-- 公共css完区域 -->
+    <!-- 该页面应用css区域 -->
+    <style type="text/css">
+        /*L-J自定样式*/
+        /*该页面样式*/
+        .content{ top:0;}
+        .container .article{font-size: 0.6rem;color: #666;}
+
+        .clearfix:before,.clearfix:after {content: "";display: block;height: 0;visibility: hidden;}
+        .clearfix:after {clear: both;}
+        .clearfix {zoom: 1;}/*兼容IE6/7*/
+        .not-top-gutter{margin-top: 0;}
+        .container .weui-cell:before{left: 0;color: #dfdfdf;}
+        .container .weui-cell{padding:10px;}
+        .add-distance3{margin: 0.5rem 0;}
+        .container .item-after{font-size: 0.6rem;color: #b0b0b0;}
+        .container .item-after2{font-size: 0.7rem;color: #b0b0b0;}
+        .container .text-center{text-align: center;}
+        .col-70{width: 70%;}
+        /*该页面样式*/
+        .container .article{font-size: 0.6rem;color: #666;}
+        .wrap-top{background-color: #FFF;width: 100%;position: fixed;height: 86px;border-bottom: 1px solid #dfdfdf;}
+        .wrap-top .wrap-icon{margin-left: 0.3rem;color: #b0b0b0;position: absolute;}
+        .wrap-top .wrap-icon i{font-size: 1.5rem;}
+        .nav-tabb{background-color: #fff;font-size: 0.8rem;width: 80%;left: 10%;height: 44px;line-height: 44px;}
+        .nav-tabb .weui-navbar__item{font-size: 0.7rem;padding: 0;}
+        .nav-tabb .weui-navbar__item:after{position: static;border-right: 0;}
+        .nav-tabb .weui-bar__item--on{background-color: #FFF;color: #666;}
+        .nav-tabb .weui-bar__item--on span{border-bottom: 2px solid #666;display: inline-block;padding: 0 0.3rem;height: 100%;}
+        .wrap-top+.weui-tab__bd{padding-top: 87px;}
+        .weui-navbar:after{position: static;height: 0;}
+
+        .tab-content-one{height: 100%;background-color: #FFF;}
+        .tab-content-one .col-30,.tab-content-one .col-70{float: left}
+        .tab-content-one .col-30{width: 30%;}
+        .tab-content-one .col-70{width: 68%;margin-left: 2%;}
+        .tab-content-one .left{height: 100%;background-color: #f8f8f8;overflow-y: scroll;}
+        .tab-content-one .right .weui-loadmore_line{margin-bottom: 0;}
+        .tab-content-one .right{height: 100%}
+        .tab-content-one .left li{padding: 1.13rem 0;text-align: center;border-bottom: 1px solid #FFF;}
+        .tab-content-one .left li.active{border-left: 2px solid #666;background-color: #FFF;}
+        .tab-content-one .right .shopping-list li{width: 31%;text-align: center;float: left;margin-bottom: 0.7rem;background-color: #f8f8f8;margin-right: 1.9%;padding-top: 0.5rem;padding-bottom: 0.2rem;}
+        .tab-content-one .right .shopping-list li:nth-of-type(3n){margin-right: 0;}
+        .tab-content-one .right .shopping-list li .img-wrap{width: 80%;display: inline-block;}
+        .tab-content-one .right .shopping-list li .img-wrap img{width: 100%;height: auto;}
+        .left .item-after{overflow-y: scroll;overflow-x: hidden;}
+
+        .tab-content-one ul{padding: 0;margin: 0;list-style-type: none}
+        .tab-nav-two{width: 100%;position: absolute;bottom: 0;}
+        .tab-nav-two ul{padding: 0.42rem 0;margin: 0;list-style-type: none;overflow: hidden;border-top: 1px solid #dfdfdf;position: relative;z-index: 666;}
+        .tab-nav-two li{border-right: 1px solid #dfdfdf;width: 33%;color: #b0b0b0;font-size: 0.7rem;float: left;text-align: center;}
+        .tab-nav-two li:last-child{border-right: 0;}
+        .tab-nav-one li.active,.tab-nav-two li.active{color: #666;}
+
+        .search-des2{position: relative;}
+        .search-des2 .search-input{border: none;text-align: center;outline: 0;width: 100%;display: block;height: 1.5rem;background-color: #f8f8f8;border-radius: 0.1rem;}
+        .search-des2 .search-iconn{font-size: 0.9rem;position: absolute;left: 37%;top: 14px;}
+        .weui-loadmore_line{margin-top: 1rem;}
+        .weui-loadmore_line .weui-loadmore__tips{top: -0.7rem;}
+
+        .list .weui-cell__hd img{height: 1.5rem;width: 1.5rem;border-radius: 50%;}
+        .list .weui-cell{padding: 10px 10px;}
+        .list .weui-cell__bd{font-size: 0.7rem;color: #666;margin-left: 0.25rem;}
+        .container-white{background-color: #FFF;}
+        .weui-tabbar{background-color: #f8f8f8;}
+        .container-white2{background-color: #FFF;padding: 0.5rem;}
+
+        .item-wrap{overflow: hidden;border-bottom: 1px solid #dfdfdf;}
+        .item-wrap:last-child{border-bottom: 0;}
+        .item-wrap .item{background: #fff;width: 125%;overflow: hidden;position: relative;display: -webkit-box;-webkit-transition: all 0.3s linear;}
+        .item-wrap .item .img-item{width: 60px;margin: 10px;}
+        .item-wrap .item .img-item img{width: 100%;}
+        .item-wrap .item .txt-item{padding-top: 10px;margin-right:25px;font-size: 14px;line-height: 24px;color: #666;-webkit-box-flex:1;position: relative;}
+        .item-wrap .item .txt-item .name{overflow : hidden;text-overflow: ellipsis;display: -webkit-box;-webkit-line-clamp: 1;-webkit-box-orient: vertical;font-size: 0.7rem;width: 90%;}
+        .item-wrap .item .arrow{width: 0;height: 0;line-height: 0;font-size: 0;border-style: solid;border-color: transparent transparent transparent #fff;border-width: 8px 0px 8px 8px;position: absolute;right: 22%;top: 50%;margin-top: -8px;}
+        .delect-btn{width: 17%;color: #fff;background: #d0021b;z-index:999;display: block;text-align: center;font-size: 0.7rem;padding-right: 0.5rem;}
+        .item-wrap .selected{-webkit-transform: translate(-16%);-webkit-transition: all 0.3s linear;}
+        .item-wrap .item .txt-item .del{position: absolute;right: -0.75rem;top: 1.75rem;}
+        .item-wrap .item .txt-item .del i{font-size: 1rem;color: #b0b0b0;}
+        .item-wrap .item .txt{margin-top: 0.6rem;}
+
+    </style>
+    <!-- 该页面应用css区域 -->
+</head>
+<body ontouchstart>
+<div class="content container">
+    <div class="weui-tab" id='page-infinite-navbar'>
+            <div class="wrap-top">
+                <span class="wrap-icon"><i class="iconfont">&#xe600;</i></span>
+            <div class="weui-navbar nav-tabb">
+                <a href='#tab1' class="weui-navbar__item weui-bar__item--on">
+                    <span>品类</span>
+                </a>
+                <a href='#tab2' class="weui-navbar__item">
+                    <span>品牌</span>
+                </a>
+                <a href='#tab3' class="weui-navbar__item">
+                    <span>愿望</span>
+                </a>
+            </div>
+                <div class="tab-nav-two">
+            <ul class="clearfix">
+                <li class="active">男装</li>
+                <li>女装</li>
+                <li>童装</li>
+            </ul>
+        </div>
+        </div>
+
+        <div class="weui-tab__bd">
+            <div id="tab1" class="weui-tab__bd-item weui-tab__bd-item--active infinite">
+               <!-- <div class="lists content-padded">
+                    <div class="chunk">
+                        <div class="order-number">
+                            <span>订单编号:<span>65465465465</span></span>
+                            <span class="state">待付款</span>
+                        </div>
+                        <div class="weui-panel weui-panel_access list">
+                            <div class="weui-panel__bd weui-cell_access">
+                                <a href="#" class="weui-media-box weui-media-box_appmsg">
+                                    <div class="weui-media-box__hd">
+                                        <img class="weui-media-box__thumb" src="../images/sp.jpg"/>
+                                    </div>
+                                    <div class="weui-media-box__bd">
+                                        <h4 class="weui-media-box__title">商品名称商品名称商品名称商品名称商品名称商品名称商品名称商品名称商品名称 <span class="money">￥259.00</span></h4>
+                                        <p class="weui-media-box__desc"><span class="lump">颜色：<span>黑色</span></span><span class="lump">尺码：<span>S</span></span><span class="cases">x1</span></p>
+                                    </div>
+                                </a>
+                                <a href="#" class="weui-media-box weui-media-box_appmsg">
+                                    <div class="weui-media-box__hd">
+                                        <img class="weui-media-box__thumb" src="../images/sp.jpg"/>
+                                    </div>
+                                    <div class="weui-media-box__bd">
+                                        <h4 class="weui-media-box__title">商品名称商品名称商品名称商品名称商品名称商品名称商品名称商品名称商品名称 <span class="money">￥259.00</span></h4>
+                                        <p class="weui-media-box__desc"><span class="lump">颜色：<span>黑色</span></span><span class="lump">尺码：<span>S</span></span><span class="cases">x1</span></p>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="cost">共<span>2</span>件商品 实付<span>￥168.00</span>（含运费<span>￥10.00</span>）</div>
+                        <div class="sale">
+                            <span class="time"><i class="iconfont">&#xe70f;</i>剩余<span>1:50</span></span>
+                            <input class="cancel" type="button" value="取消订单">
+                            <input class="payment" type="button" value="立即付款">
+                        </div>
+                    </div>
+                    <div class="chunk">
+                        <div class="order-number">
+                            <span>订单编号:<span>65465465465</span></span>
+                            <span class="state">待发货</span>
+                        </div>
+                        <div class="weui-panel weui-panel_access list">
+                            <div class="weui-panel__bd weui-cell_access">
+                                <a href="#" class="weui-media-box weui-media-box_appmsg">
+                                    <div class="weui-media-box__hd">
+                                        <img class="weui-media-box__thumb" src="../images/sp.jpg"/>
+                                    </div>
+                                    <div class="weui-media-box__bd">
+                                        <h4 class="weui-media-box__title">商品名称商品名称商品名称商品名称商品名称商品名称商品名称商品名称商品名称 <span class="money">￥259.00</span></h4>
+                                        <p class="weui-media-box__desc"><span class="lump">颜色：<span>黑色</span></span><span class="lump">尺码：<span>S</span></span><span class="cases">x1</span></p>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="cost">共<span>2</span>件商品 实付<span>￥168.00</span>（含运费<span>￥10.00</span>）</div>
+                        <div class="sale">
+                            <input class="sales" type="button" value="申请退货">
+                            <input class="take" type="button" value="确认收货">
+                        </div>
+                    </div>
+                    <div class="chunk">
+                        <div class="order-number">
+                            <span>订单编号:<span>65465465465</span></span>
+                            <span class="state">待收货</span>
+                        </div>
+                        <div class="weui-panel weui-panel_access list">
+                            <div class="weui-panel__bd weui-cell_access">
+                                <a href="#" class="weui-media-box weui-media-box_appmsg">
+                                    <div class="weui-media-box__hd">
+                                        <img class="weui-media-box__thumb" src="../images/sp.jpg"/>
+                                    </div>
+                                    <div class="weui-media-box__bd">
+                                        <h4 class="weui-media-box__title">商品名称商品名称商品名称商品名称商品名称商品名称商品名称商品名称商品名称 <span class="money">￥259.00</span></h4>
+                                        <p class="weui-media-box__desc"><span class="lump">颜色：<span>黑色</span></span><span class="lump">尺码：<span>S</span></span><span class="cases">x1</span></p>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="cost">共<span>2</span>件商品 实付<span>￥168.00</span>（含运费<span>￥10.00</span>）</div>
+                        <div class="sale">
+                            <input class="take" type="button" value="确认收货">
+                        </div>
+                    </div>
+                    <div class="chunk">
+                        <div class="order-number">
+                            <span>订单编号:<span>65465465465</span></span>
+                            <span class="state">待评价</span>
+                        </div>
+                        <div class="weui-panel weui-panel_access list">
+                            <div class="weui-panel__bd weui-cell_access">
+                                <a href="#" class="weui-media-box weui-media-box_appmsg">
+                                    <div class="weui-media-box__hd">
+                                        <img class="weui-media-box__thumb" src="../images/sp.jpg"/>
+                                    </div>
+                                    <div class="weui-media-box__bd">
+                                        <h4 class="weui-media-box__title">商品名称商品名称商品名称商品名称商品名称商品名称商品名称商品名称商品名称 <span class="money">￥259.00</span></h4>
+                                        <p class="weui-media-box__desc"><span class="lump">颜色：<span>黑色</span></span><span class="lump">尺码：<span>S</span></span><span class="cases">x1</span></p>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="cost">共<span>2</span>件商品 实付<span>￥168.00</span>（含运费<span>￥10.00</span>）</div>
+                        <div class="sale">
+                            <input class="sales" type="button" value="申请退货">
+                            <input class="estimate" type="button" value="立即评价">
+                        </div>
+                    </div>
+                    <div class="chunk">
+                        <div class="order-number">
+                            <span>订单编号:<span>65465465465</span></span>
+                            <span class="state">已完成</span>
+                        </div>
+                        <div class="weui-panel weui-panel_access list">
+                            <div class="weui-panel__bd weui-cell_access">
+                                <a href="#" class="weui-media-box weui-media-box_appmsg">
+                                    <div class="weui-media-box__hd">
+                                        <img class="weui-media-box__thumb" src="../images/sp.jpg"/>
+                                    </div>
+                                    <div class="weui-media-box__bd">
+                                        <h4 class="weui-media-box__title">商品名称商品名称商品名称商品名称商品名称商品名称商品名称商品名称商品名称 <span class="money">￥259.00</span></h4>
+                                        <p class="weui-media-box__desc"><span class="lump">颜色：<span>黑色</span></span><span class="lump">尺码：<span>S</span></span><span class="cases">x1</span></p>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="cost">共<span>2</span>件商品 实付<span>￥168.00</span>（含运费<span>￥10.00</span>）</div>
+                        <div class="sale">
+                            <input class="delete" type="button" value="删除订单">
+                        </div>
+                    </div>
+                </div>-->
+                <div class="clearfix tab-content-one">
+                    <div class="left col-30">
+                        <ul class="item-after2">
+                            <li class="active">上衣</li>
+                            <li>上衣</li>
+                            <li>上衣</li>
+                            <li>上衣</li>
+                            <li>上衣</li>
+                            <li>上衣</li>
+                            <li>上衣</li>
+                            <li>上衣</li>
+                            <li>上衣</li>
+                            <li>上衣</li>
+                            <li>上衣</li>
+                            <li>上衣</li>
+                            <li>上衣</li>
+                            <li>上衣</li>
+                            <li>上衣</li>
+                            <li>上衣</li>
+                            <li>上衣</li>
+                        </ul>
+                    </div>
+                    <div class="right col-70">
+                        <div class="weui-loadmore weui-loadmore_line">
+                            <span class="weui-loadmore__tips article">暂无数据</span>
+                        </div>
+                        <div class="shopping-list">
+                            <ul class="clearfix add-distance3 content-padded">
+                                <li class="article"><div class="img-wrap"><img src="../images/classify1.png" alt=""></div><p>T血</p></li>
+                                <li class="article"><div class="img-wrap"><img src="../images/classify2.png" alt=""></div><p>T血</p></li>
+                                <li class="article"><div class="img-wrap"><img src="../images/classify3.png" alt=""></div><p>T血</p></li>
+                                <li class="article"><div class="img-wrap"><img src="../images/classify1.png" alt=""></div><p>T血</p></li>
+                                <li class="article"><div class="img-wrap"><img src="../images/classify2.png" alt=""></div><p>T血</p></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="weui-loadmore">
+                        <i class="weui-loading"></i>
+                        <span class="weui-loadmore__tips">正在加载</span>
+                    </div>
+                </div>
+
+            </div>
+            <div id="tab2" class="weui-tab__bd-item infinite">
+                <div class="clearfix">
+                    <div class="search-des2 text-center item-after container-white2">
+                        <input type="text" placeholder="搜索门店" class="text-center search-input"><i class="iconfont search-iconn">&#xe656;</i>
+                    </div>
+                    <div class="weui-cells list not-top-gutter content-padded">
+                        <div class="weui-cell">
+                            <div class="weui-cell__bd">
+                                <p>阿玛尼</p>
+                            </div>
+                        </div>
+                        <div class="weui-cell weui-cell_access">
+                          
+                            <div class="weui-cell__bd">
+                                <p>阿玛尼</p>
+                            </div>
+                        </div>
+                        <div class="weui-cell">
+                          
+                            <div class="weui-cell__bd">
+                                <p>阿玛尼</p>
+                            </div>
+                        </div>
+                        <div class="weui-cell">
+                          
+                            <div class="weui-cell__bd">
+                                <p>阿玛尼</p>
+                            </div>
+                        </div>
+                        <div class="weui-cell">
+                          
+                            <div class="weui-cell__bd">
+                                <p>阿玛尼</p>
+                            </div>
+                        </div>
+                        <div class="weui-cell">
+                          
+                            <div class="weui-cell__bd">
+                                <p>阿玛尼</p>
+                            </div>
+                        </div>
+                        <div class="weui-cell">
+                          
+                            <div class="weui-cell__bd">
+                                <p>阿玛尼</p>
+                            </div>
+                        </div>
+                        <div class="weui-cell">
+                          
+                            <div class="weui-cell__bd">
+                                <p>阿玛尼</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="weui-loadmore">
+                        <i class="weui-loading"></i>
+                        <span class="weui-loadmore__tips">正在加载</span>
+                    </div>
+                </div>
+
+            </div>
+            <div id="tab3" class="weui-tab__bd-item infinite">
+                <div class="clearfix">
+                    <div class="lists content-padded">
+                        <div class="item-wrap">
+                            <div class="item clearfix">
+                                <div class="img-item">
+                                    <img src="../images/sp.jpg">
+                                </div>
+                                <div class="txt-item">
+                                    <p class="name">
+                                        商品名称商品名称商品名称商品名称商品名称商品名称商品名称商品名称商品名称
+                                    </p>
+                                    <p class="txt">
+                                        ￥259.00
+                                    </p>
+                                    <span class="del"><i class="iconfont">&#xe616;</i></span>
+                                </div>
+                                <a class="delect-btn">删除</a>
+                            </div>
+                        </div>
+                        <div class="item-wrap">
+                            <div class="item clearfix">
+                                <div class="img-item">
+                                    <img src="../images/sp.jpg">
+                                </div>
+                                <div class="txt-item">
+                                    <p class="name">
+                                        商品名称商品名称商品名称商品名称商品名称商品名称商品名称商品名称商品名称
+                                    </p>
+                                    <p class="txt">
+                                        ￥259.00
+                                    </p>
+                                    <span class="del"><i class="iconfont">&#xe616;</i></span>
+                                </div>
+                                <a class="delect-btn">删除</a>
+                            </div>
+                        </div>
+                        <div class="item-wrap">
+                            <div class="item clearfix">
+                                <div class="img-item">
+                                    <img src="../images/sp.jpg">
+                                </div>
+                                <div class="txt-item">
+                                    <p class="name">
+                                        商品名称商品名称商品名称商品名称商品名称商品名称商品名称商品名称商品名称
+                                    </p>
+                                    <p class="txt">
+                                        ￥259.00
+                                    </p>
+                                    <span class="del"><i class="iconfont">&#xe616;</i></span>
+                                </div>
+                                <a class="delect-btn">删除</a>
+                            </div>
+                        </div>
+                        <div class="item-wrap">
+                            <div class="item clearfix">
+                                <div class="img-item">
+                                    <img src="../images/sp.jpg">
+                                </div>
+                                <div class="txt-item">
+                                    <p class="name">
+                                        商品名称商品名称商品名称商品名称商品名称商品名称商品名称商品名称商品名称
+                                    </p>
+                                    <p class="txt">
+                                        ￥259.00
+                                    </p>
+                                    <span class="del"><i class="iconfont">&#xe616;</i></span>
+                                </div>
+                                <a class="delect-btn">删除</a>
+                            </div>
+                        </div>
+                        <div class="item-wrap">
+                            <div class="item clearfix">
+                                <div class="img-item">
+                                    <img src="../images/sp.jpg">
+                                </div>
+                                <div class="txt-item">
+                                    <p class="name">
+                                        商品名称商品名称商品名称商品名称商品名称商品名称商品名称商品名称商品名称
+                                    </p>
+                                    <p class="txt">
+                                        ￥259.00
+                                    </p>
+                                    <span class="del"><i class="iconfont">&#xe616;</i></span>
+                                </div>
+                                <a class="delect-btn">删除</a>
+                            </div>
+                        </div>
+                        <div class="item-wrap">
+                            <div class="item clearfix">
+                                <div class="img-item">
+                                    <img src="../images/sp.jpg">
+                                </div>
+                                <div class="txt-item">
+                                    <p class="name">
+                                        商品名称商品名称商品名称商品名称商品名称商品名称商品名称商品名称商品名称
+                                    </p>
+                                    <p class="txt">
+                                        ￥259.00
+                                    </p>
+                                    <span class="del"><i class="iconfont">&#xe616;</i></span>
+                                </div>
+                                <a class="delect-btn">删除</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="weui-loadmore">
+                        <i class="weui-loading"></i>
+                        <span class="weui-loadmore__tips">正在加载</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<footer>
+    <div class="weui-tabbar">
+        <a href="#" class="weui-tabbar__item weui-bar__item--on index">
+            <div class="weui-tabbar__icon add-d-img">
+                <span><img src="../images/z-53-2-2.png"/></span>
+            </div>
+            <p class="weui-tabbar__label">首页</p>
+        </a>
+        <a href="#" class="weui-tabbar__item weui-bar__item--on classify active">
+            <div class="weui-tabbar__icon">
+                <span><img src="../images/classify.png" class='gray'/></span>
+            </div>
+            <p class="weui-tabbar__label">分类</p>
+        </a>
+        <a href="#" class="weui-tabbar__item weui-bar__item--on cart">
+            <div class="weui-tabbar__icon">
+               <span><img src="../images/z-53-2-4.png"/></span>
+                <span class="weui-badge" style="position: absolute;top: -.4em;right: 1em;">8</span>
+            </div>
+            <p class="weui-tabbar__label">购物车</p>
+        </a>
+        <a href="#" class="weui-tabbar__item weui-bar__item--on personage">
+            <div class="weui-tabbar__icon">
+                <span><img src="../images/z-53-2-1.png"/></span>
+            </div>
+            <p class="weui-tabbar__label">个人</p>
+        </a>
+    </div>
+</footer>
+<!-- 公共js区域 -->
+<script src="../js/jquery.min.js"></script>
+<script src="../js/jquery-weui.min.js"></script>
+<script src="../js/swiper.min.js"></script>
+<script src="../js/city-picker.min.js"></script>
+<script src="../js/jquery.mobile-1.4.3.min.js"></script>
+<!-- 公共js区域完 -->
+<!-- 该页面应用js区域 -->
+<script type="text/javascript">
+    $(document).ready(function () {
+        $(".item").on('swipeleft', function(event) {
+            event.preventDefault();
+            /* Act on the event */
+            $(this).addClass('selected').siblings('.item').removeClass('selected');
+            $(this).find('.delect-btn').on('click', function(event) {
+                event.preventDefault();
+                /* Act on the event */
+                $(this).parent(".item").animate({
+                        height: 0,
+                        width: 0},
+                    300, function() {
+                        $(this).remove();
+                        $.toast("删除成功", "text");
+                    });
+            });
+        });
+        $('.search-input').bind('input propertychange', function() {
+            var $this =  $(this).val().length;
+            if($this >= 1){
+                $(".search-iconn").hide();
+            }else{
+                $(".search-iconn").show();
+            }
+        });
+
+        $(".item").on('swiperight', function(event) {
+            event.preventDefault();
+            $(this).removeClass('selected');
+        });
+        var delect_btn_h = $(".item-wrap").height();
+        $(".delect-btn").css("line-height","94px");
+        $(".tab-nav-two li").click(function(){
+            $(this).addClass("active").siblings().removeClass("active");
+        });//二级导航
+        $(".left li").click(function(){
+            $(this).addClass("active").siblings().removeClass("active");
+        });//左边的导航
+
+        var Wheigth = $(window).height(),
+            Wtopheight = $("header").height(),
+            footerHeight = $("footer").height();
+        var leftHeigth = Wheigth-(Wtopheight+footerHeight);
+        $(".left .item-after2").height(leftHeigth);//计算left导航高度便于滚动
+
+
+        $(document.body).infinite();
+
+        $(".infinite").infinite().on("infinite", function() {
+            var self = this;
+            if(self.loading) return;
+            console.log(self)
+            self.loading = true;
+            console.log(self);
+            setTimeout(function() {
+                $(self).find(".content-padded").append("");
+                self.loading = false;
+            }, 2000);   //模拟延迟
+        });
+
+    })
+
+</script>
+<!-- 该页面应用js区域 -->
+</body>
+</html>

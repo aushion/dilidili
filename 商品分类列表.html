@@ -1,0 +1,128 @@
+<!--制作ly-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+        <meta name="format-detection" content="telephone=no">
+        <!-- 公共css区域 -->
+        <link rel="stylesheet" href="css/weui.min.css">
+        <link rel="stylesheet" href="css/jquery-weui.min.css">
+        <link rel="stylesheet" href="css/style.css">
+        <!-- 公共css完区域 -->
+        <!-- 该页面应用css区域 -->
+        <style type="text/css">
+        header{height: 94px;}
+        .content{bottom: 0px;background-color: #F8F8F8;top: 94px;}
+        .chunk{background-color: #fff;font-size: 0.7rem;color: #b0b0b0;padding: 0.5rem 0;border-bottom: 1px solid #dfdfdf;height: 1.1rem;}
+        .chunk .weui-flex__item{border-right: 1px solid #dfdfdf;text-align: center;}
+        .chunk .weui-flex__item.active{color: #666;}
+        .chunk .weui-flex__item i{font-size: 0.7rem;}
+        .list .list-ul{margin:0;overflow: hidden;list-style-type: none;background-color: #fff;}
+        .list .list-ul li{width: 50%;float: left;padding: 0 0.5rem;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;margin-top: 1rem;}
+        .list .list-ul li img{width: 100%;}
+        .list .list-ul li .del{font-size: 0.6rem;color: #666;overflow : hidden;text-overflow: ellipsis;display: -webkit-box;-webkit-line-clamp: 2;-webkit-box-orient: vertical;margin-top: 0.25rem;height: 40px;}
+        .list .list-ul li .money{font-size: 0.6rem;color: #b0b0b0;height: 1rem;}
+        .list .list-ul li .money span{color: #d0021b;}
+        .list .list-ul li .money s{margin-left: 0.75rem;}
+        .weui-loadmore{background-color: #fff;height: 2rem;width: 100%;margin:0;padding-top: 1rem;}
+        .weui-pull-to-refresh__layer{padding: 5px;}
+        .shop-img{position: relative;}
+        .shop-img .add-shop-cart{width: 1.5rem;height: 1.5rem;border-radius: 50%;background-color: rgba(244,53,48,0.7);position: absolute;bottom: 0.65rem;right: 0.25rem;text-align: center;line-height: 1.5rem;}
+        .shop-img .add-shop-cart img{width: 0.8rem !important;height: 0.8rem !important;position: relative;top:0.15rem;}
+        </style>
+        <!-- 该页面应用css区域 -->
+    </head>
+    <body ontouchstart>   	      
+	<header>
+		<div class="header-top">
+			<div class="pull-left"><i class="iconfont">&#xe600;</i></div>
+			<div class="pull-center">上衣</div>
+		</div>
+        <div class="weui-flex chunk">
+            <div class="weui-flex__item active">默认</div>
+            <div class="weui-flex__item">新品</div>
+            <div class="weui-flex__item">人气</div>
+            <div class="weui-flex__item">价格<i class="iconfont">&#xe667;</i></div>
+        </div>
+	</header>
+	<div class="content"> 
+        <div class="weui-pull-to-refresh__layer">
+            <div class='weui-pull-to-refresh__arrow'></div>
+            <div class='weui-pull-to-refresh__preloader'></div>
+            <div class="down">下拉刷新</div>
+            <div class="up">释放刷新</div>
+            <div class="refresh">正在刷新</div>
+        </div>
+        <div class="list">
+            <ul class="list-ul">
+                <li>
+                    <div class="shop-img"><img src="images/sp2.png"/><div class="add-shop-cart"><img src="images/add-cart.png"/></div></div>
+                    <p class="del">商品名称商品名称商品名称商品名称商品名称商品名称商品名称商品名称</p>
+                    <p class="money"><span class="left">￥8888.00</span><s>￥8888.00</s></p>
+                </li>
+                <li>
+                    <div class="shop-img"><img src="images/sp2.png"/><div class="add-shop-cart"><img src="images/add-cart.png"/></div></div>
+                    <p class="del">商品名称商品名称商品名称商品名称商品名称商品名称商品名称商品名称</p>
+                    <p class="money"><span class="left">￥8888.00</span><s>￥8888.00</s></p>
+                </li>
+                <li>
+                    <div class="shop-img"><img src="images/sp2.png"/><div class="add-shop-cart"><img src="images/add-cart.png"/></div></div>
+                    <p class="del">商品名称商品名称商品名称商品名称商品名称商品名称商品名称商品名称</p>
+                    <p class="money"><span class="left">￥8888.00</span><s>￥8888.00</s></p>
+                </li>
+                <li>
+                    <div class="shop-img"><img src="images/sp2.png"/><div class="add-shop-cart"><img src="images/add-cart.png"/></div></div>
+                    <p class="del">商品名称商品名称商品名称商品名称商品名称商品名称商品名称商品名称</p>
+                    <p class="money"><span class="left">￥8888.00</span><s>￥8888.00</s></p>
+                </li>
+                <li>
+                    <div class="shop-img"><img src="images/sp2.png"/><div class="add-shop-cart"><img src="images/add-cart.png"/></div></div>
+                    <p class="del">商品名称商品名称商品名称商品名称商品名称商品名称商品名称商品名称</p>
+                    <p class="money"><span class="left">￥8888.00</span><s>￥8888.00</s></p>
+                </li>
+                <li>
+                    <div class="shop-img"><img src="images/sp2.png"/><div class="add-shop-cart"><img src="images/add-cart.png"/></div></div>
+                    <p class="del">商品名称商品名称商品名称商品名称商品名称商品名称商品名称商品名称</p>
+                    <p class="money"><span class="left">￥8888.00</span><s>￥8888.00</s></p>
+                </li>
+            </ul>
+        </div>
+        <div class="weui-loadmore">
+            <i class="weui-loading"></i>
+            <span class="weui-loadmore__tips">正在加载</span>
+        </div>
+   	</div>   
+    <!-- 公共js区域 --> 
+    <script src="js/jquery.min.js"></script>
+	<script src="js/jquery-weui.min.js"></script>
+	<script src="js/swiper.min.js"></script>
+	<script src="js/city-picker.min.js"></script>
+    <!-- 公共js区域完 -->
+    <!-- 该页面应用js区域 -->
+    <script type="text/javascript">
+    $(function(){
+        $(".chunk").on("click",".weui-flex__item",function(){
+            $(this).addClass("active").siblings().removeClass("active");
+        });
+        $(".content").infinite();
+        var loading = false;  //状态标记
+        $(".content").infinite().on("infinite", function() {
+          if(loading) return;
+          loading = true;
+          setTimeout(function() {
+            $(".list-ul").append("<li><div class='shop-img'><img src='images/sp2.png'/><div class='add-shop-cart'><img src='images/add-cart.png'/></div></div><p class='del'>商品名称商品名称商品名称商品名称商品名称商品名称商品名称商品名称</p><p class='money'><span class='left'>￥8888.00</span><s>￥8888.00</s></p></li><li><div class='shop-img'><img src='images/sp2.png'/><div class='add-shop-cart'><img src='images/add-cart.png'/></div></div><p class='del'>商品名称商品名称商品名称商品名称商品名称商品名称商品名称商品名称</p><p class='money'><span class='left'>￥8888.00</span><s>￥8888.00</s></p></li><li><div class='shop-img'><img src='images/sp2.png'/><div class='add-shop-cart'><img src='images/add-cart.png'/></div></div><p class='del'>商品名称商品名称商品名称商品名称商品名称商品名称商品名称商品名称</p><p class='money'><span class='left'>￥8888.00</span><s>￥8888.00</s></p></li><li><div class='shop-img'><img src='images/sp2.png'/><div class='add-shop-cart'><img src='images/add-cart.png'/></div></div><p class='del'>商品名称商品名称商品名称商品名称商品名称商品名称商品名称商品名称</p><p class='money'><span class='left'>￥8888.00</span><s>￥8888.00</s></p></li>");
+            loading = false;
+          }, 1500);   //模拟延迟
+         });
+        $(".content").pullToRefresh();
+        $(".content").on("pull-to-refresh", function() {
+           setTimeout("location.reload()",1000);
+        });
+    });    
+    </script>
+    <!-- 该页面应用js区域 -->
+    </body>
+</html>

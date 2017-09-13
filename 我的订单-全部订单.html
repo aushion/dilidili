@@ -1,0 +1,459 @@
+<!--制作lJ-->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <meta name="format-detection" content="telephone=no">
+    <!-- 公共css区域 -->
+    <link rel="stylesheet" href="../css/weui.min.css">
+    <link rel="stylesheet" href="../css/jquery-weui.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <!-- 公共css完区域 -->
+    <!-- 该页面应用css区域 -->
+    <style type="text/css">
+        /*L-J自定样式*/
+        .not-top-gutter{margin-top: 0;}
+        .container .weui-cell:before{left: 0;color: #dfdfdf;}
+        .container .weui-cell{padding:10px;}
+        .container .weui-cells:after{border-bottom: none;}
+        .container .weui-cells:after, .weui-cells:before{position: static;}
+        .add-top-gutter{margin-top: 3rem;}
+        .container .item-title{font-size: 0.7rem;color: #666}
+        /*该页面样式*/
+        .content{bottom: 0;top:48px;}
+        .container .article{font-size: 0.6rem;color: #666;}
+        .container .unexe-btn{background-color: #f8f8f8;border-color: #848484;color: #333;}
+
+        .chunk{background-color: #fff;margin-top: 0.5rem;}
+        .chunk .order-number{height: 46px;padding: 0 0.5rem;font-size: 0.7rem;color: #666;line-height: 2.3rem;}
+        .chunk .order-number .state{float: right;}
+        .chunk .list .weui-media-box_appmsg .weui-media-box__hd{height: auto;}
+        .chunk .list .weui-media-box_appmsg{align-items:end;}
+        .chunk .list .weui-cell_access .weui-cell__ft{position: initial;}
+        .chunk .list .weui-cell_access .weui-cell__ft:after{right: 0.5rem;}
+        .chunk .list .weui-media-box__title, .list .weui-media-box__desc{font-size: 0.7rem;color: #666;position: relative;padding-right: 4rem;}
+        .chunk .list .weui-media-box__desc{color: #b0b0b0;font-size: 0.6rem;margin-top: 0.25rem;}
+        .chunk .list .weui-media-box__desc .lump{margin-right: 0.5rem;}
+        .chunk .list .weui-media-box__title .money{position: absolute;top: 0rem;right: 0rem;font-size: 0.7rem;color: #666;}
+        .chunk .list .weui-media-box__desc .cases{position: absolute;top: 0rem;right: 0rem;}
+        .chunk .cost{height: 2.3rem;padding: 0 0.5rem;font-size: 0.6rem;color: #666;line-height: 2.3rem;text-align: right;border-bottom: 1px solid #e5e5e5;}
+        .chunk .sale{height: 2.3rem;padding: 0 0.5rem;line-height: 2.3rem;text-align: right;border-bottom: 1px solid #e5e5e5;}
+        .chunk .sale input{height: 1.7rem;padding: 0 0.5rem;font-size: 0.7rem;color: #666;border:1px solid #767676;border-radius: 3px;background-color: #fff;margin-left: 0.75rem;-webkit-appearance: none;}
+        .chunk .sale input.payment{background-color: #d0021b;color: #fff;border:1px solid #d0021b;}
+        .chunk .sale .time{font-size: 0.7rem;color: #b0b0b0;float: left;}
+        .chunk .sale .time i{font-size: 1rem;margin-right: 0.1rem;}
+        .nav-tabb{background-color: #fff;font-size: 0.7rem;}
+        .nav-tabb .weui-navbar__item{font-size: 0.7rem;padding: 12px 0;}
+        .nav-tabb .weui-navbar__item:after{position: static;border-right: 0;}
+        .nav-tabb .weui-bar__item--on{background-color: #FFF;color: #666;}
+        .weui-navbar+.weui-tab__bd{padding-top: 45px;}
+    </style>
+    <!-- 该页面应用css区域 -->
+</head>
+<body ontouchstart>
+<header>
+    <div class="header-top">
+        <div class="pull-left"><i class="iconfont">&#xe600;</i></div>
+        <div class="pull-center">我的订单</div>
+    </div>
+</header>
+<div class="content container">
+    <div class="weui-tab" id='page-infinite-navbar'>
+        <div class="weui-navbar nav-tabb">
+            <a href='#tab1' class="weui-navbar__item weui-bar__item--on">
+               全部
+            </a>
+            <a href='#tab2' class="weui-navbar__item">
+                待付款
+            </a>
+            <a href='#tab3' class="weui-navbar__item">
+                待发货
+            </a>
+            <a href='#tab4' class="weui-navbar__item">
+                待收货
+            </a>
+        </div>
+        <div class="weui-tab__bd">
+            <div id="tab1" class="weui-tab__bd-item weui-tab__bd-item--active infinite">
+                <div class="lists content-padded">
+                        <div class="chunk">
+                            <div class="order-number">
+                                <span>订单编号:<span>65465465465</span></span>
+                                <span class="state">待付款</span>
+                            </div>
+                            <div class="weui-panel weui-panel_access list">
+                                <div class="weui-panel__bd weui-cell_access">
+                                    <a href="#" class="weui-media-box weui-media-box_appmsg">
+                                        <div class="weui-media-box__hd">
+                                            <img class="weui-media-box__thumb" src="../images/sp.jpg"/>
+                                        </div>
+                                        <div class="weui-media-box__bd">
+                                            <h4 class="weui-media-box__title">商品名称商品名称商品名称商品名称商品名称商品名称商品名称商品名称商品名称 <span class="money">￥259.00</span></h4>
+                                            <p class="weui-media-box__desc"><span class="lump">颜色：<span>黑色</span></span><span class="lump">尺码：<span>S</span></span><span class="cases">x1</span></p>
+                                        </div>
+                                    </a>
+                                    <a href="#" class="weui-media-box weui-media-box_appmsg">
+                                        <div class="weui-media-box__hd">
+                                            <img class="weui-media-box__thumb" src="../images/sp.jpg"/>
+                                        </div>
+                                        <div class="weui-media-box__bd">
+                                            <h4 class="weui-media-box__title">商品名称商品名称商品名称商品名称商品名称商品名称商品名称商品名称商品名称 <span class="money">￥259.00</span></h4>
+                                            <p class="weui-media-box__desc"><span class="lump">颜色：<span>黑色</span></span><span class="lump">尺码：<span>S</span></span><span class="cases">x1</span></p>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="cost">共<span>2</span>件商品 实付<span>￥168.00</span>（含运费<span>￥10.00</span>）</div>
+                            <div class="sale">
+                                <span class="time"><i class="iconfont">&#xe70f;</i>剩余<span>1:50</span></span>
+                                <input class="cancel" type="button" value="取消订单">
+                                <input class="payment" type="button" value="立即付款">
+                            </div>
+                        </div>
+                        <div class="chunk">
+                            <div class="order-number">
+                                <span>订单编号:<span>65465465465</span></span>
+                                <span class="state">待发货</span>
+                            </div>
+                            <div class="weui-panel weui-panel_access list">
+                                <div class="weui-panel__bd weui-cell_access">
+                                    <a href="#" class="weui-media-box weui-media-box_appmsg">
+                                        <div class="weui-media-box__hd">
+                                            <img class="weui-media-box__thumb" src="../images/sp.jpg"/>
+                                        </div>
+                                        <div class="weui-media-box__bd">
+                                            <h4 class="weui-media-box__title">商品名称商品名称商品名称商品名称商品名称商品名称商品名称商品名称商品名称 <span class="money">￥259.00</span></h4>
+                                            <p class="weui-media-box__desc"><span class="lump">颜色：<span>黑色</span></span><span class="lump">尺码：<span>S</span></span><span class="cases">x1</span></p>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="cost">共<span>2</span>件商品 实付<span>￥168.00</span>（含运费<span>￥10.00</span>）</div>
+                            <div class="sale">
+                                <input class="sales" type="button" value="申请退货">
+                                <input class="take" type="button" value="确认收货">
+                            </div>
+                        </div>
+                        <div class="chunk">
+                            <div class="order-number">
+                                <span>订单编号:<span>65465465465</span></span>
+                                <span class="state">待收货</span>
+                            </div>
+                            <div class="weui-panel weui-panel_access list">
+                                <div class="weui-panel__bd weui-cell_access">
+                                    <a href="#" class="weui-media-box weui-media-box_appmsg">
+                                        <div class="weui-media-box__hd">
+                                            <img class="weui-media-box__thumb" src="../images/sp.jpg"/>
+                                        </div>
+                                        <div class="weui-media-box__bd">
+                                            <h4 class="weui-media-box__title">商品名称商品名称商品名称商品名称商品名称商品名称商品名称商品名称商品名称 <span class="money">￥259.00</span></h4>
+                                            <p class="weui-media-box__desc"><span class="lump">颜色：<span>黑色</span></span><span class="lump">尺码：<span>S</span></span><span class="cases">x1</span></p>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="cost">共<span>2</span>件商品 实付<span>￥168.00</span>（含运费<span>￥10.00</span>）</div>
+                            <div class="sale">
+                                <input class="take" type="button" value="确认收货">
+                            </div>
+                        </div>
+                        <div class="chunk">
+                            <div class="order-number">
+                                <span>订单编号:<span>65465465465</span></span>
+                                <span class="state">待评价</span>
+                            </div>
+                            <div class="weui-panel weui-panel_access list">
+                                <div class="weui-panel__bd weui-cell_access">
+                                    <a href="#" class="weui-media-box weui-media-box_appmsg">
+                                        <div class="weui-media-box__hd">
+                                            <img class="weui-media-box__thumb" src="../images/sp.jpg"/>
+                                        </div>
+                                        <div class="weui-media-box__bd">
+                                            <h4 class="weui-media-box__title">商品名称商品名称商品名称商品名称商品名称商品名称商品名称商品名称商品名称 <span class="money">￥259.00</span></h4>
+                                            <p class="weui-media-box__desc"><span class="lump">颜色：<span>黑色</span></span><span class="lump">尺码：<span>S</span></span><span class="cases">x1</span></p>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="cost">共<span>2</span>件商品 实付<span>￥168.00</span>（含运费<span>￥10.00</span>）</div>
+                            <div class="sale">
+                                <input class="sales" type="button" value="申请退货">
+                                <input class="estimate" type="button" value="立即评价">
+                            </div>
+                        </div>
+                        <div class="chunk">
+                            <div class="order-number">
+                                <span>订单编号:<span>65465465465</span></span>
+                                <span class="state">已完成</span>
+                            </div>
+                            <div class="weui-panel weui-panel_access list">
+                                <div class="weui-panel__bd weui-cell_access">
+                                    <a href="#" class="weui-media-box weui-media-box_appmsg">
+                                        <div class="weui-media-box__hd">
+                                            <img class="weui-media-box__thumb" src="../images/sp.jpg"/>
+                                        </div>
+                                        <div class="weui-media-box__bd">
+                                            <h4 class="weui-media-box__title">商品名称商品名称商品名称商品名称商品名称商品名称商品名称商品名称商品名称 <span class="money">￥259.00</span></h4>
+                                            <p class="weui-media-box__desc"><span class="lump">颜色：<span>黑色</span></span><span class="lump">尺码：<span>S</span></span><span class="cases">x1</span></p>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="cost">共<span>2</span>件商品 实付<span>￥168.00</span>（含运费<span>￥10.00</span>）</div>
+                            <div class="sale">
+                                <input class="delete" type="button" value="删除订单">
+                            </div>
+                        </div>
+                    </div>
+
+                <div class="weui-loadmore">
+                    <i class="weui-loading"></i>
+                    <span class="weui-loadmore__tips">正在加载</span>
+                </div>
+            </div>
+            <div id="tab2" class="weui-tab__bd-item infinite">
+                <div class="lists content-padded">
+                    <div class="chunk">
+                        <div class="order-number">
+                            <span>订单编号:<span>65465465465</span></span>
+                            <span class="state">待付款</span>
+                        </div>
+                        <div class="weui-panel weui-panel_access list">
+                            <div class="weui-panel__bd weui-cell_access">
+                                <a href="#" class="weui-media-box weui-media-box_appmsg">
+                                    <div class="weui-media-box__hd">
+                                        <img class="weui-media-box__thumb" src="../images/sp.jpg"/>
+                                    </div>
+                                    <div class="weui-media-box__bd">
+                                        <h4 class="weui-media-box__title">商品名称商品名称商品名称商品名称商品名称商品名称商品名称商品名称商品名称 <span class="money">￥259.00</span></h4>
+                                        <p class="weui-media-box__desc"><span class="lump">颜色：<span>黑色</span></span><span class="lump">尺码：<span>S</span></span><span class="cases">x1</span></p>
+                                    </div>
+                                </a>
+                                <a href="#" class="weui-media-box weui-media-box_appmsg">
+                                    <div class="weui-media-box__hd">
+                                        <img class="weui-media-box__thumb" src="../images/sp.jpg"/>
+                                    </div>
+                                    <div class="weui-media-box__bd">
+                                        <h4 class="weui-media-box__title">商品名称商品名称商品名称商品名称商品名称商品名称商品名称商品名称商品名称 <span class="money">￥259.00</span></h4>
+                                        <p class="weui-media-box__desc"><span class="lump">颜色：<span>黑色</span></span><span class="lump">尺码：<span>S</span></span><span class="cases">x1</span></p>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="cost">共<span>2</span>件商品 实付<span>￥168.00</span>（含运费<span>￥10.00</span>）</div>
+                        <div class="sale">
+                            <span class="time"><i class="iconfont">&#xe70f;</i>剩余<span>1:50</span></span>
+                            <input class="cancel" type="button" value="取消订单">
+                            <input class="payment" type="button" value="立即付款">
+                        </div>
+                    </div>
+                    <div class="chunk">
+                        <div class="order-number">
+                            <span>订单编号:<span>65465465465</span></span>
+                            <span class="state">待付款</span>
+                        </div>
+                        <div class="weui-panel weui-panel_access list">
+                            <div class="weui-panel__bd weui-cell_access">
+                                <a href="#" class="weui-media-box weui-media-box_appmsg">
+                                    <div class="weui-media-box__hd">
+                                        <img class="weui-media-box__thumb" src="../images/sp.jpg"/>
+                                    </div>
+                                    <div class="weui-media-box__bd">
+                                        <h4 class="weui-media-box__title">商品名称商品名称商品名称商品名称商品名称商品名称商品名称商品名称商品名称 <span class="money">￥259.00</span></h4>
+                                        <p class="weui-media-box__desc"><span class="lump">颜色：<span>黑色</span></span><span class="lump">尺码：<span>S</span></span><span class="cases">x1</span></p>
+                                    </div>
+                                </a>
+                                <a href="#" class="weui-media-box weui-media-box_appmsg">
+                                    <div class="weui-media-box__hd">
+                                        <img class="weui-media-box__thumb" src="../images/sp.jpg"/>
+                                    </div>
+                                    <div class="weui-media-box__bd">
+                                        <h4 class="weui-media-box__title">商品名称商品名称商品名称商品名称商品名称商品名称商品名称商品名称商品名称 <span class="money">￥259.00</span></h4>
+                                        <p class="weui-media-box__desc"><span class="lump">颜色：<span>黑色</span></span><span class="lump">尺码：<span>S</span></span><span class="cases">x1</span></p>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="cost">共<span>2</span>件商品 实付<span>￥168.00</span>（含运费<span>￥10.00</span>）</div>
+                        <div class="sale">
+                            <span class="time"><i class="iconfont">&#xe70f;</i>剩余<span>1:50</span></span>
+                            <input class="cancel" type="button" value="取消订单">
+                            <input class="payment" type="button" value="立即付款">
+                        </div>
+                    </div>
+                </div>
+                <div class="weui-loadmore">
+                    <i class="weui-loading"></i>
+                    <span class="weui-loadmore__tips">正在加载</span>
+                </div>
+            </div>
+            <div id="tab3" class="weui-tab__bd-item infinite">
+                <div class="lists content-padded">
+                    <div class="chunk">
+                        <div class="order-number">
+                            <span>订单编号:<span>65465465465</span></span>
+                            <span class="state">待发货</span>
+                        </div>
+                        <div class="weui-panel weui-panel_access list">
+                            <div class="weui-panel__bd weui-cell_access">
+                                <a href="#" class="weui-media-box weui-media-box_appmsg">
+                                    <div class="weui-media-box__hd">
+                                        <img class="weui-media-box__thumb" src="../images/sp.jpg"/>
+                                    </div>
+                                    <div class="weui-media-box__bd">
+                                        <h4 class="weui-media-box__title">商品名称商品名称商品名称商品名称商品名称商品名称商品名称商品名称商品名称 <span class="money">￥259.00</span></h4>
+                                        <p class="weui-media-box__desc"><span class="lump">颜色：<span>黑色</span></span><span class="lump">尺码：<span>S</span></span><span class="cases">x1</span></p>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="cost">共<span>2</span>件商品 实付<span>￥168.00</span>（含运费<span>￥10.00</span>）</div>
+                        <div class="sale">
+                            <input class="sales" type="button" value="申请退货">
+                            <input class="take" type="button" value="确认收货">
+                        </div>
+                    </div>
+                    <div class="chunk">
+                        <div class="order-number">
+                            <span>订单编号:<span>65465465465</span></span>
+                            <span class="state">待发货</span>
+                        </div>
+                        <div class="weui-panel weui-panel_access list">
+                            <div class="weui-panel__bd weui-cell_access">
+                                <a href="#" class="weui-media-box weui-media-box_appmsg">
+                                    <div class="weui-media-box__hd">
+                                        <img class="weui-media-box__thumb" src="../images/sp.jpg"/>
+                                    </div>
+                                    <div class="weui-media-box__bd">
+                                        <h4 class="weui-media-box__title">商品名称商品名称商品名称商品名称商品名称商品名称商品名称商品名称商品名称 <span class="money">￥259.00</span></h4>
+                                        <p class="weui-media-box__desc"><span class="lump">颜色：<span>黑色</span></span><span class="lump">尺码：<span>S</span></span><span class="cases">x1</span></p>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="cost">共<span>2</span>件商品 实付<span>￥168.00</span>（含运费<span>￥10.00</span>）</div>
+                        <div class="sale">
+                            <input class="sales" type="button" value="申请退货">
+                            <input class="take" type="button" value="确认收货">
+                        </div>
+                    </div>
+                    <div class="chunk">
+                        <div class="order-number">
+                            <span>订单编号:<span>65465465465</span></span>
+                            <span class="state">待发货</span>
+                        </div>
+                        <div class="weui-panel weui-panel_access list">
+                            <div class="weui-panel__bd weui-cell_access">
+                                <a href="#" class="weui-media-box weui-media-box_appmsg">
+                                    <div class="weui-media-box__hd">
+                                        <img class="weui-media-box__thumb" src="../images/sp.jpg"/>
+                                    </div>
+                                    <div class="weui-media-box__bd">
+                                        <h4 class="weui-media-box__title">商品名称商品名称商品名称商品名称商品名称商品名称商品名称商品名称商品名称 <span class="money">￥259.00</span></h4>
+                                        <p class="weui-media-box__desc"><span class="lump">颜色：<span>黑色</span></span><span class="lump">尺码：<span>S</span></span><span class="cases">x1</span></p>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="cost">共<span>2</span>件商品 实付<span>￥168.00</span>（含运费<span>￥10.00</span>）</div>
+                        <div class="sale">
+                            <input class="sales" type="button" value="申请退货">
+                            <input class="take" type="button" value="确认收货">
+                        </div>
+                    </div>
+                </div>
+                <div class="weui-loadmore">
+                    <i class="weui-loading"></i>
+                    <span class="weui-loadmore__tips">正在加载</span>
+                </div>
+            </div>
+            <div id="tab4" class="weui-tab__bd-item infinite">
+                <div class="lists content-padded">
+                    <div class="chunk">
+                        <div class="order-number">
+                            <span>订单编号:<span>65465465465</span></span>
+                            <span class="state">待评价</span>
+                        </div>
+                        <div class="weui-panel weui-panel_access list">
+                            <div class="weui-panel__bd weui-cell_access">
+                                <a href="#" class="weui-media-box weui-media-box_appmsg">
+                                    <div class="weui-media-box__hd">
+                                        <img class="weui-media-box__thumb" src="../images/sp.jpg"/>
+                                    </div>
+                                    <div class="weui-media-box__bd">
+                                        <h4 class="weui-media-box__title">商品名称商品名称商品名称商品名称商品名称商品名称商品名称商品名称商品名称 <span class="money">￥259.00</span></h4>
+                                        <p class="weui-media-box__desc"><span class="lump">颜色：<span>黑色</span></span><span class="lump">尺码：<span>S</span></span><span class="cases">x1</span></p>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="cost">共<span>2</span>件商品 实付<span>￥168.00</span>（含运费<span>￥10.00</span>）</div>
+                        <div class="sale">
+                            <input class="sales" type="button" value="申请退货">
+                            <input class="estimate" type="button" value="立即评价">
+                        </div>
+                    </div>
+                    <div class="chunk">
+                        <div class="order-number">
+                            <span>订单编号:<span>65465465465</span></span>
+                            <span class="state">已完成</span>
+                        </div>
+                        <div class="weui-panel weui-panel_access list">
+                            <div class="weui-panel__bd weui-cell_access">
+                                <a href="#" class="weui-media-box weui-media-box_appmsg">
+                                    <div class="weui-media-box__hd">
+                                        <img class="weui-media-box__thumb" src="../images/sp.jpg"/>
+                                    </div>
+                                    <div class="weui-media-box__bd">
+                                        <h4 class="weui-media-box__title">商品名称商品名称商品名称商品名称商品名称商品名称商品名称商品名称商品名称 <span class="money">￥259.00</span></h4>
+                                        <p class="weui-media-box__desc"><span class="lump">颜色：<span>黑色</span></span><span class="lump">尺码：<span>S</span></span><span class="cases">x1</span></p>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="cost">共<span>2</span>件商品 实付<span>￥168.00</span>（含运费<span>￥10.00</span>）</div>
+                        <div class="sale">
+                            <input class="delete" type="button" value="删除订单">
+                        </div>
+                    </div>
+                </div>
+                <div class="weui-loadmore">
+                    <i class="weui-loading"></i>
+                    <span class="weui-loadmore__tips">正在加载</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 公共js区域 -->
+<script src="../js/jquery.min.js"></script>
+<script src="../js/jquery-weui.min.js"></script>
+<script src="../js/swiper.min.js"></script>
+<script src="../js/city-picker.min.js"></script>
+<!-- 公共js区域完 -->
+<!-- 该页面应用js区域 -->
+<script type="text/javascript">
+    $(document).ready(function () {
+        $(document.body).infinite();
+
+        $(".infinite").infinite().on("infinite", function() {
+            var self = this;
+            if(self.loading) return;
+            console.log(self)
+            self.loading = true;
+            console.log(self);
+            setTimeout(function() {
+                $(self).find(".content-padded").append("<p>sadadadas</p>");
+                self.loading = false;
+            }, 2000);   //模拟延迟
+        });
+
+    })
+
+</script>
+<!-- 该页面应用js区域 -->
+</body>
+</html>

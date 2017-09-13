@@ -1,0 +1,183 @@
+<!--制作lj-->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <meta name="format-detection" content="telephone=no">
+    <!-- 公共css区域 -->
+    <link rel="stylesheet" href="../css/weui.min.css">
+    <link rel="stylesheet" href="../css/jquery-weui.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <!-- 公共css完区域 -->
+    <!-- 该页面应用css区域 -->
+    <style type="text/css">
+        /*L自定样式*/
+        .clearfix:before,.clearfix:after {content: "";display: block;height: 0;visibility: hidden;}
+        .clearfix:after {clear: both;}
+        .clearfix {zoom: 1;}/*兼容IE6/7*/
+        .not-top-gutter{margin-top: 0;}
+        .container .weui-cell:before{left: 0;color: #dfdfdf;}
+        .container .weui-cell{padding:10px;}
+        .container-wrap{padding: 0 0.5rem;}
+        .add-ditances4{padding-top:0.5rem;padding-bottom: 0.5rem;background-image: url("../images/linee.png");background-position: bottom;background-repeat: no-repeat;background-size: 100%;margin-bottom: 0.85rem;}
+        .container .color-grey{font-size: 0.6rem;color: #b0b0b0}
+        .container .thisfr{float: right;}
+        .container .thisfl{float: left;}
+        .container .price{color: #d0021b}
+        .container .item-title{font-size: 0.7rem;color: #666}
+        .container .item-title4{font-size: 0.6rem;}
+        /*该页面样式*/
+        .container .article{font-size: 0.6rem;color: #666;}
+        .container-form:before{position: static;}
+        .container-form .per{border: none;text-align: right;color: #b0b0b0;background-color: #fff;}
+        .row{overflow: hidden;height: 46px;background-color: #fff;}
+        .row .col-65{width: 65%;float: left;height: 100%;}
+        .row .col-35{width: 35%;float: left;height: 100%;line-height: 46px;text-align: center;font-size: 0.7rem;color: #fff;background-color: #666;}
+        .row .ad-bg-red{background-color: #d0021b;}
+       .row .matter2{line-height: 46px;padding-left: 0.5rem;color: #666;font-size: 0.7rem;
+           -webkit-box-sizing: border-box;
+           -moz-box-sizing: border-box;
+           box-sizing: border-box;}
+        .weui-cells{margin-top: 0;}
+        .weui-cells:after, .weui-cells:before{display: none;}
+        .weui-cell:before{border-top: 1px solid #dfdfdf;}
+        .weui-cells_checkbox .weui-check:checked+.weui-icon-checked:before{color: #666;}
+        .weui-cells .title{font-size: 0.7rem;color: #666;}
+        .weui-cells .title span{float: right;}
+        .weui-cells .del{font-size: 0.6rem;color: #b0b0b0;}
+        .address-control{font-size: 1rem;}
+        .chunk{background-color: #fff;margin-top: 0.5rem;}
+        .chunk .list .weui-media-box_appmsg .weui-media-box__hd{height: auto;}
+        .chunk .list .weui-media-box_appmsg{align-items:end;}
+        .chunk .list .weui-cell_access .weui-cell__ft{position: initial;}
+        .chunk .list .weui-cell_access .weui-cell__ft:after{right: 0.5rem;}
+        .chunk .list .weui-media-box__title, .list .weui-media-box__desc{font-size: 0.7rem;color: #666;position: relative;padding-right: 4rem;}
+        .chunk .list .weui-media-box__desc{color: #b0b0b0;font-size: 0.6rem;margin-top: 0.25rem;}
+        .chunk .list .weui-media-box__desc .lump{margin-right: 0.5rem;}
+        .chunk .list .weui-media-box__title .money{position: absolute;top: 0rem;right: 0rem;font-size: 0.7rem;color: #666;}
+        .chunk .list .weui-media-box__desc .cases{position: absolute;top: 0rem;right: 0rem;}
+        .container-white4{padding: 0.5rem;background-color: #FFF;margin-top: 0.5rem;}
+        .container-white{background-color: #FFF;}
+        .toolbar .picker-button{color:#666;}
+        /*a.weui-media-box:active{background-color: #eee;}
+        a.weui-cell input:active{background-color: #eee;}*/
+    </style>
+    <!-- 该页面应用css区域 -->
+</head>
+<body ontouchstart>
+<header>
+    <div class="header-top">
+        <div class="pull-left"><i class="iconfont">&#xe600;</i></div>
+        <div class="pull-center">确认订单</div>
+    </div>
+</header>
+<div class="content container">
+    <div class="weui-cells weui-cells_checkbox add-ditances4">
+        <label class="weui-cell weui-check__label weui-cell_access">
+            <div class="weui-cell__hd">
+                <i class="iconfont address-control">&#xe602;</i>
+            </div>
+            <div class="weui-cell__bd">
+                <p class="title">用户名称<span class="item-title4">188****8888</span></p>
+                <p class="del">重庆市 重庆市 渝中区 解放碑街道地址信息地址信息地址信息地址信息地址信地址信息</p>
+            </div>
+            <div class="weui-cell__ft"></div>
+        </label>
+    </div>
+    <div class="chunk">
+        <div class="weui-panel weui-panel_access list">
+            <div class="weui-panel__bd weui-cell_access">
+                <a href="#" class="weui-media-box weui-media-box_appmsg container-white">
+                    <div class="weui-media-box__hd">
+                        <img class="weui-media-box__thumb" src="../images/sp.jpg"/>
+                    </div>
+                    <div class="weui-media-box__bd">
+                        <h4 class="weui-media-box__title">商品名称商品名称商品名称商品名称商品名称商品名称商品名称商品名称商品名称 <span class="money">￥259.00</span></h4>
+                        <p class="weui-media-box__desc"><span class="lump">颜色：<span>黑色</span></span><span class="lump">尺码：<span>S</span></span><span class="cases">x1</span></p>
+                    </div>
+                </a>
+                <a href="#" class="weui-media-box weui-media-box_appmsg container-white">
+                    <div class="weui-media-box__hd">
+                        <img class="weui-media-box__thumb" src="../images/sp.jpg"/>
+                    </div>
+                    <div class="weui-media-box__bd">
+                        <h4 class="weui-media-box__title">商品名称商品名称商品名称商品名称商品名称商品名称商品名称商品名称商品名称 <span class="money">￥259.00</span></h4>
+                        <p class="weui-media-box__desc"><span class="lump">颜色：<span>黑色</span></span><span class="lump">尺码：<span>S</span></span><span class="cases">x1</span></p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="weui-cells container-form chunk">
+        <a class="weui-cell weui-cell_access" href="javascript:;" style="background-color: #FFF;">
+            <div class="weui-cell__bd">
+                <p class="item-title">优惠券</p>
+            </div>
+            <div class="weui-cell__ft color-grey">
+                <input type="text" class="per quan item-title" placeholder="请选择">
+            </div>
+        </a>
+        <a class="weui-cell weui-cell_access container-white" href="javascript:;" style="background-color: #FFF;">
+            <div class="weui-cell__bd">
+                <p class="item-title">发票</p>
+            </div>
+            <div class="weui-cell__ft color-grey">
+                <input type="text" class="per piao item-title" placeholder="请选择">
+            </div>
+        </a>
+        <div class="weui-cell">
+            <div class="weui-cell__bd">
+                <p class="item-title">留言</p>
+            </div>
+            <div class="weui-cell__ft color-grey">
+                <input type="text" class="per item-title" placeholder="可输入留言备注">
+            </div>
+        </div>
+    </div>
+    <div class="item-title container-wrap add-distance2 container-white4">
+        <div class="clearfix"><span class="thisfl">商品金额</span><span class="thisfr">¥ 999.00</span></div>
+        <div class="clearfix"><span class="thisfl">优惠券</span><span class="thisfr">- ¥ 999.00</span></div>
+        <div class="clearfix"><span class="thisfl">运费</span><span class="thisfr">+ ¥ 999.00</span></div>
+    </div>
+</div>
+<footer>
+    <div class="row">
+        <div class="col-65 matter2">
+            您需要支付:<span>¥ 598.00</span>
+        </div>
+        <div class="col-35 ad-bg-red">确认</div>
+    </div>
+</footer>
+<!-- 公共js区域 -->
+<script src="../js/jquery.min.js"></script>
+<script src="../js/jquery-weui.min.js"></script>
+<script src="../js/swiper.min.js"></script>
+<script src="../js/city-picker.min.js"></script>
+<!-- 公共js区域完 -->
+<!-- 该页面应用js区域 -->
+<script type="text/javascript">
+    $(".quan").picker({
+        title: "选择性别",
+        cols: [
+            {
+                textAlign: 'center',
+                values: ['优惠券名字1','优惠券名字1']
+            }
+        ]
+    });
+    $(".piao").picker({
+        title: "选择性别",
+        cols: [
+            {
+                textAlign: 'center',
+                values: ['不开发票','开票']
+            }
+        ]
+    });
+</script>
+<!-- 该页面应用js区域 -->
+</body>
+</html>

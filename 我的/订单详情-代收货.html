@@ -1,0 +1,179 @@
+<!--制作lj-->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <meta name="format-detection" content="telephone=no">
+    <!-- 公共css区域 -->
+    <link rel="stylesheet" href="../css/weui.min.css">
+    <link rel="stylesheet" href="../css/jquery-weui.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <!-- 公共css完区域 -->
+    <!-- 该页面应用css区域 -->
+    <style type="text/css">
+        /*L自定样式*/
+        .clearfix:before,.clearfix:after {content: "";display: block;height: 0;visibility: hidden;}
+        .clearfix:after {clear: both;}
+        .clearfix {zoom: 1;}/*兼容IE6/7*/
+        .not-top-gutter{margin-top: 0;}
+        .text-elisps{display: -webkit-box;  -webkit-box-orient: vertical;  -webkit-line-clamp: 1;  overflow: hidden;}
+        .container .weui-cell:before{left: 0;color: #dfdfdf;}
+        .container .weui-cell{padding:10px;}
+        .container-wrap{padding: 0 0.5rem;}
+        .dg-btn{background-color: #d0021b;color: #FFF;display: block;width: 100%;height: 100%;border-radius: 0; }
+        .detel-border{border: none!important;}
+        .add-distance2{margin: 1rem 0;}
+        .add-distance3{margin: 0.5rem 0;}
+        .add-ditances4{padding-top:0.5rem;padding-bottom: 0.5rem;background-image: url("../images/linee.png");background-position: bottom;background-repeat: no-repeat;background-size: 100%;margin-bottom: 0.85rem;}
+        .add-distance5{margin: 0.2rem 0;}
+        .container .color-grey{font-size: 0.6rem;color: #b0b0b0}
+        .container .item-title{font-size: 0.7rem;color: #666;}
+        .container .item-title2{font-size: 0.7rem;color: #b0b0b0;}
+        .container .item-title4{font-size: 0.6rem;}
+        .container .item-after{font-size: 0.6rem;color: #b0b0b0;}
+        .container .thisfr{float: right;}
+        .container .thisfl{float: left;}
+        .container .price{color: #d0021b}
+        .col-20{width: 20%;}
+        .col-80{width: 80%;}
+        .col-10{width: 10%;}
+        .col-90{width: 90%;}
+        .col-70{width: 70%;}
+        /*该页面样式*/
+
+        .container .article{font-size: 0.6rem;color: #666;}
+        .container .time-cost{line-height:42px;color: #b0b0b0;font-size: 0.7rem;}
+        .container .time-cost i{font-size: 1.1rem;position: relative;top: 0.1rem;margin-right: 0.1rem;}
+        .logistics-item{position: relative;overflow: hidden;}
+        .logistics-item .left-inner, .logistics-item .right-inner{float: left}
+        .logistics-item .left-inner{text-align: center;}
+        .logistics-item .right-inner{padding: 0.5rem 0;border-bottom: 1px solid #dfdfdf;}
+        .logistics .logistics-item:first-child .right-inner{padding-top: 0;}
+        .logistics .logistics-item:first-child {line-height: 1;}
+        .logistics .logistics-item:first-child p{line-height: 1.6;}
+        .logistics-item .left-inner i{color: #666;font-size: 1rem;}
+
+        .add-ditances4 .col-10{text-align: left;margin-top: 1rem;}
+        .add-ditances4 .weui-media-box__desc{margin-top: 0.2rem;}
+
+        .shoped-list .left-inner, .shoped-list .right-inner{float: left}
+        .shoped-list .left-inner img{width: 100%;height: 2.5rem;}
+        .shoped-list ul{padding: 0;margin: 0;list-style-type: none;}
+        .shoped-list .shoped-list-item{margin-bottom: 0.3rem;overflow: hidden}
+        .shoped-list .shoped-list-item .item-title, .shoped-list .shoped-list-item .item-after{overflow: hidden;padding-right: 0.5rem;}
+        .shoped-list .shoped-list-item .left-inner{-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 0 0.5rem;}
+        .shoped-list .shoped-list-item .right-inner{padding-bottom:1.1rem; border-bottom: 1px solid #dfdfdf;}
+
+        .chunk{background-color: #fff;margin-top: 0.5rem;}
+        .chunk .list .weui-media-box_appmsg .weui-media-box__hd{height: auto;}
+        .chunk .list .weui-media-box_appmsg{align-items:end;}
+        .chunk .list .weui-cell_access .weui-cell__ft{position: initial;}
+        .chunk .list .weui-cell_access .weui-cell__ft:after{right: 0.5rem;}
+        .chunk .list .weui-media-box__title, .list .weui-media-box__desc{font-size: 0.7rem;color: #666;position: relative;padding-right: 4rem;}
+        .chunk .list .weui-media-box__desc{color: #b0b0b0;font-size: 0.6rem;margin-top: 0.25rem;}
+        .chunk .list .weui-media-box__desc .lump{margin-right: 0.5rem;}
+        .chunk .list .weui-media-box__title .money{position: absolute;top: 0rem;right: 0rem;font-size: 0.6rem;color: #666;}
+        .chunk .list .weui-media-box__desc .cases{position: absolute;top: 0rem;right: 0rem;}
+        .container .weui-media-box{padding: 15px 10px;}
+
+        .container-white2{background-color: #FFF;padding: 0.5rem; }
+        .container-white{background-color: #FFF;}
+        footer{background-color: #FFF;}
+        footer .order-btn{border: 1px solid #666;font-size: 0.7rem;padding: 0 0.3rem;color: #666;background-color: #FFF;border-radius: 0.1rem;margin-left: 7%;height: 75%;margin-top: 0.3rem;}
+        footer .order-btn:last-child{margin-left: 0;}
+        footer .container{height: 100%;}
+        footer .container-white2{padding: 0 0.5rem;}
+
+        .weui-dialog__title{font-size: 0.7rem;}
+        .weui-prompt-input{border: none;font-size: 0.6rem;color: #666;}
+        .weui-dialog__ft{font-size: 0.7rem;}
+        .weui-dialog__btn{color: #666;}
+        .weui-dialog__btn.default{color: #999!important;}
+    </style>
+    <!-- 该页面应用css区域 -->
+</head>
+<body ontouchstart>
+<header>
+    <div class="header-top">
+        <div class="pull-left"><i class="iconfont">&#xe600;</i></div>
+        <div class="pull-center">订单详情</div>
+    </div>
+</header>
+<div class="content container">
+    <div class="container-wrap add-distance3 container-white2">
+        <p class="item-title">订单编号 : <span>656654564654</span></p>
+        <p class="color-grey">订单状态 : <span>代发货</span></p>
+        <p class="color-grey">下单时间 : <span>2017.01.02 20:30:56</span></p>
+    </div>
+    <div class="container-wrap add-ditances4 logistics-item container-white2">
+        <div class="left-inner col-10"><i class="iconfont">&#xe602;</i></div>
+        <div class="weui-media-box__bd right-inner col-90 detel-border">
+            <p class="item-title"><span>用户名称</span><span class="thisfr item-title4">146545465465</span></p>
+            <p class="weui-media-box__desc color-grey">由各种物质组成的巨型球状天体，叫做星球。星球有一定的形状，有自己的运行轨道。</p>
+        </div>
+    </div>
+
+    <div class="chunk">
+        <div class="weui-panel weui-panel_access list">
+            <div class="weui-panel__bd weui-cell_access">
+                <a href="#" class="weui-media-box weui-media-box_appmsg container-white">
+                    <div class="weui-media-box__hd">
+                        <img class="weui-media-box__thumb" src="../images/sp.jpg"/>
+                    </div>
+                    <div class="weui-media-box__bd">
+                        <h4 class="weui-media-box__title">商品名称商品名称商品名称商品名称商品名称商品名称商品名称商品名称商品名称 <span class="money">￥259.00</span></h4>
+                        <p class="weui-media-box__desc"><span class="lump">颜色：<span>黑色</span></span><span class="lump">尺码：<span>S</span></span><span class="cases">x1</span></p>
+                    </div>
+                </a>
+                <a href="#" class="weui-media-box weui-media-box_appmsg container-white">
+                    <div class="weui-media-box__hd">
+                        <img class="weui-media-box__thumb" src="../images/sp.jpg"/>
+                    </div>
+                    <div class="weui-media-box__bd">
+                        <h4 class="weui-media-box__title">商品名称商品名称商品名称商品名称商品名称商品名称商品名称商品名称商品名称 <span class="money">￥259.00</span></h4>
+                        <p class="weui-media-box__desc"><span class="lump">颜色：<span>黑色</span></span><span class="lump">尺码：<span>S</span></span><span class="cases">x1</span></p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="item-title container-wrap add-distance2 container-white2">
+        <div class="clearfix"><span class="thisfl">商品金额</span><span class="thisfr">¥ 999.00</span></div>
+        <div class="clearfix"><span class="thisfl">优惠券</span><span class="thisfr">- ¥ 999.00</span></div>
+        <div class="clearfix"><span class="thisfl">运费</span><span class="thisfr">+ ¥ 999.00</span></div>
+        <div class="clearfix"><span class="thisfl">实付金额</span><span class="thisfr price">¥ 999.00</span></div>
+    </div>
+    <div class="item-after container-wrap add-distance2 container-white2">
+        <div class="add-distance5"><span>支付时间 : </span><span>2017.01.01 21:38:29</span></div>
+        <div class="add-distance5"><span>支付方式 : </span><span>微信支付</span></div>
+        <div class="add-distance5"><span>发货时间 : </span><span>2017.01.01 21:38:29</span></div>
+        <div class="add-distance5"><span>物流平台 : </span><span>顺丰快递 11013545565</span></div>
+    </div>
+</div>
+<footer>
+    <div class="container clearfix container-wrap container-white2">
+        <button type="button" class="order-btn thisfr">查看物流</button>
+        <button type="button" class="order-btn thisfr curren-btn">确认收货</button>
+    </div>
+</footer>
+<!-- 公共js区域 -->
+<script src="../js/jquery.min.js"></script>
+<script src="../js/jquery-weui.min.js"></script>
+<script src="../js/swiper.min.js"></script>
+<script src="../js/city-picker.min.js"></script>
+<!-- 公共js区域完 -->
+<!-- 该页面应用js区域 -->
+<script type="text/javascript">
+    $(".curren-btn").click(function () {
+        $.confirm("确定收货?");
+        $(".weui-dialog .weui-dialog__hd").empty();
+        $(".weui-dialog .weui-dialog__bd").css("color","#666")
+    })
+</script>
+<!-- 该页面应用js区域 -->
+</body>
+</html>

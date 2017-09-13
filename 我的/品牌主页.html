@@ -1,0 +1,269 @@
+<!--制作ly-->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <meta name="format-detection" content="telephone=no">
+    <!-- 公共css区域 -->
+    <link rel="stylesheet" href="../css/weui.min.css">
+    <link rel="stylesheet" href="../css/jquery-weui.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <!-- 公共css完区域 -->
+    <!-- 该页面应用css区域 -->
+    <style type="text/css">
+        header{height: 0;}
+        .header-top2{height: 6rem;background: url("../images/aticle.png") no-repeat;background-size: 100% 100%;}
+        .header-top .pull-left,.header-top .pull-right{z-index: 999;color: #666;}
+        .header-top .pull-right2 i{color: #666;}
+        .content{background-color: #F8F8F8;top: 0;}
+        .chunk{background-color: #fff;font-size: 0.7rem;color: #b0b0b0;padding: 0.5rem 0;border-bottom: 1px solid #dfdfdf;height: 1.1rem;z-index: 999;}
+        .chunk .weui-flex__item{border-right: 1px solid #dfdfdf;text-align: center;}
+        .chunk .weui-flex__item.active{color: #666;}
+        .chunk .weui-flex__item i{font-size: 0.7rem;}
+        .list .list-ul li{width: 50%;float: left;padding: 0 0.5rem;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;margin-top: 1rem;z-index: 99;}
+        .list .list-ul li img{width: 100%;}
+        .list .list-ul li .del{font-size: 0.6rem;color: #666;overflow : hidden;text-overflow: ellipsis;display: -webkit-box;-webkit-line-clamp: 2;-webkit-box-orient: vertical;margin-top: 0.25rem;height: 40px;}
+        .list .list-ul li .money{font-size: 0.6rem;color: #b0b0b0;height: 1rem;}
+        .list .list-ul li .money span{color: #d0021b;}
+        .list .list-ul li .money s{margin-left: 0.75rem;}
+        .head-some{position: absolute;height: 2.5rem;overflow: hidden;width: 95%;bottom: 0.5rem;}
+        .head-some .left-some{width: 45%;float: left;overflow: hidden}
+        .head-some .left-some .name{color: #FFF;font-size: 0.8rem;margin-left: 0.5rem;position: relative;top: 0.7rem;display: inline-block;}
+        .head-some .left-some img{width: 2.5rem;height: 100%;border-radius: 0.2rem;float: left}
+        .head-some .right-some{width: 55%;float: right;text-align: right;position: relative;top: 0.5rem;}
+        .head-some .right-some button{padding: 0.2rem;border: none;border-radius: 0.1rem;color: #FFF;font-size: 0.6rem;}
+        .head-some .right-some button.one{background-color: #b0b0b0;}
+        .head-some .right-some button.two{background-color: #d00012;}
+
+        .row2{width: 100%;height: 100%;border-top: 1px solid #dfdfdf;}
+        .row2 .col-50{width: 49.5%;float: left;border-right: 1px solid #dfdfdf;text-align: center;height: 100%;line-height: 46px;font-size: 0.7rem;}
+        .row2 .col-50:last-child{border-right: 0;}
+        #FL,#JS{z-index: 9999;background-color: #FFF;}
+        .close-s{text-align: center;border-top: 1px solid #dfdfdf;height: 46px;bottom: 0;width: 100%;position: absolute;background-color: #FFF;z-index: 666666;}
+        .close-s i{font-size: 1.3rem;color:#b0b0b0;margin-top: 0.4rem;}
+        .container2 {top: 0;background-color: #FFF;margin-top: 0;}
+        .container2 .article{font-size: 0.7rem;color: #666;}
+        .container2 .img-wrap3{width: 50%;margin: 0.5rem auto;}
+        .container2 .img-wrap3 img{width: 100%;}
+        .container2 .weui-cell:before{left: 0;}
+        .container2 .article-wrap{padding: 0 0.5rem;font-size: 0.7rem;color: #666;}
+		.add-css{width:100%;position:fixed;top:0px;left:0px;}
+        .shop-manager{background-color: #fff;text-align: center;padding: 0.5rem 0;margin-bottom: 0.5rem;font-size: 0.6rem;color: #666;height: 6rem;}
+        .shop-manager .weui-flex__item{border-right:1px solid #dfdfdf;width: 50%;}
+        .shop-manager .weui-flex__item:last-child{border-right: 0;}
+        .shop-manager .piece-left .manager-img{width: 4rem;height:4rem;margin: 0 auto;margin-bottom: 0.25rem;}
+        .shop-manager .piece-left .manager-img img{width: 100%;height: 100%;}
+        .shop-manager .piece-right{position: relative;}
+        .shop-manager .piece-right .shop-name{margin-bottom: 0.15rem;text-align:left;overflow : hidden;text-overflow: ellipsis;display: -webkit-box;-webkit-line-clamp: 1;-webkit-box-orient: vertical;padding: 0 20%;}
+        .shop-manager .piece-right .more{color: #666;font-size: 0.6rem;font-weight: 500;position: absolute;bottom: 0rem;right: 0.5rem;}
+        .adds{display: none;}
+        .adds .weui-flex__item{width: 24.5%;float: left;}
+        .adds .weui-flex__item:last-child{border-right: 0;}
+        .shop-img{position: relative;}
+        .shop-img .add-shop-cart{width: 1.5rem;height: 1.5rem;border-radius: 50%;background-color: rgba(244,53,48,0.7);position: absolute;bottom: 0.65rem;right: 0.25rem;text-align: center;line-height: 1.5rem;}
+        .shop-img .add-shop-cart img{width: 0.8rem !important;height: 0.8rem !important;position: relative;top:0.15rem;}
+    </style>
+    <!-- 该页面应用css区域 -->
+</head>
+<body ontouchstart>
+<div class="weui-flex chunk adds">
+        <div class="weui-flex__item active">默认</div>
+        <div class="weui-flex__item">新品</div>
+        <div class="weui-flex__item">人气</div>
+        <div class="weui-flex__item">价格<i class="iconfont">&#xe667;</i></div>
+    </div>
+<div class="content">
+    <div class="weui-pull-to-refresh__layer">
+        <div class='weui-pull-to-refresh__arrow'></div>
+        <div class='weui-pull-to-refresh__preloader'></div>
+        <div class="down">下拉刷新</div>
+        <div class="up">释放刷新</div>
+        <div class="refresh">正在刷新</div>
+    </div>
+    <div class="lump">
+    	<div class="header-top header-top2">
+            <div class="pull-left"><i class="iconfont">&#xe600;</i></div>
+            <div class="pull-right pull-right2"><i class="iconfont">&#xe607;</i></div>
+            <div class="head-some">
+                <div class="left-some"><img src="../images/logo.jpg" alt=""><span class="name">品牌名称</span></div>
+                <div class="right-some"><button type="button" class="one"><i class="iconfont">&#xe678;</i> 品牌收藏</button>
+                    <button type="button" class="two"><i class="iconfont">&#xe605;</i> 品牌收藏</button>
+                </div>
+            </div>
+        </div>
+        <div class="shop-manager weui-flex">
+            <div class="weui-flex__item piece-left">
+                <div class="manager-img"><img src="../images/logo.jpg"/></div>
+                <div>品牌经理：<span>八戒</span></div>
+                <div>联系电话：<span>189 9999 9999</span></div>
+            </div>
+            <div class="weui-flex__item piece-right">
+                <div class="shop-name">江北北城天街店</div>
+                <div class="shop-name">渝中时代天街店</div>
+                <div class="shop-name">九龙城西城天街店</div>
+                <div class="shop-name">江北星光店</div>
+                <span class="more">点击查看更多店铺</span>
+            </div>
+        </div>
+        <div class="weui-flex chunk addss">
+            <div class="weui-flex__item active">默认</div>
+            <div class="weui-flex__item">新品</div>
+            <div class="weui-flex__item">人气</div>
+            <div class="weui-flex__item">价格<i class="iconfont">&#xe667;</i></div>
+        </div>
+    </div>
+    <div class="list">        
+        <ul class="list-ul">
+            <li>
+                <div class="shop-img"><img src="../images/sp2.png"/><div class="add-shop-cart"><img src="../images/add-cart.png"/></div></div>
+                <p class="del">商品名称商品名称商品名称商品名称商品名称商品名称商品名称商品名称</p>
+                <p class="money"><span class="left">￥8888.00</span><s>￥8888.00</s></p>
+            </li>
+            <li>
+                <div class="shop-img"><img src="../images/sp2.png"/><div class="add-shop-cart"><img src="../images/add-cart.png"/></div></div>
+                <p class="del">商品名称商品名称商品名称商品名称商品名称商品名称商品名称商品名称</p>
+                <p class="money"><span class="left">￥8888.00</span><s>￥8888.00</s></p>
+            </li>
+            <li>
+                <div class="shop-img"><img src="../images/sp2.png"/><div class="add-shop-cart"><img src="../images/add-cart.png"/></div></div>
+                <p class="del">商品名称商品名称商品名称商品名称商品名称商品名称商品名称商品名称</p>
+                <p class="money"><span class="left">￥8888.00</span><s>￥8888.00</s></p>
+            </li>
+            <li>
+                <div class="shop-img"><img src="../images/sp2.png"/><div class="add-shop-cart"><img src="../images/add-cart.png"/></div></div>
+                <p class="del">商品名称商品名称商品名称商品名称商品名称商品名称商品名称商品名称</p>
+                <p class="money"><span class="left">￥8888.00</span><s>￥8888.00</s></p>
+            </li>
+            <li>
+                <div class="shop-img"><img src="../images/sp2.png"/><div class="add-shop-cart"><img src="../images/add-cart.png"/></div></div>
+                <p class="del">商品名称商品名称商品名称商品名称商品名称商品名称商品名称商品名称</p>
+                <p class="money"><span class="left">￥8888.00</span><s>￥8888.00</s></p>
+            </li>
+            <li>
+                <div class="shop-img"><img src="../images/sp2.png"/><div class="add-shop-cart"><img src="../images/add-cart.png"/></div></div>
+                <p class="del">商品名称商品名称商品名称商品名称商品名称商品名称商品名称商品名称</p>
+                <p class="money"><span class="left">￥8888.00</span><s>￥8888.00</s></p>
+            </li>
+        </ul>
+    </div>
+    <div class="weui-loadmore">
+        <i class="weui-loading"></i>
+        <span class="weui-loadmore__tips">正在加载</span>
+    </div>
+</div>
+<footer>
+    <div class="row2">
+        <div class="col-50 sort open-popup" data-target="">商品分类</div>
+        <div class="col-50 intor open-popup" data-target="">品牌介绍</div>
+    </div>
+</footer>
+
+<div id="FL" class="weui-popup__container">
+    <div class="weui-popup__overlay"></div>
+    <div class="weui-popup__modal">
+        <div class="content container2">
+            <div class="weui-cells article not-top-gutter">
+                <a class="weui-cell weui-cell_access" href="javascript:;">
+                    <div class="weui-cell__bd">
+                        <p>全部商品</p>
+                    </div>
+                    <div class="weui-cell__ft">
+                    </div>
+                </a>
+                <div class="weui-cell">
+                    <div class="weui-cell__bd">
+                        <p>二级分类标题</p>
+                    </div>
+                </div>
+                <div class="weui-cell">
+                    <div class="weui-cell__bd">
+                        <p>二级分类标题</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="close-s close-popup">
+            <i class="iconfont">
+                <i class="weui-icon-cancel"></i>
+            </i>
+        </div>
+    </div>
+</div>
+<div id="JS" class="weui-popup__container">
+    <div class="weui-popup__overlay"></div>
+    <div class="weui-popup__modal">
+        <div class="content container2">
+            <div class="img-wrap3">
+                <img src="../images/aticle.png" alt="">
+            </div>
+            <div class="container-wrap">
+                <p class="article-wrap">店铺文字店铺文字店铺文字店铺文字店铺文字店铺文字店铺文字店铺文字店铺文字店铺文字店铺文字店铺文字店铺文字店铺文字店铺文字</p>
+            </div>
+        </div>
+        <div class="close-s close-popup">
+            <i class="iconfont">
+                <i class="weui-icon-cancel"></i>
+            </i>
+        </div>
+    </div>
+</div>
+<!-- 公共js区域 -->
+<script src="../js/jquery.min.js"></script>
+<script src="../js/jquery-weui.min.js"></script>
+<script src="../js/swiper.min.js"></script>
+<script src="../js/city-picker.min.js"></script>
+<!-- 公共js区域完 -->
+<!-- 该页面应用js区域 -->
+<script type="text/javascript">
+    $(function(){
+        $(".chunk").on("click",".weui-flex__item",function(){
+            $(this).addClass("active").siblings().removeClass("active");
+        });
+        $(".sort").click(function () {
+            $("#FL").popup();
+        });
+        $(".intor").click(function () {
+            $("#JS").popup();
+        });
+        $(".close-s").click(function () {
+            $.closePopup()
+        });
+        $("button.one").click(function () {
+            $.toast("取消成功");
+        })
+        $("button.two").click(function () {
+            $.toast("收藏成功");
+        })
+		$(".content").scroll(function () {
+			var thisScroll = $(this).scrollTop();
+            var lump_h = $(".lump").height();
+			if(thisScroll < lump_h){
+				$(".adds").removeClass("add-css").hide();
+                $(".addss").show();
+			}else if(thisScroll >= lump_h){
+				$(".adds").addClass("add-css").show();
+                $(".addss").hide();
+			}			
+        })
+        $(".content").pullToRefresh();
+        $(".content").on("pull-to-refresh", function() {
+           setTimeout("location.reload()",1000);
+        });
+         $(".content").infinite();
+        var loading = false;  //状态标记
+        $(".content").infinite().on("infinite", function() {
+          if(loading) return;
+          loading = true;
+          setTimeout(function() {
+            $(".list-ul").append('<li><div class="shop-img"><img src="../images/sp2.png"/><div class="add-shop-cart"><img src="../images/add-cart.png"/></div></div><p class="del">商品名称商品名称商品名称商品名称商品名称商品名称商品名称商品名称</p><p class="money"><span class="left">￥8888.00</span><s>￥8888.00</s></p></li><li><div class="shop-img"><img src="../images/sp2.png"/><div class="add-shop-cart"><img src="../images/add-cart.png"/></div></div><p class="del">商品名称商品名称商品名称商品名称商品名称商品名称商品名称商品名称</p><p class="money"><span class="left">￥8888.00</span><s>￥8888.00</s></p></li><li><div class="shop-img"><img src="../images/sp2.png"/><div class="add-shop-cart"><img src="../images/add-cart.png"/></div></div><p class="del">商品名称商品名称商品名称商品名称商品名称商品名称商品名称商品名称</p><p class="money"><span class="left">￥8888.00</span><s>￥8888.00</s></p></li><li><div class="shop-img"><img src="../images/sp2.png"/><div class="add-shop-cart"><img src="../images/add-cart.png"/></div></div><p class="del">商品名称商品名称商品名称商品名称商品名称商品名称商品名称商品名称</p><p class="money"><span class="left">￥8888.00</span><s>￥8888.00</s></p></li>');
+            loading = false;
+          }, 1500);   //模拟延迟
+         });
+    });
+</script>
+<!-- 该页面应用js区域 -->
+</body>
+</html>

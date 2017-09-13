@@ -1,0 +1,466 @@
+<!--制作ly-->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <meta name="format-detection" content="telephone=no">
+    <!-- 公共css区域 -->
+    <link rel="stylesheet" href="../css/weui.min.css">
+    <link rel="stylesheet" href="../css/jquery-weui.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <!-- 公共css完区域 -->
+    <!-- 该页面应用css区域 -->
+    <style type="text/css">
+        img {
+            width: 100%;
+        }
+
+        header {
+            height: 145px;
+        }
+
+        .header {
+            position: relative;
+            color: #fff;
+            overflow: hidden;
+        }
+
+        .header .background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 145px;
+            background: url('../images/bg-my.png') 100% 100% no-repeat;
+        }
+
+        .header .content-wrapper {
+            position: relative;
+            padding: 60px 12px 15px 10px;
+            font-size: 0;
+        }
+
+        .header .content-wrapper .avator {
+            display: inline-block;
+            vertical-align: top;
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            margin-right: 8px;
+            overflow: hidden;
+        }
+
+        .header .content-wrapper .contents {
+            display: inline-block;
+            font-size: 14px;
+        }
+
+        .header .content-wrapper .contents .tel {
+            margin: 2px 0 4px 0;
+            font-size: 10px;
+        }
+
+        .header .content-wrapper .contents .level {
+            font-size: 0;
+            margin-bottom: 5px;
+        }
+
+        .header .content-wrapper .contents .symbol {
+            display: inline-block;
+            vertical-align: top;
+            width: 12px;
+            height: 12px;
+            margin-right: 5px;
+            background-image: url(../images/symbol.png);
+            background-size: 12px 12px;
+            background-repeat: no-repeat;
+        }
+
+        .header .content-wrapper .contents .discription {
+            font-size: 10px;
+            line-height: 12px;
+        }
+
+        .header .content-wrapper .brand-list {
+            font-size: 0;
+        }
+
+        .header .content-wrapper .brand {
+            display: inline-block;
+            margin-right: 5px;
+            overflow: hidden;
+            width: 23px;
+            height: 23px;
+            border-radius: 50%;
+        }
+
+        .header .content-wrapper .qr-code {
+            display: inline-block;
+            position: absolute;
+            right: 10px;
+            bottom: 20px;
+            width: 23px;
+            height: 23px;
+        }
+
+        .content {
+            position: absolute;
+            top: 145px;
+            background: #f8f8f8;
+        }
+
+        .my-record {
+            display: flex;
+            width: 100%;
+            height: 50px;
+            position: relative;
+            flex-flow: row nowrap;
+            justify-content: space-between;
+            align-items: stretch;
+            background-color: #fff;
+            color: #2f2f2f;
+        }
+
+        .my-record .item {
+            flex: 1 1 auto;
+            height: 98%;
+            text-align: center;
+            position: relative;
+            box-sizing: border-box;
+        }
+
+        .my-record::before {
+            content: " ";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            height: 1px;
+            border-top: 1px solid #e5e5e5;
+            color: #e5e5e5;
+            -webkit-transform-origin: 0 0;
+            transform-origin: 0 0;
+            -webkit-transform: scaleY(0.5);
+            transform: scaleY(0.5);
+            z-index: 2;
+        }
+
+        .my-record .item:before {
+            content: " ";
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 1px;
+            bottom: 0;
+            border-right: 1px solid #D9D9D9;
+            color: #D9D9D9;
+            -webkit-transform-origin: 100% 0;
+            transform-origin: 100% 0;
+            -webkit-transform: scaleX(0.5);
+            transform: scaleX(0.5);
+        }
+
+        .my-record .item .name {
+            font-size: 10px;
+        }
+
+        .my-record .item .title {
+            font-size: 12px;
+        }
+
+        .order-cells {
+            width: 100%;
+            font-size: 13px;
+            padding: 20px 5.6%;
+            margin: auto;
+            margin-bottom: 10px;
+            display: flex;
+            box-sizing: border-box;
+            flex-flow: row nowrap;
+            justify-content: space-between;
+            background-color: #fff;
+        }
+
+        .order-cells .order-manager {
+            width: 71.5%;
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: space-between;
+        }
+
+        .order-cells .order-manager .item {
+            flex: 49.5% 0;
+            height: 61px;
+            text-align: center;
+            background: #f8f8f8;
+            color: #979797;
+        }
+
+        .order-cells .all-orders {
+            width: 28%;
+            height: 125px;
+            background: #f8f8f8;
+            text-align: center;
+            color: #979797;
+        }
+
+        .order-cells .all-orders .icon {
+            margin-top: 32px;
+        }
+
+        .order-cells .icon {
+            width: 20px;
+            margin: 14px auto 0;
+            color: #cccccc;
+        }
+
+        .my-service {
+            margin-bottom: 10px;
+            background-color: #fff;
+        }
+
+        .my-service .title {
+            width: 100%;
+            height: 39px;
+            line-height: 39px;
+            padding-left: 22px;
+            color: #303030;
+            font-size: 14px;
+            position: relative;
+            box-sizing: border-box;
+        }
+
+        .my-service .title::before {
+            content: " ";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            height: 1px;
+            border-top: 1px solid #e5e5e5;
+            color: #e5e5e5;
+            -webkit-transform-origin: 0 0;
+            transform-origin: 0 0;
+            -webkit-transform: scaleY(0.5);
+            transform: scaleY(0.5);
+            z-index: 2;
+        }
+
+        .my-service .items-wrapper {
+            display: flex;
+            width: 100%;
+            flex-flow: row nowrap;
+            height: 82px;
+        }
+
+        .my-service .icon {
+            width: 17px;
+            height: 17px;
+            margin: 20px auto 0;
+        }
+
+        .my-service .item {
+            flex: 1 1 auto;
+            height: 100%;
+            text-align: center;
+            font-size: 13px;
+            color: #979797;
+        }
+
+        .my-service .item .border-wrapper {
+            position: relative;
+            box-sizing: border-box;
+        }
+
+        .my-service .item .border-wrapper::before {
+            content: " ";
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 1px;
+            bottom: 0;
+            border-right: 1px solid #D9D9D9;
+            color: #D9D9D9;
+            -webkit-transform-origin: 100% 0;
+            transform-origin: 100% 0;
+            -webkit-transform: scaleX(0.5);
+            transform: scaleX(0.5);
+        }
+
+        .others {
+            color: #303030;
+            font-size: 14px;
+        }
+    </style>
+    <!-- 该页面应用css区域 -->
+</head>
+
+<body ontouchstart>
+    <!-- 头部 -->
+    <header>
+        <div class="header">
+            <div class="background"></div>
+            <div class="content-wrapper">
+                <div class="avator">
+                    <img src="../images/avator.png">
+                </div>
+                <div class="contents">
+                    <div class="tel">189****1234</div>
+                    <div class="level">
+                        <span class="symbol"></span>
+                        <span class="discription">黑金会员</span>
+                    </div>
+                    <div class="brand-list">
+                        <span class="brand"><img src="../images/nb.png"></span>
+                        <span class="brand"><img src="../images/nb.png"></span>
+                        <span class="brand"><img src="../images/nb.png"></span>
+                        <span class="brand"><img src="../images/nb.png"></span>
+                        <span class="brand"><img src="../images/add-brand.png"></span>
+                    </div>
+                </div>
+                <div class="qr-code"><img src="../images/qrcode.png"></div>
+            </div>
+        </div>
+    </header>
+    <!-- 头部 -->
+    <div class="content">
+        <!-- 记录菜单 -->
+        <div class="my-record">
+            <div class="item">
+                <div class="num">99</div>
+                <div class="title">愿望清单</div>
+            </div>
+            <div class="item">
+                <div class="num">24</div>
+                <div class="title">关注品牌</div>
+            </div>
+            <div class="item">
+                <div class="num">33</div>
+                <div class="title">浏览记录</div>
+            </div>
+        </div>
+        <!-- 记录菜单 -->
+
+        <!-- 订单管理菜单 -->
+        <div class="order-cells">
+            <div class="item order-manager">
+                <div class="item unpaid">
+                    <div class="icon"><img src="../images/dfk.png"></div>
+                    <div>待付款</div>
+
+                </div>
+                <div class="item not-rated">
+                    <div class="icon"><img src="../images/dpj.png"></div>
+                    <div>待评价</div>
+                </div>
+                <div class="item not-shipped">
+                    <div class="icon"><img src="../images/dfh.png"></div>
+                    <div>待发货</div>
+                </div>
+                <div class="item not-received">
+                    <div class="icon"><img src="../images/dsh.png"></div>
+                    <div>待收货</div>
+                </div>
+            </div>
+            <div class="item all-orders">
+                <div class="icon"><img src="../images/bj.png"></div>
+                <div>全部订单</div>
+            </div>
+        </div>
+        <!-- 订单管理菜单 -->
+
+        <!-- 我的服务 -->
+        <div class="my-service">
+            <div class="title">我的服务</div>
+            <div class="items-wrapper">
+                <div class="item">
+                    <div class="border-wrapper">
+                        <div class="icon"><img src="../images/tcgz.png"></div>
+                        <div>售后服务</div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="border-wrapper">
+                        <div class="icon"><img src="../images/yhq.png"></div>
+                        <div>优惠券</div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="border-wrapper">
+                        <div class="icon"><img src="../images/dz.png"></div>
+                        <div>收货地址</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 我的服务 -->
+
+        <!-- 其他项 -->
+        <div class="weui-cells others">
+            <a class="weui-cell weui-cell_access" href="javascript:;">
+                <div class="weui-cell__hd"><img src="../images/sz.png" alt="" style="width:20px;margin-right:5px;display:block"></div>
+                <div class="weui-cell__bd">
+                    <p>设置</p>
+                </div>
+                <div class="weui-cell__ft"></div>
+            </a>
+            <a class="weui-cell weui-cell_access" href="javascript:;">
+                <div class="weui-cell__hd"><img src="../images/bz.png" alt="" style="width:20px;margin-right:5px;display:block"></div>
+                <div class="weui-cell__bd">
+                    <p>帮助</p>
+                </div>
+                <div class="weui-cell__ft"></div>
+            </a>
+        </div>
+        <!-- 其他项 -->
+    </div>
+    <footer>
+        <div class="weui-tabbar">
+            <a href="#" class="weui-tabbar__item weui-bar__item--on index active">
+                <div class="weui-tabbar__icon add-d-img">
+                    <span><img src="../images/index.png"/></span>
+                </div>
+                <p class="weui-tabbar__label">首页</p>
+            </a>
+            <a href="#" class="weui-tabbar__item weui-bar__item--on classify">
+                <div class="weui-tabbar__icon">
+                    <span><img src="../images/z-53-2-3.png" class='gray'/></span>
+                </div>
+                <p class="weui-tabbar__label">分类</p>
+            </a>
+            <a href="#" class="weui-tabbar__item weui-bar__item--on cart">
+                <div class="weui-tabbar__icon">
+                    <span><img src="../images/z-53-2-4.png"/></span>
+                    <span class="weui-badge" style="position: absolute;top: -.4em;right: 1em;">8</span>
+                </div>
+                <p class="weui-tabbar__label">购物车</p>
+            </a>
+            <a href="#" class="weui-tabbar__item weui-bar__item--on personage">
+                <div class="weui-tabbar__icon">
+                    <span><img src="../images/z-53-2-1.png"/></span>
+                </div>
+                <p class="weui-tabbar__label">个人</p>
+            </a>
+        </div>
+    </footer>
+
+    <!-- 公共js区域 -->
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/jquery-weui.min.js"></script>
+    <script src="../js/swiper.min.js"></script>
+    <script src="../js/city-picker.min.js"></script>
+    <!-- 公共js区域完 -->
+    <!-- 该页面应用js区域 -->
+    <script type="text/javascript">
+        $(function () {
+
+        });
+    </script>
+    <!-- 该页面应用js区域 -->
+</body>
+
+</html>

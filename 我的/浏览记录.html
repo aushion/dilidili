@@ -1,0 +1,304 @@
+<!--制作lJ-->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <meta name="format-detection" content="telephone=no">
+    <!-- 公共css区域 -->
+    <link rel="stylesheet" href="../css/weui.min.css">
+    <link rel="stylesheet" href="../css/jquery-weui.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <!-- 公共css完区域 -->
+    <!-- 该页面应用css区域 -->
+    <style type="text/css">
+        /*L-J自定样式*/
+        .clearfix:before,.clearfix:after {content: "";display: block;height: 0;visibility: hidden;}
+        .clearfix:after {clear: both;}
+        .clearfix {zoom: 1;}/*兼容IE6/7*/
+        .container .weui-panel:before,  .container .weui-panel:after{position: static;}
+        .container-wrap{padding: 0 0.5rem;}
+
+        .detel-border{border: none!important;}
+
+        .container .item-after{font-size: 0.6rem;color: #b0b0b0;}
+
+        .container .text-center{text-align: center;}
+
+        /*该页面样式*/
+        .content{bottom: 0;}
+        .header-top .self-center{font-size: 0.8rem;}
+        .header-top .self-right{font-size: 0.7rem;color: #b0b0b0;}
+
+        .item-wrap{overflow: hidden;border-bottom: 1px solid #dfdfdf;}
+        .item-wrap:last-child{border-bottom: 0;}
+        .item-wrap .item{background: #fff;width: 125%;overflow: hidden;position: relative;display: -webkit-box;-webkit-transition: all 0.3s linear;}
+        .item-wrap .item .img-item{width: 60px;margin: 10px;}
+        .item-wrap .item .img-item img{width: 100%;}
+        .item-wrap .item .txt-item{padding-top: 10px;margin-right:25px;font-size: 14px;line-height: 24px;color: #666;-webkit-box-flex:1;position: relative;}
+        .item-wrap .item .txt-item .name{overflow : hidden;text-overflow: ellipsis;display: -webkit-box;-webkit-line-clamp: 1;-webkit-box-orient: vertical;font-size: 0.7rem;width: 90%;}
+        .item-wrap .item .arrow{width: 0;height: 0;line-height: 0;font-size: 0;border-style: solid;border-color: transparent transparent transparent #fff;border-width: 8px 0px 8px 8px;position: absolute;right: 22%;top: 50%;margin-top: -8px;}
+        .delect-btn{width: 17%;color: #fff;background: #d0021b;z-index:999;display: block;text-align: center;font-size: 0.7rem;padding-right: 0.5rem;}
+        .item-wrap .selected{-webkit-transform: translate(-16%);-webkit-transition: all 0.3s linear;}
+        .item-wrap .item .txt-item .del{position: absolute;right: -0.75rem;top: 1.75rem;}
+        .item-wrap .item .txt-item .del i{font-size: 1rem;color: #b0b0b0;}
+        .item-wrap .item .txt{margin-top: 0.6rem;}
+
+        .classification ul{padding-top: 0.5rem;padding-left: 0.5rem;padding-right:0.5rem;margin: 0 0 0.5rem;list-style-type: none;background-color: #FFF;}
+        .classification li{float: left;width: 20.8%;border: 1px solid #dfdfdf;border-radius: 0.1rem;margin-bottom: 0.5rem;margin-right: 4.7%;}
+        .classification li:nth-of-type(4n){margin-right: 0;}
+        .classification li.active{border-color: #666;color: #666;}
+        .list{width: 100%;margin-top: 0;}
+        .list .weui-media-box_appmsg .weui-media-box__hd{height: auto;}
+        .list .weui-media-box_appmsg{align-items:end;}
+        .list .weui-cell_access .weui-cell__ft{position: initial;}
+        .list .weui-cell_access .weui-cell__ft:after{right: 0.75rem;}
+        .list .weui-media-box__title, .list .weui-media-box__desc{font-size: 0.7rem;color: #666;white-space: inherit;word-wrap: normal;word-break: inherit;overflow : hidden;text-overflow: ellipsis;display: -webkit-box;-webkit-line-clamp: 1;-webkit-box-orient: vertical;}
+        .list .a-gutter{margin-top: 0.3rem;}
+        .container .weui-media-box:before{left: 87px;border-color: #dfdfdf;}
+        .container .weui-media-box{padding: 15px 10px;}
+        .con .weui-media-box__title, .list .weui-media-box__desc{font-size: 0.6rem;}
+        .container-white2{padding: 0.5rem;background-color: #FFF;}
+        .container-white{background-color: #FFF;}
+        .weui-dialog__title{font-size: 0.7rem;}
+        .weui-prompt-input{border: none;font-size: 0.6rem;color: #666;}
+        .weui-dialog__ft{font-size: 0.7rem;}
+        .weui-dialog__btn{color: #666;}
+        .weui-dialog__btn.default{color: #999!important;}
+    </style>
+    <!-- 该页面应用css区域 -->
+</head>
+<body ontouchstart>
+<header>
+    <div class="header-top detel-border">
+        <div class="pull-left"><i class="iconfont">&#xe600;</i></div>
+        <div class="pull-center self-center">浏览记录</div>
+        <div class="pull-right self-right empty">清空</div>
+    </div>
+</header>
+<div class="content container">
+    <div class="weui-pull-to-refresh__layer">
+        <div class='weui-pull-to-refresh__arrow'></div>
+        <div class='weui-pull-to-refresh__preloader'></div>
+        <div class="down">下拉刷新</div>
+        <div class="up">释放刷新</div>
+        <div class="refresh">正在刷新</div>
+    </div>
+    <div class="classification">
+        <ul class="clearfix item-after text-center">
+            <li class="active">全部</li>
+            <li>一级分类</li>
+            <li>一级分类</li>
+            <li>一级分类</li>
+            <li>一级分类</li>
+        </ul>
+    </div>
+    <div class="lists content-padded">
+        <div class="item-wrap">
+            <div class="item clearfix">
+                <div class="img-item">
+                    <img src="../images/sp.jpg">
+                </div>
+                <div class="txt-item">
+                    <p class="name">
+                        商品名称商品名称商品名称商品名称商品名称商品名称商品名称商品名称商品名称
+                    </p>
+                    <p class="txt">
+                        ￥259.00
+                    </p>
+                    <span class="del"><i class="iconfont">&#xe616;</i></span>
+                </div>
+                <a class="delect-btn">删除</a>
+            </div>
+        </div>
+        <div class="item-wrap">
+            <div class="item clearfix">
+                <div class="img-item">
+                    <img src="../images/sp.jpg">
+                </div>
+                <div class="txt-item">
+                    <p class="name">
+                        商品名称商品名称商品名称商品名称商品名称商品名称商品名称商品名称商品名称
+                    </p>
+                    <p class="txt">
+                        ￥259.00
+                    </p>
+                    <span class="del"><i class="iconfont">&#xe616;</i></span>
+                </div>
+                <a class="delect-btn">删除</a>
+            </div>
+        </div>
+        <div class="item-wrap">
+            <div class="item clearfix">
+                <div class="img-item">
+                    <img src="../images/sp.jpg">
+                </div>
+                <div class="txt-item">
+                    <p class="name">
+                        商品名称商品名称商品名称商品名称商品名称商品名称商品名称商品名称商品名称
+                    </p>
+                    <p class="txt">
+                        ￥259.00
+                    </p>
+                    <span class="del"><i class="iconfont">&#xe616;</i></span>
+                </div>
+                <a class="delect-btn">删除</a>
+            </div>
+        </div>
+        <div class="item-wrap">
+            <div class="item clearfix">
+                <div class="img-item">
+                    <img src="../images/sp.jpg">
+                </div>
+                <div class="txt-item">
+                    <p class="name">
+                        商品名称商品名称商品名称商品名称商品名称商品名称商品名称商品名称商品名称
+                    </p>
+                    <p class="txt">
+                        ￥259.00
+                    </p>
+                    <span class="del"><i class="iconfont">&#xe616;</i></span>
+                </div>
+                <a class="delect-btn">删除</a>
+            </div>
+        </div>
+        <div class="item-wrap">
+            <div class="item clearfix">
+                <div class="img-item">
+                    <img src="../images/sp.jpg">
+                </div>
+                <div class="txt-item">
+                    <p class="name">
+                        商品名称商品名称商品名称商品名称商品名称商品名称商品名称商品名称商品名称
+                    </p>
+                    <p class="txt">
+                        ￥259.00
+                    </p>
+                    <span class="del"><i class="iconfont">&#xe616;</i></span>
+                </div>
+                <a class="delect-btn">删除</a>
+            </div>
+        </div>
+        <div class="item-wrap">
+            <div class="item clearfix">
+                <div class="img-item">
+                    <img src="../images/sp.jpg">
+                </div>
+                <div class="txt-item">
+                    <p class="name">
+                        商品名称商品名称商品名称商品名称商品名称商品名称商品名称商品名称商品名称
+                    </p>
+                    <p class="txt">
+                        ￥259.00
+                    </p>
+                    <span class="del"><i class="iconfont">&#xe616;</i></span>
+                </div>
+                <a class="delect-btn">删除</a>
+            </div>
+        </div>
+    </div>
+    <!--<div class="weui-panel weui-panel_access list con">
+        <div class="weui-panel__bd weui-cell_access">
+            <a href="#" class="weui-media-box weui-media-box_appmsg container-white">
+                <div class="weui-media-box__hd">
+                    <img class="weui-media-box__thumb" src="../images/sp.jpg"/>
+                </div>
+                <div class="weui-media-box__bd">
+                    <h4 class="weui-media-box__title">商品名称商品名称商品名称商品名称商品名称商品名称商品名称商品名称商品名称</h4>
+                    <p class="weui-media-box__desc a-gutter">￥259.00</p>
+                </div>
+                <span class="weui-cell__ft"></span>
+            </a>
+            <a href="#" class="weui-media-box weui-media-box_appmsg container-white">
+                <div class="weui-media-box__hd">
+                    <img class="weui-media-box__thumb" src="../images/sp.jpg"/>
+                </div>
+                <div class="weui-media-box__bd">
+                    <h4 class="weui-media-box__title">商品名称商品名称商品名称商品名称商品名称商品名称商品名称商品名称商品名称</h4>
+                    <p class="weui-media-box__desc a-gutter">￥259.00</p>
+                </div>
+                <span class="weui-cell__ft"></span>
+            </a>
+            <a href="#" class="weui-media-box weui-media-box_appmsg container-white">
+                <div class="weui-media-box__hd">
+                    <img class="weui-media-box__thumb" src="../images/sp.jpg"/>
+                </div>
+                <div class="weui-media-box__bd">
+                    <h4 class="weui-media-box__title">商品名称商品名称商品名称商品名称商品名称商品名称商品名称商品名称商品名称</h4>
+                    <p class="weui-media-box__desc a-gutter">￥259.00</p>
+                </div>
+                <span class="weui-cell__ft"></span>
+            </a>
+            <a href="#" class="weui-media-box weui-media-box_appmsg container-white">
+                <div class="weui-media-box__hd">
+                    <img class="weui-media-box__thumb" src="../images/sp.jpg"/>
+                </div>
+                <div class="weui-media-box__bd">
+                    <h4 class="weui-media-box__title">商品名称商品名称商品名称商品名称商品名称商品名称商品名称商品名称商品名称</h4>
+                    <p class="weui-media-box__desc a-gutter">￥259.00</p>
+                </div>
+                <span class="weui-cell__ft"></span>
+            </a>
+            <a href="#" class="weui-media-box weui-media-box_appmsg container-white">
+                <div class="weui-media-box__hd">
+                    <img class="weui-media-box__thumb" src="../images/sp.jpg"/>
+                </div>
+                <div class="weui-media-box__bd">
+                    <h4 class="weui-media-box__title">商品名称商品名称商品名称商品名称商品名称商品名称商品名称商品名称商品名称</h4>
+                    <p class="weui-media-box__desc a-gutter">￥259.00</p>
+                </div>
+                <span class="weui-cell__ft"></span>
+            </a>
+            <a href="#" class="weui-media-box weui-media-box_appmsg container-white">
+                <div class="weui-media-box__hd">
+                    <img class="weui-media-box__thumb" src="../images/sp.jpg"/>
+                </div>
+                <div class="weui-media-box__bd">
+                    <h4 class="weui-media-box__title">商品名称商品名称商品名称商品名称商品名称商品名称商品名称商品名称商品名称</h4>
+                    <p class="weui-media-box__desc a-gutter">￥259.00</p>
+                </div>
+                <span class="weui-cell__ft"></span>
+            </a>
+        </div>
+    </div>-->
+    <div class="weui-loadmore">
+        <i class="weui-loading"></i>
+        <span class="weui-loadmore__tips">正在加载</span>
+    </div>
+</div>
+<!-- 公共js区域 -->
+<script src="../js/jquery.min.js"></script>
+<script src="../js/jquery-weui.min.js"></script>
+<script src="../js/swiper.min.js"></script>
+<script src="../js/city-picker.min.js"></script>
+<!-- 公共js区域完 -->
+<!-- 该页面应用js区域 -->
+<script type="text/javascript">
+    $("body").on("click",".classification li",function () {
+        $(this).addClass("active").siblings().removeClass("active")
+    })
+    $(".empty").click(function () {
+        $.confirm("确定清空?");
+        $(".weui-dialog .weui-dialog__hd").empty();
+        $(".weui-dialog .weui-dialog__bd").css("color","#666")
+    })
+    $(".content").pullToRefresh();
+    $(".content").on("pull-to-refresh", function() {
+       setTimeout("location.reload()",1000);
+    });
+    $(".content").infinite();
+    var loading = false;  //状态标记
+    $(".content").infinite().on("infinite", function() {
+      if(loading) return;
+      loading = true;
+      setTimeout(function() {
+        $(".weui-panel__bd").append('<a href="#" class="weui-media-box weui-media-box_appmsg container-white"><div class="weui-media-box__hd"><img class="weui-media-box__thumb" src="../images/sp.jpg"/></div><div class="weui-media-box__bd"><h4 class="weui-media-box__title">商品名称商品名称商品名称商品名称商品名称商品名称商品名称商品名称商品名称</h4><p class="weui-media-box__desc a-gutter">￥259.00</p></div><span class="weui-cell__ft"></span></a><a href="#" class="weui-media-box weui-media-box_appmsg container-white"><div class="weui-media-box__hd"><img class="weui-media-box__thumb" src="../images/sp.jpg"/></div><div class="weui-media-box__bd"><h4 class="weui-media-box__title">商品名称商品名称商品名称商品名称商品名称商品名称商品名称商品名称商品名称</h4><p class="weui-media-box__desc a-gutter">￥259.00</p></div><span class="weui-cell__ft"></span></a><a href="#" class="weui-media-box weui-media-box_appmsg container-white"><div class="weui-media-box__hd"><img class="weui-media-box__thumb" src="../images/sp.jpg"/></div><div class="weui-media-box__bd"><h4 class="weui-media-box__title">商品名称商品名称商品名称商品名称商品名称商品名称商品名称商品名称商品名称</h4><p class="weui-media-box__desc a-gutter">￥259.00</p></div><span class="weui-cell__ft"></span></a><a href="#" class="weui-media-box weui-media-box_appmsg container-white"><div class="weui-media-box__hd"><img class="weui-media-box__thumb" src="../images/sp.jpg"/></div><div class="weui-media-box__bd"><h4 class="weui-media-box__title">商品名称商品名称商品名称商品名称商品名称商品名称商品名称商品名称商品名称</h4><p class="weui-media-box__desc a-gutter">￥259.00</p></div><span class="weui-cell__ft"></span></a>');
+        loading = false;
+      }, 1000);   //模拟延迟
+     });
+</script>
+<!-- 该页面应用js区域 -->
+</body>
+</html>

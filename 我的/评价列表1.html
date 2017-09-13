@@ -1,0 +1,161 @@
+<!--制作ly-->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <meta name="format-detection" content="telephone=no">
+    <!-- 公共css区域 -->
+    <link rel="stylesheet" href="../css/weui.min.css">
+    <link rel="stylesheet" href="../css/jquery-weui.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <!-- 公共css完区域 -->
+    <!-- 该页面应用css区域 -->
+    <style type="text/css">
+        .content{background-color: #F8F8F8;bottom: 0;}
+        .side .swiper-wrapper img{width: 100%;}
+        .evaluate{background-color: #fff;margin-top: 0.5rem;}
+        .evaluate .weui-panel{margin: 0;}
+        .evaluate .weui-panel .weui-media-box__hd{width: 1.8rem;height: 1.8rem;margin-right: 0.25rem;}
+        .evaluate .weui-panel .weui-media-box__hd img{width: 1.8rem;height: 1.8rem;border-radius: 50%;}
+        .evaluate .weui-panel .weui-media-box__bd .weui-media-box__title{font-size: 0.6rem;color: #666;}
+        .evaluate .weui-panel .weui-media-box__bd .weui-media-box__desc{font-size: 0.6rem;color: #b0b0b0;}
+        .evaluate .weui-panel .weui-media-box__bd .weui-media-box__desc i{margin-right: 0.1rem;}
+        .evaluate .weui-panel .weui-media-box__bd .weui-media-box__desc i.red{color: #d0021b;}
+        .evaluate .weui-panel .weui-media-box{padding: 10px 0.5rem;}
+        .evaluate .weui-panel .weui-cell__ft{font-size: 0.6rem;color: #b0b0b0;}
+        .evaluate .weui-panel:after{display: none;}
+        .evaluate .text{padding: 0 0.5rem;font-size: 0.6rem;color: #666;}
+        .evaluate .text .img-ul{overflow: hidden;list-style-type: none;margin:0;}
+        .evaluate .text .img-ul li{width: 3rem;height: 3rem;float: left;margin-right: 0.5rem;margin-top: 0.25rem;}
+        .evaluate .text .img-ul li img{width: 100%;height: 100%;}
+        .evaluate .text .size{height: 1.5rem;line-height: 1.5rem;overflow: hidden;font-size: 0.6rem;}
+
+        .classification ul{padding: 0;margin:  0 0 0.5rem;list-style-type: none;}
+        .classification li{float: left;width: 21.6%;border: 1px solid #dfdfdf;border-radius: 0.1rem;margin-bottom: 0.5rem;margin-right: 4.7%;}
+        .classification li:nth-of-type(4n){margin-right: 0;}
+        .classification li.active{border-color: #666;color: #666;}
+        .container .text-center{text-align: center;}
+        .container .item-after3{font-size: 0.7rem;color: #b0b0b0;}
+        .container-wrap{padding: 0 0.5rem;}
+        .clearfix:after{content: "";display: block;clear: both;}
+        .container .weui-panel:before{position: static;}
+        .container .evaluate .text .size span{float: none;}
+        .container .self-right{font-size: 0.7rem;color: #b0b0b0;}
+        .container-white3{padding-top:0.5rem;background-color: #FFF; }
+    </style>
+    <!-- 该页面应用css区域 -->
+</head>
+<body ontouchstart>
+<header>
+    <div class="header-top">
+        <div class="pull-left"><i class="iconfont">&#xe600;</i></div>
+        <div class="pull-center">晒单评价</div>
+        <div class="pull-right"><i class="iconfont">&#xe603;</i></div>
+    </div>
+</header>
+<div class="content container">
+    <div class="classification container-wrap container-white3">
+        <ul class="clearfix item-after3 text-center">
+            <li class="active">全部<span>50</span></li>
+            <li>有图<span>(50)</span></li>
+        </ul>
+    </div>
+    <div class="evaluate">
+        <div class="weui-panel weui-panel_access">
+            <div class="weui-panel__bd">
+                <a href="javascript:void(0);" class="weui-media-box weui-media-box_appmsg">
+                    <div class="weui-media-box__hd">
+                        <img class="weui-media-box__thumb" src="../images/logo.jpg"/>
+                    </div>
+                    <div class="weui-media-box__bd">
+                        <h4 class="weui-media-box__title">用户名称用户名称</h4>
+                        <p class="weui-media-box__desc">
+                            <i class="iconfont red">&#xe604;</i>
+                            <i class="iconfont red">&#xe604;</i>
+                            <i class="iconfont red">&#xe604;</i>
+                            <i class="iconfont red">&#xe604;</i>
+                            <i class="iconfont">&#xe60f;</i>
+                        </p>
+                    </div>
+                    <div class="weui-cell__ft">2017-01-01 10:50</div>
+                </a>
+            </div>
+        </div>
+        <div class="text">
+            <p class="del">评价内容评价内容评价内容评价内容评价内容评价内容评价内容评价内容评价内容评价内容评价内容评价内容评价内容评价内容</p>
+            <ul class="img-ul">
+                <li><img src="../images/logo.jpg"/></li>
+                <li><img src="../images/logo.jpg"/></li>
+                <li><img src="../images/logo.jpg"/></li>
+                <li><img src="../images/logo.jpg"/></li>
+            </ul>
+            <div class="size self-right"><span>颜色 : <span>黑色</span></span> <span>尺码 : <span>XL</span></span></div>
+        </div>
+    </div>
+    <div class="evaluate">
+        <div class="weui-panel weui-panel_access">
+            <div class="weui-panel__bd">
+                <a href="javascript:void(0);" class="weui-media-box weui-media-box_appmsg">
+                    <div class="weui-media-box__hd">
+                        <img class="weui-media-box__thumb" src="../images/logo.jpg"/>
+                    </div>
+                    <div class="weui-media-box__bd">
+                        <h4 class="weui-media-box__title">用户名称用户名称</h4>
+                        <p class="weui-media-box__desc">
+                            <i class="iconfont red">&#xe604;</i>
+                            <i class="iconfont red">&#xe604;</i>
+                            <i class="iconfont red">&#xe604;</i>
+                            <i class="iconfont red">&#xe604;</i>
+                            <i class="iconfont">&#xe60f;</i>
+                        </p>
+                    </div>
+                    <div class="weui-cell__ft">2017-01-01 10:50</div>
+                </a>
+            </div>
+        </div>
+        <div class="text">
+            <p class="del">评价内容评价内容评价内容评价内容评价内容评价内容评价内容评价内容评价内容评价内容评价内容评价内容评价内容评价内容</p>
+            <ul class="img-ul">
+                <li><img src="../images/logo.jpg"/></li>
+                <li><img src="../images/logo.jpg"/></li>
+                <li><img src="../images/logo.jpg"/></li>
+                <li><img src="../images/logo.jpg"/></li>
+            </ul>
+            <div class="size self-right"><span>颜色 : <span>黑色</span></span> <span>尺码 : <span>XL</span></span></div>
+        </div>
+    </div>
+</div>
+<!-- 公共js区域 -->
+<script src="../js/jquery.min.js"></script>
+<script src="../js/jquery-weui.min.js"></script>
+<script src="../js/swiper.min.js"></script>
+<script src="../js/city-picker.min.js"></script>
+<!-- 公共js区域完 -->
+<!-- 该页面应用js区域 -->
+<script type="text/javascript">
+    $(function(){
+        //加的效果
+        $(".add").click(function(){
+            var n=$(this).prev().val();
+            var num=parseInt(n)+1;
+            if(num==0){ return;}
+            $(this).prev().val(num);
+        });
+        //减的效果
+        $(".jian").click(function(){
+            var n=$(this).next().val();
+            var num=parseInt(n)-1;
+            if(num==0){ return}
+            $(this).next().val(num);
+        });
+    });
+    $("body").on("click",".classification li",function () {
+        $(this).addClass("active").siblings().removeClass("active")
+    });
+</script>
+<!-- 该页面应用js区域 -->
+</body>
+</html>

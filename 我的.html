@@ -1,0 +1,216 @@
+<!--制作ly-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+        <meta name="format-detection" content="telephone=no">
+        <!-- 公共css区域 -->
+        <link rel="stylesheet" href="../css/weui.min.css">
+        <link rel="stylesheet" href="../css/jquery-weui.min.css">
+        <link rel="stylesheet" href="../css/style.css">
+        <!-- 公共css完区域 -->
+        <!-- 该页面应用css区域 -->
+        <style type="text/css">
+        .content{background-color: #F8F8F8;top: 0px;}
+        .head{height: 145px;background: url(../images/bg-my.png);background-size: 100% 100%;}
+        .head .header-top{padding: 0 0.5rem;line-height: 45px;border:0;position: relative;height: 45px;color: #fff;}
+        .head .header-top .pull-center{color: #fff;}
+        .head .header-top .pull-right span{position:relative;}
+        .head .header-top .pull-right span i{font-size: 1.2rem;}
+        .head .header-top .pull-right span .number{width: 0.8rem;height: 0.8rem;background-color:#f43530;border-radius: 50%;font-size: 0.4rem;line-height: 0.8rem;text-align: center;color: #fff;position: absolute;top: -0.5rem;right: -0.25rem;}
+        .head .head-personage{height: 100px;padding: 0 0.5rem;position: relative;}
+        .head .head-personage .avatar{width: 70px;height: 70px;margin-top: 15px;position: relative;}
+        .head .head-personage .avatar img{width: 100%;height: 100%;border-radius: 50%;}
+        .head .head-personage .avatar .phone{position: absolute;top: 25px;left: 80px;font-size: 0.6rem;color: #fff;}
+        .head .head-personage .ewm{position: absolute;top: 13px;right: 0.5rem;}
+        .head .head-personage .ewm i{font-size: 1.2rem;color: #fff;}
+        .row{background-color: #fff;padding: 0.35rem 0;}
+        .row .weui-flex{text-align:center;font-size: 0.6rem;color: #666;}
+        .row .weui-flex .weui-flex__item{border-right: 1px solid #dfdfdf;}
+        .row .weui-flex .weui-flex__item:last-child{border-right: 0;}
+        .weui-cells:after, .weui-cells:before{display: none;}
+        .rows .weui-cells{margin-top: 0.5rem;}
+        .rows .weui-cell__bd{font-size: 0.7rem;color: #666;}
+        .rows .weui-cell__ft{font-size: 0.6rem;color: #b0b0b0;}
+        .rows .chunk{background-color: #fff;border-top: 1px solid #dfdfdf;text-align: center;font-size: 0.5rem;color: #666;padding: 0.5rem 0;}
+        .rows .chunk .typeface .add{position: relative;width: 1.5rem;height: 1.5rem;margin:0 auto;}
+        .rows .chunk .typeface img{width: 1.5rem;height: 1.5rem;}
+        .rows .chunk .typeface span{position: relative;}
+        .rows .chunk .typeface i{font-size: 1rem;color: #666;}
+        .rows .chunk .typeface .number{width: 0.7rem;height: 0.7rem;background-color: #d0021b;color: #fff;font-size: 0.5rem;text-align: center;line-height: 0.7rem;border-radius: 50%;position: absolute;top: 0rem;right: 0rem;}
+        #about{z-index: 9999;position: absolute;}
+        .ewm-content{bottom: 0;background-color: #666;top: 45px;}
+        .ewm-content .main{background-color: #fff;width: 90%;height: 85%;margin-left: 5%;margin-top: 7.5%;border-radius: 3px;padding: 1rem 1rem; -webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;}
+        .ewm-content .main .head-img{width: 100px;text-align: center;font-size: 0.7rem;color: #666;margin:0 auto;}
+        .ewm-content .main .head-img img{width: 70px;height: 70px;border-radius: 50%;}
+        .ewm-content .main .head-img p{font-size: 0.9rem;}
+        .ewm-content .main .ewm-img{width: 100%;}
+        .ewm-content .main .ewm-img img{width: 100%;height: 100%;}
+        </style>
+        <!-- 该页面应用css区域 -->
+    </head>
+    <body ontouchstart>	
+	<div class="content">
+        <div class="head">
+            <div class="header-top">
+                <div class="pull-left"><i class="iconfont">&#xe600;</i></div>
+                <div class="pull-center">账户安全</div>
+                <div class="pull-right"><span class="inform"><i class="iconfont">&#xe632;</i><div class="number">99+</div></span></div>
+            </div>
+            <div class="head-personage">
+                <div class="avatar"><img src="../images/logo.jpg"/><span class="phone">189****1111</span></div>
+                <div class="ewm"><a href="javascript:;" class="open-popup" data-target=""><i class="iconfont">&#xe61a;</i></a></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="weui-flex">
+                <div class="weui-flex__item">
+                    <p>100</p>
+                    <p>收藏的商品</p>
+                </div>
+                <div class="weui-flex__item">
+                    <p>100</p>
+                    <p>收藏的品牌</p>
+                </div>
+                <div class="weui-flex__item">
+                    <p>100</p>
+                    <p>浏览记录</p>
+                </div>
+            </div>
+        </div>
+        <div class="rows">
+            <div class="weui-cells">
+                <a class="weui-cell weui-cell_access" href="#">
+                    <div class="weui-cell__bd">
+                        <p>我的订单</p>
+                    </div>
+                    <div class="weui-cell__ft">查看全部订单</div>
+                </a>
+            </div>
+            <div class="weui-flex chunk">
+                <div class="weui-flex__item">
+                    <div class="typeface"><div class="add"><img src="../images/dfk.png"/><div class="number">10</div></div></div>
+                    <p>待付款</p>
+                </div>
+                <div class="weui-flex__item">
+                    <div class="typeface"><div class="add"><img src="../images/dfh.png"/></div></div>
+                    <p>待发货</p>
+                </div>
+                <div class="weui-flex__item">
+                    <div class="typeface"><div class="add"><img src="../images/dsh.png"/></div></div>
+                    <p>待收货</p>
+                </div>
+                <div class="weui-flex__item">
+                    <div class="typeface"><div class="add"><img src="../images/dpj.png"/></div></div>
+                    <p>待评价</p>
+                </div>
+                <div class="weui-flex__item">
+                    <div class="typeface"><div class="add"><img src="../images/sh.png"/></div></div>
+                    <p>售后服务</p>
+                </div>
+            </div>
+        </div>
+        <div class="rows">
+            <div class="weui-cells">
+                <a class="weui-cell weui-cell_access" href="#">
+                    <div class="weui-cell__bd">
+                        <p>我的服务</p>
+                    </div>
+                </a>
+            </div>
+            <div class="weui-flex chunk">
+                <div class="weui-flex__item">
+                    <div class="typeface"><div class="add"><img src="../images/dz.png"/></div></div>
+                    <p>地址</p>
+                </div>
+                <div class="weui-flex__item">
+                    <div class="typeface"><div class="add"><img src="../images/yhq.png"/></div></div>
+                    <p>优惠券</p>
+                </div>
+                <div class="weui-flex__item">
+                    <div class="typeface"><div class="add"><img src="../images/tcgz.png"/></div></div>
+                    <p>提成</p>
+                </div>
+                <div class="weui-flex__item">
+                    <div class="typeface"><div class="add"><img src="../images/sz.png"/></div></div>
+                    <p>设置</p>
+                </div>
+                <div class="weui-flex__item">
+                    <div class="typeface"><div class="add"><img src="../images/bz.png"/></div></div>
+                    <p>帮助</p>
+                </div>
+            </div>
+        </div>
+   	</div>
+    <div id="about" class="weui-popup__container">
+            <div class="weui-popup__overlay"></div>
+            <div class="weui-popup__modal">
+                <header>
+                    <div class="header-top">
+                        <a class='close-popup'><div class="pull-left ewm-return"><i class="iconfont">&#xe600;</i></div></a>
+                        <div class="pull-center">我的二维码</div>
+                    </div>
+                </header>
+                <div class="content ewm-content">
+                    <div class="main">
+                        <div class="head-img">
+                            <p><img src="../images/logo.jpg"/></p>
+                            <p>188****1111</p>
+                        </div>
+                        <div class="ewm-img"><img src="../images/weixin-qr.jpg"/></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <footer>
+        <div class="weui-tabbar">
+            <a href="#" class="weui-tabbar__item weui-bar__item--on index">
+                <div class="weui-tabbar__icon add-d-img">
+                    <span><img src="images/z-53-2-2.png"/></span>
+                </div>
+                <p class="weui-tabbar__label">首页</p>
+            </a>
+            <a href="#" class="weui-tabbar__item weui-bar__item--on classify">
+                <div class="weui-tabbar__icon">
+                    <span><img src="images/z-53-2-3.png" class='gray'/></span>
+                </div>
+                <p class="weui-tabbar__label">分类</p>
+            </a>
+            <a href="#" class="weui-tabbar__item weui-bar__item--on cart">
+                <div class="weui-tabbar__icon">
+                   <span><img src="images/z-53-2-4.png"/></span>
+                    <span class="weui-badge" style="position: absolute;top: -.4em;right: 1em;">8</span>
+                </div>
+                <p class="weui-tabbar__label">购物车</p>
+            </a>
+            <a href="#" class="weui-tabbar__item weui-bar__item--on personage active">
+                <div class="weui-tabbar__icon">
+                    <span><img src="images/personage.png"/></span>
+                </div>
+                <p class="weui-tabbar__label">个人</p>
+            </a>
+        </div>
+    </footer>
+    <!-- 公共js区域 --> 
+    <script src="../js/jquery.min.js"></script>
+	<script src="../js/jquery-weui.min.js"></script>
+	<script src="../js/swiper.min.js"></script>
+	<script src="../js/city-picker.min.js"></script>
+    <!-- 公共js区域完 -->
+    <!-- 该页面应用js区域 -->
+    <script type="text/javascript">
+    $(function(){
+        $(".ewm").click(function(){
+            $("#about").popup();
+        });
+        $(".ewm-return").click(function(){
+            $.closePopup();
+        });
+    });
+    </script>
+    <!-- 该页面应用js区域 -->
+    </body>
+</html>

@@ -1,0 +1,337 @@
+<!--制作ly-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+        <meta name="format-detection" content="telephone=no">
+        <!-- 公共css区域 -->
+        <link rel="stylesheet" href="../css/weui.min.css">
+        <link rel="stylesheet" href="../css/jquery-weui.min.css">
+        <link rel="stylesheet" href="../css/style.css">
+        <!-- 公共css完区域 -->
+        <!-- 该页面应用css区域 -->
+        <style type="text/css">
+        .content{background-color: #F8F8F8;top: 0;}
+        .header-top .pull-right i{font-size: 1.3rem;color: #b0b0b0;}
+        .side .swiper-wrapper img{width: 100%;}
+        .side .swiper-container{background-color: #fff;}
+        .side .swiper-pagination-bullet{background: #fff;opacity: 0.7;}
+        .side .swiper-pagination-bullet-active{background-color: #666;opacity: 1;}
+        .side .text{font-size: 0.7rem;color: #666;line-height: 20px;padding: 0rem 0.5rem;background-color: #fff;}
+        .side .money{font-size: 0.6rem;color: #b0b0b0;height: 1rem;padding: 0rem 0.5rem 0.5rem 0.5rem;background-color: #fff;}
+        .side .money span{color: #d0021b;}
+        .side .money s{margin-left: 0.75rem;}
+        .evaluate{background-color: #fff;margin-top: 0.5rem;}
+        .evaluate .weui-cells{background-color: #fff;margin:0;font-size: 0.7rem;color: #666;}
+        .evaluate .weui-cells:after, .evaluate .weui-cells:before{display: none;}
+        .evaluate .weui-cells .weui-cell__ft{color: #b0b0b0;}
+        .evaluate .weui-cells .weui-cell{padding: 10px 0.5rem;}
+        .evaluate .weui-panel{margin: 0;}
+        .evaluate .weui-panel .weui-media-box__hd{width: 1.8rem;height: 1.8rem;margin-right: 0.25rem;}
+        .evaluate .weui-panel .weui-media-box__hd img{width: 1.8rem;height: 1.8rem;border-radius: 50%;}
+        .evaluate .weui-panel .weui-media-box__bd .weui-media-box__title{font-size: 0.6rem;color: #666;}
+        .evaluate .weui-panel .weui-media-box__bd .weui-media-box__desc{font-size: 0.6rem;color: #b0b0b0;}
+        .evaluate .weui-panel .weui-media-box__bd .weui-media-box__desc i{margin-right: 0.1rem;}
+        .evaluate .weui-panel .weui-media-box__bd .weui-media-box__desc i.red{color: #d0021b;}
+        .evaluate .weui-panel .weui-media-box{padding: 10px 0.5rem;}
+        .evaluate .weui-panel .weui-cell__ft{font-size: 0.6rem;color: #b0b0b0;}
+        .evaluate .weui-panel:after{display: none;}
+        .evaluate .text{padding: 0 0.5rem;font-size: 0.6rem;color: #666;}
+        .evaluate .text .img-ul{overflow: hidden;list-style-type: none;margin:0;}
+        .evaluate .text .img-ul li{width: 3rem;height: 3rem;float: left;margin-right: 0.5rem;margin-top: 0.25rem;}
+        .evaluate .text .img-ul li img{width: 100%;height: 100%;}
+        .evaluate .text .size{height: 1.5rem;line-height: 1.5rem;overflow: hidden;font-size: 0.6rem;color: #b0b0b0;}
+        .evaluate .text .size .lump{margin-right: 0.5rem;}
+        .evaluate .text .size .yuan{width: 0.5rem;height: 0.5rem;border-radius: 50%;margin-top: 0.5rem;margin-right: 0.15rem;}
+        .evaluate .text .size .yuan.black{background-color: #000;float: left;}
+        .evaluate .text .size span{float: left;font-size: 0.6rem;}
+        .sp-affiliation{background-color: #fff;margin-top: 0.5rem;}
+        .sp-affiliation .weui-cell__hd img{width: 1.8rem;height: 1.8rem;border-radius: 50%;}
+        .sp-affiliation .weui-cells{background-color: #fff;margin:0;font-size: 0.7rem;color: #666;}
+        .sp-affiliation .weui-cells:after, .sp-affiliation .weui-cells:before{display: none;}
+        .sp-affiliation .weui-cells .weui-cell__ft{color: #b0b0b0;}
+        .sp-affiliation .weui-cells .weui-cell{padding: 10px 0.5rem;}
+        .particulars{background-color: #fff;margin-top: 0.5rem;padding: 0.5rem 0.5rem;}
+        .particulars .tab{font-size: 0.7rem;color: #666;text-align: center;width: 100%;border-collapse: collapse;}
+        .particulars .tab .ly-23{width: 23%;padding: 0.15rem 0;}
+        .particulars .tab .ly-31{width: 31%;padding: 0.15rem 0;}
+        .particulars .tab td{border:1px solid #dfdfdf;}
+        .particulars .text{font-size: 0.7rem;color: #666;margin-top: 1rem;}
+        .particulars .text img{width: 100%;}
+        .bottom{overflow: hidden;height: 100%;font-size: 0.5rem;color: #666;text-align: center; line-height: 46px;}
+        .bottom .ly-17{width: 17%;float: left;height: 100%;border-top: 1px solid #dfdfdf;}
+        .bottom .ly-18{width: 18%;float: left;height: 100%;border-top: 1px solid #dfdfdf;}
+        .bottom .ly-18{width: 18%;float: left;height: 100%;border-top: 1px solid #dfdfdf;}
+        .bottom .ly-19{width: 19%;float: left;height: 100%;border-top: 1px solid #dfdfdf;}
+        .bottom .ly-19 i{font-size: 1rem;}
+        .bottom .ly-26.add-cart{width: 28%;float: left;height: 100%;background-color: #d0021b;color: #fff;font-size: 0.7rem;}
+        .bottom .cart i{font-size: 1.5rem;color: #999;}
+        .bottom .cart div{width: 30px;height: 30px;position: relative;margin: 0 auto;top: 0.15rem;}
+        .bottom .cart div .number{width: 0.8rem;height: 0.8rem;border-radius: 50%;background-color: #d0021b;text-align: center;line-height: 0.8rem;position: absolute;top: 0.25rem;right: -0.25rem;font-size: 0.5rem;color: #fff;}
+        .bottom .add-cart a{color: #fff;}
+        #about{z-index: 9999;background-color:rgba(0,0,0,0.5);}
+        #about .main{background-color: #fff;position: relative;}
+        #about .main .close{position: absolute;top: -0.5rem;right:-0.25rem;padding: 0.5rem;z-index: 99999;}
+        #about .main .close i{font-size: 1rem;color: #b0b0b0;}
+        #about .main .main-chunk{position: relative;height: 4rem;border-right: 1px solid #dfdfdf;overflow: hidden;}
+        #about .main .main-chunk .weui-media-box{padding: 10px 0.5rem;}
+        #about .main .main-chunk .weui-media-box_appmsg .weui-media-box__thumb{width: 60px;}
+        #about .main .main-chunk .weui-media-box__hd{margin-right: 0.25rem;}
+        #about .main .main-chunk .weui-media-box__bd .weui-media-box__title{font-size: 0.7rem;color: #666;margin-top: -0.5rem;}
+        #about .main .main-chunk .weui-media-box__bd .weui-media-box__title .left{color: #d0021b;}
+        #about .main .main-chunk .weui-media-box__bd .weui-media-box__title s{color: #b0b0b0;margin-left: 0.75rem;font-size: 0.6rem;}
+        #about .main .main-chunk .weui-media-box__bd .weui-media-box__desc{color: #666;margin-top: 0.75rem;}
+        #about .main .color{height: 2rem;line-height: 2rem;padding: 0 0.5rem;font-size: 0.7rem;border-bottom: 1px solid #dfdfdf;color: #666;overflow: hidden;}
+        #about .main .color span{float: left;}
+        #about .main .color .yuan{width: 1rem;height: 1rem;border-radius: 50%;float: left;margin-left: 0.5rem;margin-top: 0.5rem;}
+        #about .main .color .yuan.red{background-color: #D6D6D6;}
+        #about .main .color .yuan.green{background-color: #47B79E;}
+        #about .main .color .yardage{font-size: 0.6rem;color: #b0b0b0;text-align: center;line-height: 1rem;}
+        #about .main .color .yardage.active{background-color: #F4F4F4;color: #666;}
+        #about .main .color .actives{opacity: 0.5;}
+        #about .main .color .yardages{font-size: 0.6rem;color: #b0b0b0;text-align: center;line-height: 1rem;border:1px solid #dfdfdf;}
+        #about .main .number{line-height: 3rem;padding: 0 0.5rem;font-size: 0.7rem;color: #666;overflow: hidden;height: 7rem;}
+        #about .main .number span{float: left;}
+        .gw_num{border: 1px solid #dbdbdb;width: 94px;line-height: 26px;overflow: hidden;height: 25px;float: left;margin-left: 0.5rem;margin-top: 0.8rem;}
+        .gw_num em{display: block;height: 25px;width: 26px;float: left;color: #666;border-right: 1px solid #dbdbdb;text-align: center;cursor: pointer;background: #fff;line-height: 25px;}
+        .gw_num .num{display: block;float: left;text-align: center;width: 38px;font-style: normal;font-size: 14px;line-height: 25px;border: 0;height: 25px;}
+        .gw_num em.add{float: right;border-right: 0;border-left: 1px solid #dbdbdb;}
+        #about .main .buttons{height: 46px;width: 100%;line-height: 46px;text-align: center;font-size: 0.9rem;color: #fff;background-color: #d0021b;}
+        em{font-style:normal}
+        .u-flyer{display: block;width: 50px;height: 50px;border-radius: 50px;position: fixed;z-index: 9999;}
+        .header-top .pull-left .chunks{background-color:rgba(0,0,0,0.2);width: 35px;height: 35px;line-height: 35px;text-align: center;border-radius: 50%;margin-top: 5px;}
+        .header-top .pull-left {left: 0.5rem;}
+        .header-top .pull-left .chunks i{color: #fff;position:relative;top: 0.1rem;}
+        .header-top .pull-right .chunks{background-color:rgba(0,0,0,0.2);width: 35px;height: 35px;line-height: 35px;text-align: center;border-radius: 50%;margin-top: 5px;}
+        .header-top .pull-right .chunks i{color: #fff;position:relative;top: 0.1rem;font-size: 1rem;}
+        header{background-color:rgba(255,255,255,0);}
+        .sp{width: 1.25rem;height: 1.25rem;text-align: center;line-height: 1rem;margin: 0 auto;margin-top: 0.15rem;}
+        .sp img{width: 100%;height: 100%;}
+        .name{margin-top: -0.75rem;}
+        .sps{width: 1.25rem;height: 1.25rem;text-align: center;line-height: 1rem;margin: 0 auto;margin-top: 0.35em;}
+        .sps img{width: 100%;height: 100%;}
+        .names{margin-top: -0.8rem;}
+        </style>
+        <!-- 该页面应用css区域 -->
+    </head>
+    <body ontouchstart>	
+	<header>
+		<div class="header-top">
+			<div class="pull-left"><div class="chunks"><i class="iconfont">&#xe600;</i></div></div>
+			<div class="pull-center"></div>
+            <div class="pull-right"><div class="chunks"><i class="iconfont">&#xe603;</i></div></div>
+		</div>
+	</header>
+	<div class="content">
+        <div class="lumps">
+        	<div class="side">
+                <div class="swiper-container" data-space-between='10' data-pagination='.swiper-pagination' data-autoplay="1000">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide"><img src="images/spdel.png"></div>
+                        <div class="swiper-slide"><img src="images/spdel.png"></div>
+                        <div class="swiper-slide"><img src="images/spdel.png"></div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+                <p class="text">商品名称商品名称商品名称商品名称商品名称商品名称商品名称商品名称商品名</p>
+                <p class="money"><span class="left">￥8888.00</span><s>￥8888.00</s></p>
+            </div>
+            <div class="evaluate">
+                <div class="weui-cells">
+                    <a class="weui-cell weui-cell_access" href="#">
+                        <div class="weui-cell__bd">
+                            <p>用户评价（<span>1000</span>）</p>
+                        </div>
+                        <div class="weui-cell__ft">查看全部</div>
+                    </a>
+                </div>
+                <div class="weui-panel weui-panel_access">
+                    <div class="weui-panel__bd">
+                        <a href="javascript:void(0);" class="weui-media-box weui-media-box_appmsg">
+                            <div class="weui-media-box__hd">
+                                <img class="weui-media-box__thumb" src="images/logo.jpg"/>
+                            </div>
+                            <div class="weui-media-box__bd">
+                                <h4 class="weui-media-box__title">用户名称用户名称</h4>
+                                <p class="weui-media-box__desc">
+                                    <i class="iconfont red">&#xe604;</i>
+                                    <i class="iconfont red">&#xe604;</i>
+                                    <i class="iconfont red">&#xe604;</i>
+                                    <i class="iconfont red">&#xe604;</i>
+                                    <i class="iconfont">&#xe60f;</i>
+                                </p>
+                            </div>
+                            <div class="weui-cell__ft">2017-01-01 10:50</div>
+                        </a>  
+                    </div>
+                </div>
+                <div class="text">
+                    <p class="del">评价内容评价内容评价内容评价内容评价内容评价内容评价内容评价内容评价内容评价内容评价内容评价内容评价内容评价内容</p>
+                    <ul class="img-ul">
+                        <li><img src="images/logo.jpg"/></li>
+                        <li><img src="images/logo.jpg"/></li>
+                        <li><img src="images/logo.jpg"/></li>
+                        <li><img src="images/logo.jpg"/></li>
+                    </ul>
+                    <div class="size"><span class="lump">颜色：<span>黑色</span></span><span class="lump">尺码：<span>S</span></span><span class="cases">x1</span></div>
+                </div>
+            </div>
+            <div class="sp-affiliation">
+                <div class="weui-cells">
+                    <div class="weui-cell weui-cell_access">
+                        <div class="weui-cell__hd"><img src="images/logo.jpg"/></div>
+                        <div class="weui-cell__bd">
+                            <p>阿玛尼</p>
+                        </div>
+                        <div class="weui-cell__ft">进入品牌店铺</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="particulars">
+            <table class="tab">
+                <tr>
+                    <td class="ly-23">吊牌尺码</td>
+                    <td class="ly-23">衣长</td>
+                    <td class="ly-23">裙长</td>
+                    <td class="ly-31">其他参数...</td>
+                </tr>
+                <tr>
+                    <td class="ly-23">S</td>
+                    <td class="ly-23">100cm</td>
+                    <td class="ly-23">500cm</td>
+                    <td class="ly-31">...</td>
+                </tr>
+                <tr>
+                    <td class="ly-23">S</td>
+                    <td class="ly-23">100cm</td>
+                    <td class="ly-23">500cm</td>
+                    <td class="ly-31">...</td>
+                </tr>
+                <tr>
+                    <td class="ly-23">S</td>
+                    <td class="ly-23">100cm</td>
+                    <td class="ly-23">500cm</td>
+                    <td class="ly-31">...</td>
+                </tr>
+            </table>
+            <div class="text">
+                <img src="images/spdel.png"/>
+                <p>图文展示图文展示图文展示图文展示图文展示图文展示图文展示图文展示图文展示图文展示图文展示图文展示图文展示图文展示图文展示图文展示图文展示图文展示图文展示图文展示图文展示图文展示</p>
+                <img src="images/spdel.png"/>
+            </div>
+        </div>    
+   	</div>
+    <div id="about" class="weui-popup__container popup-bottom">
+            <div class="weui-popup__overlay"></div>
+            <div class="weui-popup__modal">
+                <div class="main">
+                    <span class="close close-popup"><i class="iconfont">&#xe61e;</i></span>
+                    <div class="main-chunk">
+                        <div class="weui-panel weui-panel_access">
+                            <div class="weui-panel__bd">
+                                <a class="weui-media-box weui-media-box_appmsg">
+                                    <div class="weui-media-box__hd fr">
+                                        <img class="weui-media-box__thumb" src="images/sp.jpg"/>
+                                    </div>
+                                    <div class="weui-media-box__bd">
+                                        <h4 class="weui-media-box__title"><span class="left">￥8888.00</span><s>￥8888.00</s></h4>
+                                        <p class="weui-media-box__desc">已选：<span>绿色，S</span></p>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="color"><span class="title">颜色</span><div class="yuan yuans red actives"></div><div class="yuan yuans green"></div><div class="yuan yuans red"></div></div>
+                    <div class="color"><span class="title">尺码</span><div class="yuan yardage active">S</div><div class="yuan yardage">M</div><div class="yuan yardage">L</div><div class="yuan yardages">XL</div></div>
+                    <div class="number">
+                        <span class="title">数量</span>
+                        <div class="gw_num"><em class="jian">-</em><input type="text" value="1" class="num"/><em class="add">+</em></div>
+                    </div>
+                    <div class="buttons close-popup addcar">加入购物车</div>
+                </div>
+            </div>
+        </div>
+    <footer>
+        <div class="row bottom">
+            <div class="ly-17 cart"><div><i class="iconfont" id="end">&#xe650;</i><div class="number">20</div></div></div>
+            <div class="ly-19"><div class="sps"><img src="images/x.png"/></div><div class="names">愿望清单</div></div>
+            <div class="ly-18"><div class="sp"><img src="images/sp.png"/></div><div class="name">品牌店铺</div></div>
+            <div class="ly-18"><div class="sp"><img src="images/ljgm.png"/></div><div class="name">立即购买</div></div>
+            <div class="ly-26 add-cart"><a href="javascript:;" class="open-popup" data-target="open-popup">加入购物车</a></div>
+        </div>
+    </footer>
+    <!-- 公共js区域 --> 
+    <script src="../js/jquery.min.js"></script>
+	<script src="../js/jquery-weui.min.js"></script>
+	<script src="../js/swiper.min.js"></script>
+	<script src="../js/city-picker.min.js"></script>
+    <script src="../js/jquery.fly.min.js"></script>
+    <!-- 公共js区域完 -->
+    <!-- 该页面应用js区域 -->
+    <script type="text/javascript">
+    $(function(){
+        $(".swiper-container").swiper({
+            
+        });
+        $(".open-popup").click(function(){
+            $("#about").popup();
+        });
+        $(".close").click(function(){
+            $.closePopup();
+        });
+        $(".buttons").click(function(){
+            $.closePopup();
+        });
+        //加的效果
+        $(".add").click(function(){
+            var n=$(this).prev().val();
+            var num=parseInt(n)+1;
+            if(num==0){ return;}
+                $(this).prev().val(num);
+            });
+            //减的效果
+            $(".jian").click(function(){
+            var n=$(this).next().val();
+            var num=parseInt(n)-1;
+            if(num==0){ return}
+                $(this).next().val(num);
+        });
+        //商品飞入购物车效果
+        var offset = $("#end").offset();       
+        $(".addcar").click(function(event){
+            var addcar = $(this);
+            var img = $(".fr").find('img').attr('src');
+            var flyer = $('<img class="u-flyer" src="'+img+'">');
+            flyer.fly({
+                start: {
+                    left: event.pageX,
+                    top: event.pageY
+                },
+                end: {
+                    left: offset.left+10,
+                    top: offset.top+10,
+                    width: 0,
+                    height: 0
+                },
+                onEnd: function(){
+                    $("#msg").show().animate({width: '250px'}, 200).fadeOut(1000);
+                    this.destory();
+                    $.toast("添加成功", "text");
+                }           
+            });
+        });
+        $(".color").on("click",".yardage",function(){
+            $(this).addClass("active").siblings().removeClass("active");
+        });
+        $(".color").on("click",".yuans",function(){
+            $(this).addClass("actives").siblings().removeClass("actives");
+        });
+    });
+    </script>
+    <!-- 该页面应用js区域 -->
+    </body>
+</html>

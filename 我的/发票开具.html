@@ -1,0 +1,110 @@
+<!--制作lJ-->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <meta name="format-detection" content="telephone=no">
+    <!-- 公共css区域 -->
+    <link rel="stylesheet" href="../css/weui.min.css">
+    <link rel="stylesheet" href="../css/jquery-weui.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <!-- 公共css完区域 -->
+    <!-- 该页面应用css区域 -->
+    <style type="text/css">
+        /*L自定样式*/
+        .not-top-gutter{margin-top: 0;}
+        .container .weui-cell:before{left: 0;color: #dfdfdf;}
+        .container .weui-cell{padding:10px;}
+        .detel-border{border: none!important;}
+        .container .item-title{font-size: 0.7rem;color: #666}
+        /*该页面样式*/
+        .content{bottom: 0;}
+        .container .article{font-size: 0.6rem;color: #666;}
+        .container-form .weui-label{width: 70px;}
+        .container-form:before{position: static;}
+        .container-form .form-radio{margin-right: 1rem;}
+        .container-form .form-radio .circle{width: 0.8rem;height: 0.8rem;border-radius: 0.4rem;border: 1px solid #dfdfdf;display: inline-block;margin-right: 0.4rem;position: relative;top: 0.2rem;}
+        .container-form .form-radio .circle-choose{background: url("../images/xz.png") no-repeat;background-size: 100%;border: none;width: 0.9rem;height: 0.9rem; border-radius: 0.45rem;}
+        .submit .btn-black{background-color: #666;color: #FFF;font-size: 0.7rem;}
+
+
+    </style>
+    <!-- 该页面应用css区域 -->
+</head>
+<body ontouchstart>
+<header>
+    <div class="header-top detel-border">
+        <div class="pull-left"><i class="iconfont">&#xe600;</i></div>
+        <div class="pull-center">发票信息</div>
+    </div>
+</header>
+<div class="content container">
+    <div class="weui-cells weui-cells_form container-form ">
+        <div class="weui-cell item-title tab-nav">
+            <label class="form-radio">
+                <span class="circle circle-choose"></span><span>个人</span>
+            </label>
+            <label class="form-radio">
+                <span class="circle"></span><span>单位</span>
+            </label>
+        </div>
+        <div class="tab-content item-title">
+            <div>
+                <div class="weui-cell">
+                    <div class="weui-cell__hd"><label class="weui-label">发票抬头 </label></div>
+                    <div class="weui-cell__bd">
+                        <p>个人 ( 不可修改 )</p>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="weui-cell">
+                    <div class="weui-cell__hd"><label class="weui-label">发票抬头 </label></div>
+                    <div class="weui-cell__bd">
+                        <input class="weui-input" type="text" placeholder="请输入单位名称">
+                    </div>
+                </div>
+                <div class="weui-cell">
+                    <div class="weui-cell__hd"><label class="weui-label">税号 </label></div>
+                    <div class="weui-cell__bd">
+                        <input class="weui-input" type="text" placeholder="请输入正确的纳税人识别号">
+                    </div>
+                </div>
+                <div class="weui-cell">
+                    <div class="weui-cell__hd"><label class="weui-label">发票明细 </label></div>
+                    <div class="weui-cell__bd">
+                        <input class="weui-input" type="text" placeholder="请选择" id="job"><i class="iconfont"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="submit">
+        <button type="button" class="btn-black">确定</button>
+    </div>
+</div>
+<!-- 公共js区域 -->
+<script src="../js/jquery.min.js"></script>
+<script src="../js/jquery-weui.min.js"></script>
+<script src="../js/swiper.min.js"></script>
+<script src="../js/city-picker.min.js"></script>
+<!-- 公共js区域完 -->
+<!-- 该页面应用js区域 -->
+<script type="text/javascript">
+    $("#job").select({
+        title: "选择发票类型",
+        items: ["法官", "医生", "猎人", "学生", "记者", "其他"]
+    });
+    $(".tab-content>div:gt(0)").hide();
+    $(".form-radio").click(function () {
+        $(this).find(".circle").addClass("circle-choose").parent().siblings().find(".circle").removeClass("circle-choose");
+        var index=$(".form-radio").index(this);
+        $(".tab-content>div").eq(index).show().siblings().hide();
+    })
+</script>
+<!-- 该页面应用js区域 -->
+</body>
+</html>

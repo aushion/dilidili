@@ -1,0 +1,145 @@
+<!--制作ly-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+        <meta name="format-detection" content="telephone=no">
+        <!-- 公共css区域 -->
+        <link rel="stylesheet" href="../css/weui.min.css">
+        <link rel="stylesheet" href="../css/jquery-weui.min.css">
+        <link rel="stylesheet" href="../css/style.css">
+        <!-- 公共css完区域 -->
+        <!-- 该页面应用css区域 -->
+        <style type="text/css">
+        .content{bottom: 0px;background-color: #F8F8F8;}
+        .chunk{background-color: #fff;margin-top: 0.5rem;}
+        .chunk .order-number{height: 2.3rem;padding: 0 0.5rem;font-size: 0.7rem;color: #666;line-height: 2.3rem;}
+        .chunk .order-number .state{float: right;}
+        .chunk .list .weui-media-box_appmsg .weui-media-box__hd{height: auto;}
+        .chunk .list .weui-media-box_appmsg{align-items:end;}
+        .chunk .list .weui-cell_access .weui-cell__ft{position: initial;}
+        .chunk .list .weui-cell_access .weui-cell__ft:after{right: 0.5rem;}
+        .chunk .list .weui-media-box__title, .list .weui-media-box__desc{font-size: 0.7rem;color: #666;position: relative;padding-right: 4rem;}
+        .chunk .list .weui-media-box__desc{color: #b0b0b0;font-size: 0.6rem;margin-top: 0.25rem;}
+        .chunk .list .weui-media-box__desc .lump{margin-right: 0.5rem;}
+        .chunk .list .weui-media-box__title .money{position: absolute;top: 0rem;right: 0rem;font-size: 0.7rem;color: #666;}
+        .chunk .list .weui-media-box__desc .cases{position: absolute;top: 0rem;right: 0rem;}
+        .chunk .cost{height: 2.3rem;padding: 0 0.5rem;font-size: 0.6rem;color: #666;line-height: 2.3rem;text-align: right;border-bottom: 1px solid #e5e5e5;}
+        .chunk .sale{height: 2.3rem;padding: 0 0.5rem;line-height: 2.3rem;text-align: right;border-bottom: 1px solid #e5e5e5;}
+        .chunk .sale input{height: 1.7rem;padding: 0 0.5rem;font-size: 0.7rem;color: #666;border:1px solid #767676;border-radius: 3px;background-color: #fff;}
+        </style>
+        <!-- 该页面应用css区域 -->
+    </head>
+    <body ontouchstart>	
+	<header>
+		<div class="header-top">
+			<div class="pull-left"><i class="iconfont">&#xe600;</i></div>
+			<div class="pull-center">售后服务订单</div>
+		</div>
+	</header>
+	<div class="content">
+        <div class="weui-pull-to-refresh__layer">
+            <div class='weui-pull-to-refresh__arrow'></div>
+            <div class='weui-pull-to-refresh__preloader'></div>
+            <div class="down">下拉刷新</div>
+            <div class="up">释放刷新</div>
+            <div class="refresh">正在刷新</div>
+        </div>
+        <div class="lists">
+        	<div class="chunk">
+                <div class="order-number">
+                    <span>订单编号:<span>65465465465</span></span>
+                    <span class="state">售后中</span>
+                </div>
+                <div class="weui-panel weui-panel_access list">
+                    <div class="weui-panel__bd weui-cell_access">
+                        <a href="#" class="weui-media-box weui-media-box_appmsg">
+                            <div class="weui-media-box__hd">
+                                <img class="weui-media-box__thumb" src="../images/sp.jpg"/>
+                            </div>
+                            <div class="weui-media-box__bd">
+                                <h4 class="weui-media-box__title">商品名称商品名称商品名称商品名称商品名称商品名称商品名称商品名称商品名称 <span class="money">￥259.00</span></h4>
+                                <p class="weui-media-box__desc"><span class="lump">颜色：<span>黑色</span></span><span class="lump">尺码：<span>S</span></span><span class="cases">x1</span></p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="cost">共<span>2</span>件商品 实付<span>￥168.00</span>（含运费<span>￥10.00</span>）</div>
+                <div class="sale"><input type="button" value="取消售后"></div>
+            </div>
+            <div class="chunk">
+                <div class="order-number">
+                    <span>订单编号:<span>65465465465</span></span>
+                    <span class="state">待收货</span>
+                </div>
+                <div class="weui-panel weui-panel_access list">
+                    <div class="weui-panel__bd weui-cell_access">
+                        <a href="#" class="weui-media-box weui-media-box_appmsg">
+                            <div class="weui-media-box__hd">
+                                <img class="weui-media-box__thumb" src="../images/sp.jpg"/>
+                            </div>
+                            <div class="weui-media-box__bd">
+                                <h4 class="weui-media-box__title">商品名称商品名称商品名称商品名称商品名称商品名称商品名称商品名称商品名称 <span class="money">￥259.00</span></h4>
+                                <p class="weui-media-box__desc"><span class="lump">颜色：<span>黑色</span></span><span class="lump">尺码：<span>S</span></span><span class="cases">x1</span></p>
+                            </div>
+                        </a>
+                        <a href="#" class="weui-media-box weui-media-box_appmsg">
+                            <div class="weui-media-box__hd">
+                                <img class="weui-media-box__thumb" src="../images/sp.jpg"/>
+                            </div>
+                            <div class="weui-media-box__bd">
+                                <h4 class="weui-media-box__title">商品名称商品名称商品名称商品名称商品名称商品名称商品名称商品名称商品名称 <span class="money">￥259.00</span></h4>
+                                <p class="weui-media-box__desc"><span class="lump">颜色：<span>黑色</span></span><span class="lump">尺码：<span>S</span></span><span class="cases">x1</span></p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="cost">共<span>2</span>件商品 实付<span>￥168.00</span>（含运费<span>￥10.00</span>）</div>
+                <div class="sale"><input type="button" value="取消售后"></div>
+            </div>
+        </div>
+        <div class="weui-loadmore">
+            <i class="weui-loading"></i>
+            <span class="weui-loadmore__tips">正在加载</span>
+        </div>
+   	</div>
+    <!-- 公共js区域 --> 
+    <script src="../js/jquery.min.js"></script>
+	<script src="../js/jquery-weui.min.js"></script>
+	<script src="../js/swiper.min.js"></script>
+	<script src="../js/city-picker.min.js"></script>
+    <!-- 公共js区域完 -->
+    <!-- 该页面应用js区域 -->
+    <script type="text/javascript">
+    $(function(){
+        $(".sale").click(function(){
+            $.confirm({
+              title: '确定取消售后吗',
+              onOK: function () {
+              },
+              onCancel: function () {
+              }
+            });
+        });
+        $(".content").pullToRefresh();
+        $(".content").on("pull-to-refresh", function() {
+           setTimeout("location.reload()",1000);
+        });
+        $(".content").infinite();
+        var loading = false;  //状态标记
+        $(".content").infinite().on("infinite", function() {
+          if(loading) return;
+          loading = true;
+          setTimeout(function() {
+            $(".lists").append('<div class="chunk"><div class="order-number"><span>订单编号:<span>65465465465</span></span><span class="state">售后中</span></div><div class="weui-panel weui-panel_access list"><div class="weui-panel__bd weui-cell_access"><a href="#" class="weui-media-box weui-media-box_appmsg"><div class="weui-media-box__hd"><img class="weui-media-box__thumb" src="../images/sp.jpg"/></div><div class="weui-media-box__bd"><h4 class="weui-media-box__title">商品名称商品名称商品名称商品名称商品名称商品名称商品名称商品名称商品名称 <span class="money">￥259.00</span></h4><p class="weui-media-box__desc"><span class="lump">颜色：<span>黑色</span></span><span class="lump">尺码：<span>S</span></span><span class="cases">x1</span></p></div></a></div></div><div class="cost">共<span>2</span>件商品 实付<span>￥168.00</span>（含运费<span>￥10.00</span>）</div><div class="sale"><input type="button" value="取消售后"></div></div><div class="chunk"><div class="order-number"><span>订单编号:<span>65465465465</span></span><span class="state">售后中</span></div><div class="weui-panel weui-panel_access list"><div class="weui-panel__bd weui-cell_access"><a href="#" class="weui-media-box weui-media-box_appmsg"><div class="weui-media-box__hd"><img class="weui-media-box__thumb" src="../images/sp.jpg"/></div><div class="weui-media-box__bd"><h4 class="weui-media-box__title">商品名称商品名称商品名称商品名称商品名称商品名称商品名称商品名称商品名称 <span class="money">￥259.00</span></h4><p class="weui-media-box__desc"><span class="lump">颜色：<span>黑色</span></span><span class="lump">尺码：<span>S</span></span><span class="cases">x1</span></p></div></a></div></div><div class="cost">共<span>2</span>件商品 实付<span>￥168.00</span>（含运费<span>￥10.00</span>）</div><div class="sale"><input type="button" value="取消售后"></div></div>');
+            loading = false;
+          }, 1000);   //模拟延迟
+         });
+    });
+    </script>
+    <!-- 该页面应用js区域 -->
+    </body>
+</html>
