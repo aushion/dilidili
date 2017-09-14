@@ -1,0 +1,244 @@
+<!--制作lj-->
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title></title>
+  <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+  <meta name="format-detection" content="telephone=no">
+  <!-- 公共css区域 -->
+  <link rel="stylesheet" href="../css/weui.min.css">
+  <link rel="stylesheet" href="../css/jquery-weui.min.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <!-- 公共css完区域 -->
+  <!-- 该页面应用css区域 -->
+  <style type="text/css">
+    .header-top {
+      border: none;
+    }
+
+    .nav {
+      width: 210px;
+      justify-content: space-around;
+      text-align: center;
+      margin: auto;
+    }
+
+    .active {
+      border-bottom: 2px solid #0d0d0d;
+    }
+
+    .search-des2 {
+      position: relative;
+      border-bottom: 1px solid #dfdfdf;
+    }
+
+    .search-des2 .search-input {
+      border: none;
+      text-align: center;
+      outline: 0;
+      width: 100%;
+      display: block;
+      height: 1.5rem;
+      background-color: #f8f8f8;
+      border-radius: 0.1rem;
+      font-size: 0.7rem;
+    }
+
+    .search-des2 .search-iconn {
+      font-size: 1.1rem;
+      position: absolute;
+      left: 35%;
+      top: 10px;
+    }
+
+    .container-white2 {
+      background-color: #FFF;
+      padding: 0.5rem;
+    }
+
+    .container {
+      background: #fff;
+    }
+    .container .item-after {
+      font-size: 0.6rem;
+      color: #b0b0b0;
+    }
+
+    .container img {
+      width: 100%;
+    }
+
+    .container .text-center {
+      text-align: center;
+    }
+
+    .swiper-container {
+      width: 100%;
+      height: 151px;
+      margin-bottom: 9px;
+    }
+
+    .swiper-slide {
+      text-align: center;
+      font-size: 18px;
+      background: #fff;
+      width: 80%;
+
+      /* Center slide text vertically */
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      -webkit-justify-content: center;
+      justify-content: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      -webkit-align-items: center;
+      align-items: center;
+    }
+
+    .swiper-wrapper {
+      margin-left: 10%;
+    }
+
+    .brand-classify {
+      text-align: center;
+      height: 36px;
+      vertical-align: middle;
+      line-height: 36px;
+      color: #b0b0b0;
+      position: relative;
+    }
+
+    .brand-classify::after {
+
+    }
+
+    .brand-classify .text {
+      position: relative;
+      box-sizing: border-box;
+    }
+
+    .brand-classify .text::before {
+      content: " ";
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 1px;
+      bottom: 0;
+      border-right: 1px solid #D9D9D9;
+      color: #D9D9D9;
+      -webkit-transform-origin: 100% 0;
+      transform-origin: 100% 0;
+      -webkit-transform: scaleX(0.5);
+      transform: scaleX(0.5);
+    }
+
+    .brands-list {
+      display: flex;
+      width: 258px;
+      height: 85px;
+      margin: auto;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+
+    .brands-list .item {
+      flex: 0 0 86px;
+      width: 86px;
+      height: 100%;
+    }
+  </style>
+  <!-- 该页面应用css区域 -->
+</head>
+<body ontouchstart>
+<header>
+  <div class="header-top">
+    <div class="weui-flex nav">
+      <div class="weui-flex__item classify">品类</div>
+      <div class="weui-flex__item brand active">品牌</div>
+      <div class="weui-flex__item wish">愿望</div>
+    </div>
+  </div>
+</header>
+<div class="content container">
+  <div class="search-des2 text-center item-after container-white2">
+    <input type="text" placeholder="搜索品牌" class="text-center search-input"><i class="iconfont search-iconn">&#xe656;</i>
+  </div>
+
+  <div class="swiper-container" id="brand-swipe">
+    <!-- Additional required wrapper -->
+    <div class="swiper-wrapper">
+      <!-- Slides -->
+      <div class="swiper-slide"><img src="../images/556-302.png" alt=""></div>
+      <div class="swiper-slide"><img src="../images/556-302.png" alt=""></div>
+      <div class="swiper-slide"><img src="../images/556-302.png" alt=""></div>
+    </div>
+    <!-- If we need pagination -->
+    <div class="swiper-pagination"></div>
+
+  </div>
+  <div class="weui-flex brand-classify">
+    <div class="weui-flex__item all-brands active">
+      <div class="text">全部品牌</div>
+    </div>
+    <div class="weui-flex__item standard">
+      <div class="text">独立设计师</div>
+    </div>
+    <div class="weui-flex__item wish">
+      <div class="text">热门品牌</div>
+    </div>
+  </div>
+
+  <div class="brands-list">
+    <div class="item"><img src="../images/172-170.png" alt=""></div>
+    <div class="item"><img src="../images/172-170.png" alt=""></div>
+    <div class="item"><img src="../images/172-170.png" alt=""></div>
+    <div class="item"><img src="../images/172-170.png" alt=""></div>
+    <div class="item"><img src="../images/172-170.png" alt=""></div>
+    <div class="item"><img src="../images/172-170.png" alt=""></div>
+    <div class="item"><img src="../images/172-170.png" alt=""></div>
+    <div class="item"><img src="../images/172-170.png" alt=""></div>
+    <div class="item"><img src="../images/172-170.png" alt=""></div>
+    <div class="item"><img src="../images/172-170.png" alt=""></div>
+    <div class="item"><img src="../images/172-170.png" alt=""></div>
+    <div class="item"><img src="../images/172-170.png" alt=""></div>
+  </div>
+
+</div>
+
+<!-- 公共js区域 -->
+<script src="../js/jquery.min.js"></script>
+<script src="../js/jquery-weui.min.js"></script>
+<script src="../js/swiper.min.js"></script>
+<script src="../js/city-picker.min.js"></script>
+<!-- 公共js区域完 -->
+<!-- 该页面应用js区域 -->
+<script type="text/javascript">
+  /**/
+  $('.search-input').bind('input propertychange', function () {
+    var $this = $(this).val().length;
+    if ($this >= 1) {
+      $(".search-iconn").hide();
+    } else {
+      $(".search-iconn").show();
+    }
+  });
+
+  $('#brand-swipe').swiper({
+    initialSlide: 1,
+    loop: true,
+    autoplay: '3000',
+    slidesPerView: 'auto',
+    paginationClickable: true,
+    spaceBetween: 9
+  })
+</script>
+<!-- 该页面应用js区域 -->
+</body>
+</html>
