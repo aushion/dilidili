@@ -1,0 +1,177 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <meta name="format-detection" content="telephone=no">
+    <!-- 公共css区域 -->
+    <link rel="stylesheet" href="../css/weui.min.css">
+    <link rel="stylesheet" href="../css/jquery-weui.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <!-- 公共css完区域 -->
+    <!-- 该页面应用css区域 -->
+    <style type="text/css">
+        .header-top {
+            border: none;
+        }
+
+        .nav {
+            width: 210px;
+            justify-content: space-around;
+            text-align: center;
+            margin: auto;
+        }
+
+        .header-top .active {
+            border-bottom: 2px solid #0d0d0d;
+        }
+        #classify .title{
+            /*width: calc(100%-12);*/
+            border-top: 1px solid #ccc;
+            background: rgb(237,237,237);
+            height: 24px;
+            line-height: 24px;
+            font-size: 14px;
+            padding-left: 12px;
+        }
+        #classify .type-list{
+            display: flex;
+            width: 100%;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+
+    </style>
+    <!-- 该页面应用css区域 -->
+</head>
+<body ontouchstart>
+<header>
+    <div class="header-top">
+        <div class="weui-flex nav">
+            <div class="weui-flex__item classify active">品类</div>
+            <div class="weui-flex__item brand ">品牌</div>
+            <div class="weui-flex__item wish">愿望</div>
+        </div>
+    </div>
+</header>
+<div class="content container">
+     <div id="classify">
+         <div class="title">男士 <i class="iconfont arrow-down"></i> </div>
+         <div class="type-list">
+            <div class="item">
+                <img src="../images/64-64.png" alt="">
+                <div>衬衫</div>
+            </div>
+         </div>
+     </div>
+
+</div>
+<footer>
+    <div class="weui-tabbar">
+        <a href="#" class="weui-tabbar__item weui-bar__item--on index">
+            <div class="weui-tabbar__icon add-d-img">
+                <span><img src="../images/z-53-2-2.png"/></span>
+            </div>
+            <p class="weui-tabbar__label">首页</p>
+        </a>
+        <a href="#" class="weui-tabbar__item weui-bar__item--on classify active">
+            <div class="weui-tabbar__icon">
+                <span><img src="../images/classify.png" class='gray'/></span>
+            </div>
+            <p class="weui-tabbar__label">分类</p>
+        </a>
+        <a href="#" class="weui-tabbar__item weui-bar__item--on cart">
+            <div class="weui-tabbar__icon">
+               <span><img src="../images/z-53-2-4.png"/></span>
+                <span class="weui-badge" style="position: absolute;top: -.4em;right: 1em;">8</span>
+            </div>
+            <p class="weui-tabbar__label">购物车</p>
+        </a>
+        <a href="#" class="weui-tabbar__item weui-bar__item--on personage">
+            <div class="weui-tabbar__icon">
+                <span><img src="../images/z-53-2-1.png"/></span>
+            </div>
+            <p class="weui-tabbar__label">个人</p>
+        </a>
+    </div>
+</footer>
+<!-- 公共js区域 -->
+<script src="../js/jquery.min.js"></script>
+<script src="../js/jquery-weui.min.js"></script>
+<script src="../js/swiper.min.js"></script>
+<script src="../js/city-picker.min.js"></script>
+<script src="../js/jquery.mobile-1.4.3.min.js"></script>
+<!-- 公共js区域完 -->
+<!-- 该页面应用js区域 -->
+<script type="text/javascript">
+    $(document).ready(function () {
+        $(".item").on('swipeleft', function(event) {
+            event.preventDefault();
+            /* Act on the event */
+            $(this).addClass('selected').siblings('.item').removeClass('selected');
+            $(this).find('.delect-btn').on('click', function(event) {
+                event.preventDefault();
+                /* Act on the event */
+                $(this).parent(".item").animate({
+                        height: 0,
+                        width: 0},
+                    300, function() {
+                        $(this).remove();
+                        $.toast("删除成功", "text");
+                    });
+            });
+        });
+        $('.search-input').bind('input propertychange', function() {
+            var $this =  $(this).val().length;
+            if($this >= 1){
+                $(".search-iconn").hide();
+            }else{
+                $(".search-iconn").show();
+            }
+        });
+
+        $(".item").on('swiperight', function(event) {
+            event.preventDefault();
+            $(this).removeClass('selected');
+        });
+        var delect_btn_h = $(".item-wrap").height();
+        $(".delect-btn").css("line-height","94px");
+        $(".tab-nav-two li").click(function(){
+            $(this).addClass("active").siblings().removeClass("active");
+        });//二级导航
+        $(".left li").click(function(){
+            $(this).addClass("active").siblings().removeClass("active");
+        });//左边的导航
+
+        var Wheigth = $(window).height(),
+            Wtopheight = $("header").height(),
+            footerHeight = $("footer").height();
+        var leftHeigth = Wheigth-(Wtopheight+footerHeight);
+        $(".left .item-after2").height(leftHeigth);//计算left导航高度便于滚动
+
+
+        $(document.body).infinite();
+
+        $(".infinite").infinite().on("infinite", function() {
+            var self = this;
+            if(self.loading) return;
+            console.log(self)
+            self.loading = true;
+            console.log(self);
+            setTimeout(function() {
+                $(self).find(".content-padded").append("");
+                self.loading = false;
+            }, 2000);   //模拟延迟
+        });
+
+    })
+
+</script>
+<!-- 该页面应用js区域 -->
+</body>
+</html>
