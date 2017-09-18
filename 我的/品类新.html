@@ -39,7 +39,7 @@
     }
 
     #classify img {
-      width: 100%;
+      width: 42%;
     }
 
     #classify .type-list {
@@ -51,9 +51,8 @@
     }
 
     #classify .type-list .item {
-      flex: 0 0 32px;
-      width: 32px;
-      padding: 0 21.5px;
+      flex: 0 0 20%;
+      width: 20%;
       height: 62px;
       margin-top: 18px;
       text-align: center;
@@ -76,7 +75,7 @@
 <div class="content container">
   <div id="classify">
     <div class="man">
-      <div class="title">男士 <i class="iconfont arrow-down" style="float: right;">下拉</i></div>
+      <div class="title">男士 <i class="iconfont" style="float: right;">收起</i></div>
       <div class="type-list">
         <div class="item">
           <img src="../images/64-64.png" alt="">
@@ -113,7 +112,7 @@
       </div>
     </div>
     <div class="women">
-      <div class="title">女士 <i class="iconfont arrow-down"></i></div>
+      <div class="title">女士 <i class="iconfont" style="float: right;">收起</i></div>
       <div class="type-list">
         <div class="item">
           <img src="../images/64-64.png" alt="">
@@ -150,7 +149,7 @@
       </div>
     </div>
     <div class="children">
-      <div class="title">儿童 <i class="iconfont arrow-down"></i></div>
+      <div class="title">儿童 <i class="iconfont" style="float: right;">收起</i></div>
       <div class="type-list">
         <div class="item">
           <img src="../images/64-64.png" alt="">
@@ -229,10 +228,12 @@
 <!-- 该页面应用js区域 -->
 <script type="text/javascript">
   $(document).ready(function () {
-    $('.arrow-down').click(function () {
-      $(this).parent().next().animate({
+    $('.iconfont').click(function () {
+      $(this).text() === '收起' ? $(this).text('展开').parent().next().animate({
         height: 80,
-      }, 500)
+      }, 500) : $(this).text('收起').parent().next().animate({
+        height: 'auto',
+      }, 1000);
     })
   })
 </script>
